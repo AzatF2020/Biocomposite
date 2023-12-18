@@ -1,0 +1,20 @@
+extends ../layout/index
+
+include ../parts/tags
+include ../parts/industry
+
+block constants
+  - const title = "Решение отраслей"
+
+block page
+  section.intro
+    .intro-container
+      .intro__overlay
+      .intro__content
+        .intro__info
+          h1.intro__title Решения для отраслей
+          +tags(solutions.tags)
+  each block in solutions.industry
+    +industry(block)
+
+

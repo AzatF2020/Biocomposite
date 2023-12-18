@@ -1,0 +1,15 @@
+@import "utils/reset";
+@import "utils/fontface";
+@import "utils/mixins";
+@import "utils/variables";
+@import "utils/fontface";
+@import "utils/global";
+
+@import "components/header";
+@import "components/footer";
+@import "components/tags";
+@import "components/industry";
+@import "components/map";
+
+@import "pages/solutions/intro";
+@import "pages/contacts/contacts";

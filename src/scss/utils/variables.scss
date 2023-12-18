@@ -1,0 +1,5 @@
+$header-height: 8.8rem;
+
+@include breakpoint(tablet) {
+  $header-height: 7.8rem;
+}

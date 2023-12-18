@@ -1,0 +1,6 @@
+mixin tags(tags)
+  .tags.js-slider-tags
+    .swiper-wrapper
+      each tag in tags
+        .swiper-slide
+          .tags__slide #{tag}

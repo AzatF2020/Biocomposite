@@ -1,0 +1,87 @@
+{
+  "tags": [
+    "Городское благоустройство", "Автомобилестроение", "Авиационная промышленность", "Вагоностроение"
+  ],
+  "industry": [
+    {
+      "title": "Городское благоустройство",
+      "text": " Композитные скамейки «Элегант», «ЭКО» из льняных тканей для благоустройства парковых, городских, промышленных территорий",
+      "videoSrc": "assets/video/video-industry-first.MP4",
+      "sliders": [
+        {
+          "name": "Скамейки",
+          "imgSrc": "assets/img/benches.png"
+        },
+        {
+          "name": "Опоры освещения и светильники",
+          "imgSrc": "assets/img/luminaire.png"
+        },
+        {
+          "name": "Террасная доска",
+          "imgSrc": "assets/img/board.png"
+        },
+        {
+          "name": "Террасная доска",
+          "imgSrc": "assets/img/board.png"
+        }
+      ]
+    },
+    {
+      "title": "Промышлен-ность",
+      "text": "Для производства используются различные технологии, такие как пластификация, смешивание, нанесение покрытия и другие.",
+      "videoSrc": "assets/video/video-industry-second.MP4",
+      "sliders": [
+        {
+          "name": "Композитная арматура",
+          "imgSrc": "assets/img/armature.png"
+        },
+        {
+          "name": "Композитные люки",
+          "imgSrc": "assets/img/hatches.png"
+        },
+        {
+          "name": "Элементы для грузового автотранспорта",
+          "imgSrc": "assets/img/auto-element.png"
+        }
+      ]
+    },
+    {
+      "title": "Дизайн и архитектура",
+      "text": "Композитные навесы, погодные модули, каркасы под любой проект",
+      "videoSrc": "assets/video/video-industry-third.MP4",
+      "sliders": [
+        {
+          "name": "Детали экстерьера и интерьера",
+          "imgSrc": "assets/img/interior-details.png"
+        },
+        {
+          "name": "Настилы",
+          "imgSrc": "assets/img/decks.png"
+        },
+        {
+          "name": "Остановочные павильоны",
+          "imgSrc": "assets/img/pavilions.png"
+        }
+      ]
+    },
+    {
+      "title": "Развитие инфраструктуры",
+      "text": "Быстровозводимые сборно-разборная модульная пассажирская платформа из композита: несущий каркас, погодный модуль, пешеходный настил, ограждения, перилы.",
+      "videoSrc": "assets/video/video-industry-fourth.MP4",
+      "sliders": [
+        {
+          "name": "Детали экстерьера и интерьера",
+          "imgSrc": "assets/img/electrical-cabinets.png"
+        },
+        {
+          "name": "Элементы корпуса",
+          "imgSrc": "assets/img/housing-elements.png"
+        },
+        {
+          "name": "Элементы периферийных решений",
+          "imgSrc": "assets/img/peripheral.png"
+        }
+      ]
+    }
+  ]
+}

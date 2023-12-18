@@ -1,0 +1,13 @@
+block constants
+
+doctype html
+html(lang="ru")
+  include ../components/head
+  body
+    .page-content
+      include ../components/header.pug
+      main.page-main
+        block page
+      include ../components/footer.pug
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=83ae1ece-dbbb-4e2c-888f-09f022a9613f&lang=ru_RU" type="text/javascript" defer=true)
+  script(type="module", src="js/main.js")

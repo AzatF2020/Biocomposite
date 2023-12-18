@@ -1,0 +1,21 @@
+mixin industry(industry)
+  section.industry
+    .container
+      video(muted="" data-autoplay="" loop playsinline preload="none").industry__video.lazyload
+        source(src=industry.videoSrc type="video/mp4")
+      .industry__content
+        h2.industry__title= industry.title
+        p.industry__text= industry.text
+        .industry__slider-navigation.js-navigation
+          button.industry__slider-navigation-button.js-prev
+            img(src="assets/icons/left-white-arrow.svg" alt="icon")
+          button.industry__slider-navigation-button.js-next
+            img(src="assets/icons/right-white-arrow.svg" alt="icon")
+        .industry__slider.js-slider
+          .swiper-wrapper
+            each slide in industry.sliders
+              .swiper-slide
+                .industry__slide
+                  span.industry__counter
+                  span.industry__slider-name= slide.name
+                  img(src=slide.imgSrc alt="slider image").industry__slider-img

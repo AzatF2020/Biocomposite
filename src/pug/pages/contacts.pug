@@ -1,0 +1,28 @@
+extends ../layout/index
+
+block constants
+  - const title = "Контакты"
+
+block page
+  section.contacts
+    .container
+      .contacts__content
+        h1.contacts__title Контакты
+        ul.contacts__list-info
+          li.contacts__contact-info
+            p.contacts__contact-info-type телефон
+            a(href="tel:78432345678").contacts__contact-info-link +7 (843) 234 56 78
+          li.contacts__contact-info
+            p.contacts__contact-info-type e-mail
+            a(href="mail:example@mail.ru").contacts__contact-info-link example@mail.ru
+          li.contacts__contact-info
+            p.contacts__contact-info-type адрес
+            p.contacts__contact-info-address
+              | Республика Татарстан, Казань, 420074,
+              | ул. Петербургская, 1 а/я 24
+        button.contacts__button Связаться
+
+        include ../components/map
+
+
+

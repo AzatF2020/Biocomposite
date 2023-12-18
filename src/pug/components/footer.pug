@@ -1,0 +1,43 @@
+footer.footer
+  .container
+    .footer__content
+      h2.footer__title Свяжитесь с&nbsp;нами и&nbsp;мы&nbsp;решим ваши задачи
+      .footer__info
+        form.footer__form
+          .footer__form-fields
+            label.footer__form-label
+              span.footer__form-placeholder Ваше имя
+              input(name="name" type="text" required=true).footer__form-input
+            label.footer__form-label
+              span.footer__form-placeholder Номер телефона
+              input(name="name" type="text" required=true).footer__form-input
+          .footer__form-bottom
+            button.footer__bottom-button Отправить
+            .footer__form-checkmark-wrapper
+              label.footer__form-checkmark-label
+                input(type="checkbox" name="policy").footer__form-checkbox
+                span.footer__form-checkmark
+              p.footer__form-text
+                | Нажимая на кнопку вы соглашаетсь с обработкой &nbsp;
+                a персональных данных
+        span.footer__info-line
+        .footer__info-bottom
+          a(href="tel:+78009995999").footer__number-link 8 800 999-59-99
+          a(href="/#").footer__mail-wrapper
+            img(src="assets/icons/email.svg" alt="icon").footer__mail-icon
+            | mail@bio.ru
+      .footer__bottom
+        .footer__bottom-left-wrapper
+          .footer__logo-wrapper
+            img(src="assets/icons/logo.svg" alt="logo").footer__logo
+          nav.footer__navigation
+            a(href="/#").footer__link Производство
+            a(href="/#").footer__link Решения для отраслей
+            a(href="/#").footer__link Контакты
+            a(href="/#").footer__link Связаться
+        .footer__creator-wrapper
+          p Разработка сайта
+          a(href="/#" target="_blank")
+            img(src="assets/icons/creator.svg" alt="creator icon")
+
+

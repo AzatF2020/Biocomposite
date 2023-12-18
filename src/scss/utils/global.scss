@@ -1,0 +1,115 @@
+:root {
+  --content-margin: 2rem;
+  --content-padding-two: 2rem;
+  --content-padding: 4rem;
+  --content-margin-mobile: .8rem;
+
+  --black: #000000;
+  --white: #FFFFFF;
+  --dark-grey: #1F1F1F;
+  --dark-grey-opacity: #1F1F1F;
+  --grey: #323232;
+  --light-grey: rgba(255, 255, 255, 0.30);
+  --dark-green: #2B420E;
+  --green-1: #26D74D;
+  --green-2: #64EB81;
+  --light-green: #F1F5E4;
+  --light-green-opacity: #F1F5E4;
+  
+  --fz-h1: 10rem;
+  --fz-h2: 8rem;
+  --fz-h3: 7.2rem;
+  --fz-h4: 5.2rem;
+  --fz-h5: 4rem;
+  --fz-h6: 3.5rem;
+
+  --fz-p-t1: 3rem;
+  --fz-p-t2: 2.4rem;
+  --fz-p-t3: 2rem;
+  --fz-p-t4: 1.6rem;
+
+  --fz-i-t5: 2rem;
+  --fz-i-t6: 1.5rem;
+}
+
+html { 
+  font-size: 0.595vw;
+
+  @include breakpointMF(super-large) {
+    font-size: 11.8px;
+  }
+
+  @include breakpoint(laptop) {
+    font-size: 10px;
+  }
+}
+
+body {
+  background-color: var(--black);
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  @supports (width: max(20vw, 100px)) {
+    padding-right: max(env(safe-area-inset-right, 1.4rem), var(--content-padding-two));
+    padding-left: max(env(safe-area-inset-left, 1.4rem), var(--content-padding-two));
+
+    @include breakpoint(tablet) {
+      padding-right: max(env(safe-area-inset-right, 1.4rem), 1rem);
+      padding-left: max(env(safe-area-inset-left, 1.4rem), 1rem);
+    }
+  }
+}
+
+.intro-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  @supports (width: max(20vw, 100px)) {
+    padding-right: max(env(safe-area-inset-right, 1.4rem), var(--content-padding));
+    padding-left: max(env(safe-area-inset-left, 1.4rem), var(--content-padding));
+
+    @include breakpoint(tablet) {
+      padding-right: max(env(safe-area-inset-right, 1.4rem), 1rem);
+      padding-left: max(env(safe-area-inset-left, 1.4rem), 1rem);
+    }
+  }
+}
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.swiper-slide {
+  box-sizing: border-box;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  overflow: hidden;
+}
+
+.no-scroll {
+  overflow-y: scroll;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  body {
+    height: auto;
+    overflow: hidden;
+  }
+}
