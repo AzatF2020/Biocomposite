@@ -7,11 +7,11 @@ mixin industry(industry)
         h2.industry__title= industry.title
         p.industry__text= industry.text
         .industry__slider-navigation.js-navigation
-          button.industry__slider-navigation-button.js-prev
+          button.slider-navigation-button.js-prev
             img(src="assets/icons/left-white-arrow.svg" alt="icon")
-          button.industry__slider-navigation-button.js-next
+          button.slider-navigation-button.js-next
             img(src="assets/icons/right-white-arrow.svg" alt="icon")
-        .industry__slider.js-slider
+        .industry__slider.js-init-slider
           .swiper-wrapper
             each slide in industry.sliders
               .swiper-slide

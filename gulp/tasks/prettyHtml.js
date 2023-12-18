@@ -3,7 +3,6 @@ const prettyHtml = require("gulp-pretty-html")
 const htmlmin = require("gulp-htmlmin")
 
 const beautifyHtml = async function() {
-  console.log("beatyHTML")
   return gulp.src('dist/*.html')
     .pipe(htmlmin({
       collapseWhitespace: true,

@@ -99,16 +99,16 @@
     width: 97.6%;
     margin-left: 4rem;
 
-    @include breakpoint(tablet) {
-      width: 52%;
+    @include breakpoint(laptop) {
+      width: 100%;
+      max-width: 52rem;
     }
 
-    @include breakpoint(small-tablet) {
-      width: 67.5%;
+    @include breakpoint(tablet) {
+
     }
 
     @include breakpoint(mobile) {
-      width: 100%;
       max-width: 26.5rem;
     }
 
@@ -131,23 +131,6 @@
     }
   }
 
-  &__slider-navigation-button {
-    width: 4.8rem;
-    height: 4.8rem;
-    border: .15rem solid var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .25s linear opacity;
-
-    &[disabled=""] {
-      opacity: .45;
-      pointer-events: none;
-      cursor: default;
-    }
-  }
-
   &__slide {
     height: 26rem;
     position: relative;
@@ -163,7 +146,7 @@
     width: 100%;
     max-width: 52rem;
 
-    @include breakpoint(small-tablet) {
+    @include breakpoint(tablet) {
       min-width: 26.5rem;
       height: 26.5rem;
     }

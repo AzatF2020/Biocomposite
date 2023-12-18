@@ -1,13 +1,25 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
+const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default;
 const config = require("./path")
+const { isDev } = require("./constants")
 
 const { js: jsConfig } = config
 
 const webpackConfig = {
+  optimization: {
+    usedExports: true,
+    minimize: true,
+    minimizer: [
+      new TerserPlugin()
+    ]
+  },
   entry: {
     main: jsConfig.entryPoint
   },
+  plugins: [
+    // new StatoscopeWebpackPlugin()
+  ],
   output: {
     path: path.resolve(__dirname, jsConfig.dist),
     filename: '[name].js'
@@ -17,18 +29,16 @@ const webpackConfig = {
       {
         test: /\.(sass|less|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.js$/, // Check for all js files
+        exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
+        loader: 'babel-loader'
       }
     ]
   },
-  devtool: 'eval-source-map',
-  optimization: {
-    usedExports: true,
-    minimize: true,
-    minimizer: [new TerserPlugin({
-      parallel: true,
-    })]
-  },
-  mode: process.env.MODE || "development",
+  devtool: isDev ? 'eval-source-map' : false,
+  mode: "development",
   externals: {
     jquery: 'jQuery'
   },

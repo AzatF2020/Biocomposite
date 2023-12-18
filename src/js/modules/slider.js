@@ -1,35 +1,29 @@
 import Swiper from "swiper";
-import 'swiper/css';
 import { Navigation, Parallax } from "swiper/modules"
 
 Swiper.use([Navigation, Parallax])
 
 export default function initSlider() {
-  const sliders = document.querySelectorAll(".js-slider");
+  const sliders = document.querySelectorAll(".js-init-slider");
   
-  const sliderBreakpointsOptions = {
-    1150: {
-      slidesPerView: 3,
-    },
-    1149: {
-      slidesPerView: 2,
-      spaceBetween: 10,
+  const sliderBreakpointsOptions = (sliderPerView) => ({
+    1200: {
+      slidesPerView: sliderPerView,
     },
     769: {
       spaceBetween: 10,
-      slidesPerView: "auto",
     },
     320: {
       spaceBetween: 8,
-      slidesPerView: "auto",
     }
-  }
+  })
   
   function swiperInit(slider, options) {
+    
     new Swiper(slider, {
       parallax: true,
-      speed: 1150,
-      breakpoints: sliderBreakpointsOptions,
+      speed: 800,
+      breakpoints: sliderBreakpointsOptions(options?.slidesPerView),
       navigation: {
         prevEl: options?.prevButton,
         nextEl: options?.nextButton,
@@ -40,6 +34,8 @@ export default function initSlider() {
   function prepareSwiperSettings(slider) {
     if(!slider) return
     
+    const slidesPerView = slider?.dataset.perview || 3
+    const limitSliders = slider?.dataset.navigationlimit || 3
     const totalSliders = slider?.querySelector(".swiper-wrapper")?.children.length
     const currentSliderNavigation =
       slider?.previousElementSibling.classList.contains("js-navigation")
@@ -49,11 +45,11 @@ export default function initSlider() {
     const prevButton = currentSliderNavigation?.querySelector(".js-prev") || null
     const nextButton = currentSliderNavigation?.querySelector(".js-next") || null
     
-    if(totalSliders <= 3) {
-      swiperInit(slider, null)
+    if(totalSliders <= limitSliders) {
+      swiperInit(slider, { slidesPerView })
       currentSliderNavigation?.remove()
     } else {
-      swiperInit(slider, { prevButton, nextButton })
+      swiperInit(slider, { prevButton, nextButton, slidesPerView })
     }
   }
   

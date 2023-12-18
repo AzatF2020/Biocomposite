@@ -5,13 +5,17 @@ export default function connectMap() {
   const map = document.querySelectorAll(".js-map")
   
   async function getMapJson(path) {
-    if(!path) return
-    
-    const response = await fetch(path)
-    return response.json()
+    try {
+      if(!path) return
+      
+      const response = await fetch(path)
+      return response.json()
+    } catch (error) {
+      console.error("Error while fetch map json", error)
+    }
   }
   
-  function getMapOptions() {
+  function initMap() {
     map?.forEach(async (elementMap) => {
       const jsonPath = elementMap?.dataset.json
       const zoom = Number(elementMap?.dataset.zoom)
@@ -19,16 +23,19 @@ export default function connectMap() {
       const mapCenter = elementMap?.dataset.center.split(", ")
       const mapCoordinates = await getMapJson(jsonPath)
       
-      initMap(elementMap, {
-        zoom,
-        mapCenter,
+      const isMapCenterExists = mapCenter.length !== 1 ? mapCenter : [55.786430, 49.124335]
+      const isZoomExists = zoom ? zoom : 5
+      
+      setMapOptions(elementMap, {
+        zoom: isZoomExists,
+        mapCenter: isMapCenterExists,
         mapIconPath,
         mapCoordinates,
       })
     })
   }
   
-  function initMap(map, options) {
+  function setMapOptions(map, options) {
     const {
       zoom,
       mapCoordinates,
@@ -52,5 +59,5 @@ export default function connectMap() {
     })
   }
   
-  return ymaps.ready(() => getMapOptions())
+  return ymaps.ready(() => initMap())
 }

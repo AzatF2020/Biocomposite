@@ -8,9 +8,7 @@ const csso = require("gulp-csso")
 const rename = require("gulp-rename")
 const sass = require("gulp-sass")(require("sass"))
 const sassGlob = require("gulp-sass-glob")
-const webpCss = require("gulp-webp-css")
-const gulpif = require("gulp-if")
-const { isDev, isProd } = require("../config/constants")
+const { isDev } = require("../config/constants")
 
 const { scss: scssConfig } = config
  
@@ -24,7 +22,6 @@ const scss = async function() {
     }))
     .pipe(sassGlob())
     .pipe(sass())
-    .pipe(gulpif(isProd, webpCss()))
     .pipe(autoprefixer())
     .pipe(dest(scssConfig.dist, { sourcemaps: isDev }))
     .pipe(rename({suffix: ".min"}))

@@ -40,9 +40,8 @@ export default class Map {
     
     const placemark = new ymaps.Placemark(coords, placemarkProperties, placemarkOptions);
     
-    
     this.instance.geoObjects.add(placemark);
-    console.log(placemark)
+
     return placemark;
   }
 }

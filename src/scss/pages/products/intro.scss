@@ -1,0 +1,291 @@
+.products-intro {
+  margin-top: 8.8rem;
+  position: relative;
+
+  &__overlay {
+    @include overlayWidth;
+
+    background-image: url("../assets/img/products-intro-image.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 3rem;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__content {
+    height: calc(100vh - 11.5rem);
+    padding-bottom: 2rem;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    color: var(--light-green);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h1);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -1.6px;
+    margin-left: var(--content-margin);
+    margin-bottom: 6rem;
+  }
+
+  &__slider {
+    width: 40.5%;
+    margin-left: var(--content-margin);
+    position: relative;
+
+    @include breakpoint(laptop) {
+      width: 100%;
+      max-width: 65.5rem;
+    }
+  }
+
+  &__slider-navigation {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    right: var(--content-margin);
+    bottom: 10rem;
+    column-gap: .4rem;
+  }
+
+  &__slide {
+    position: relative;
+    width: 100%;
+    max-width: 65.5rem;
+    height: 35rem;
+    overflow: hidden;
+    border-radius: 3rem;
+    cursor: default;
+  }
+
+  &__slide-main {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: var(--white);
+    padding: 2rem;
+    transition: opacity .25s ease;
+  }
+
+  &__slide:hover &__slide-main  {
+    opacity: 0;
+  }
+
+  &__slide-main-image {
+    position: absolute;
+    height: auto;
+    object-fit: contain;
+    width: 55%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 0;
+  }
+
+  &__slide-main-title {
+    color: var(--black);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h5);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -1px;
+    width: 100%;
+    max-width: 40rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__slide-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding: 2rem;
+  }
+
+  &__slide-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  &__slide-hover-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    row-gap: 2.4rem;
+  }
+
+  &__slide-list-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__slide-list-name {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    img {
+
+    }
+    p {
+      color: var(--white);
+      font-family: "Inter", sans-serif;
+      font-size: var(--fz-i-t5);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+    }
+  }
+
+  &__slide-list-text {
+    color: var(--white);
+
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t5);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    width: 100%;
+    max-width: 32.7rem;
+
+  }
+
+  &__slide-bottom {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    left: 2rem;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__slide-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.3px;
+
+    border: .15rem solid var(--black);
+    padding: 1.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: opacity .55s ease;
+    transition-delay: .45s
+  }
+
+  &__slide:hover &__slide-bottom > &__slide-tag  {
+    opacity: 0;
+    transition: opacity .25s ease;
+    transition-delay: 0s;
+  }
+
+  &__slide-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: var(--green-2);
+    border-radius: 50%;
+
+    &::before {
+      content: "Подробнее";
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 4.8rem;
+      height: 4.8rem;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      padding-left: 1.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 3rem;
+      background-color: var(--green-2);
+
+      font-family: "Inter", sans-serif;
+      font-size: var(--fz-i-t6);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 0.15px;
+
+      transition: width .55s ease,
+                  color .25s ease,
+                  0.3s ease background-color;
+      color: rgba(255, 255, 255, 0);
+    }
+
+    &:hover::before {
+      background-color: var(--green-1);
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1.75rem;
+    }
+  }
+
+  &__slide:hover &__slide-bottom > &__slide-link  {
+    &::before {
+      width: 100%;
+      color: var(--black);
+      transition: width .55s ease,
+                  color .55s ease,
+                  0.3s ease background-color;
+      transition-delay: 0s, .55s, 0s;
+    }
+  }
+}
+
+.container {
+}
+
+.js-init-slider {
+}
+
+.swiper-wrapper {
+}

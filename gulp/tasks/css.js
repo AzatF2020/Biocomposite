@@ -8,7 +8,6 @@ const cssImport = require("gulp-cssimport")
 const autoprefixer = require("gulp-autoprefixer")
 const csso = require("gulp-csso")
 const rename = require("gulp-rename")
-const webpCss = require("gulp-webp-css")
 const { isDev } = require("../config/constants")
 
 const { css: cssConfig } = config
@@ -23,7 +22,7 @@ const css = async function() {
     }))
     .pipe(concat("main.css"))
     .pipe(cssImport())
-    .pipe(webpCss())
+    // .pipe(webpCss({}))
     .pipe(autoprefixer())
     .pipe(dest(cssConfig.dist, { sourcemaps: isDev }))
     .pipe(rename({suffix: "min"}))
