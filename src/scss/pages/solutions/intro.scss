@@ -6,7 +6,7 @@
   &__content {
     padding-bottom: 1rem;
     width: 100%;
-    height: calc(100vh - 2rem);
+    min-height: calc(100vh - 2rem);
 
     display: flex;
     align-items: flex-end;
@@ -36,14 +36,14 @@
     top: 9rem;
     right: 0;
     bottom: 0;
-    height: calc(100vh - 10rem);
+    min-height: calc(100vh - 10rem);
     z-index: -1;
 
     border-radius: 2rem;
 
     @include breakpoint(tablet) {
       top: 7rem;
-      height: calc(100vh - 8rem);
+      min-height: calc(100vh - 8rem);
     }
   }
 

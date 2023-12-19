@@ -1,6 +1,6 @@
-mixin tags(tags)
+mixin tags(data)
   .tags.js-slider-tags
     .swiper-wrapper
-      each tag in tags
+      each tag in data
         .swiper-slide
           .tags__slide #{tag}

@@ -1,4 +1,5 @@
 extends ../layout/index
+include ../parts/product
 
 block constants
   - const title = "Продукция"
@@ -14,7 +15,11 @@ block page
             img(src="assets/icons/left-white-arrow.svg" alt="icon")
           button.slider-navigation-button.js-next
             img(src="assets/icons/right-white-arrow.svg" alt="icon")
-        div(class="products-intro__slider js-init-slider" data-perView="auto" data-navigationlimit="2")
+        div(
+          class="products-intro__slider js-init-slider"
+          data-perview="2"
+          data-navigationlimit="2"
+          data-mobileloop="true")
           .swiper-wrapper
             .swiper-slide
               .products-intro__slide
@@ -42,9 +47,8 @@ block page
                         p
                           strong Сроки изготовления:
                       p.products-intro__slide-list-text по согласованию
-
+                span.products-intro__slide-tag Скамейки
                 .products-intro__slide-bottom
-                  span.products-intro__slide-tag Скамейки
                   a(href="/#").products-intro__slide-link
                     img(src="assets/icons/arrow-right-black.svg" alt="icon")
             .swiper-slide
@@ -73,9 +77,8 @@ block page
                         p
                           strong Сроки изготовления:
                       p.products-intro__slide-list-text по согласованию
-
+                span.products-intro__slide-tag Опоры и&nbsp освещения
                 .products-intro__slide-bottom
-                  span.products-intro__slide-tag Опоры освещения и&nbsp;светильники
                   a(href="/#").products-intro__slide-link
                     img(src="assets/icons/arrow-right-black.svg" alt="icon")
             .swiper-slide
@@ -107,11 +110,13 @@ block page
                         p
                           strong Сроки изготовления:
                       p.products-intro__slide-list-text по согласованию
-
+                span.products-intro__slide-tag Террасная доска
                 .products-intro__slide-bottom
-                  span.products-intro__slide-tag Террасная доска
                   a(href="/#").products-intro__slide-link
                     img(src="assets/icons/arrow-right-black.svg" alt="icon")
 
+
+  each product in products.product
+    +product(product)
 
 

@@ -1,0 +1,32 @@
+mixin product(data)
+  section.product
+    .container
+      .product__content
+        h2.product__title= data.title
+        .products-intro__slider-navigation.js-navigation
+          button.slider-navigation-button.js-prev
+            img(src="assets/icons/left-white-arrow.svg" alt="icon")
+          button.slider-navigation-button.js-next
+            img(src="assets/icons/right-white-arrow.svg" alt="icon")
+        div(class="product__slider js-init-slider" data-perview="3")
+          .swiper-wrapper
+            each slide in data.sliders
+              .swiper-slide
+                a(href="/#").product__slide
+                  span.product__slide-bottom-tag= slide.tag
+                  .product__slide-bottom
+                    div(class="product__slide-bottom-wrapper" data-text="Подробнее")
+                      img(src="assets/icons/arrow-right-black.svg" alt="icon").product__slide-bottom-link-icon
+                  h3.product__slide-title= slide.title
+                  .product__slide-current
+                    img(src=slide.imgSrc).product__slide-current-image
+                  .product__slide-hover
+                    img(src=slide.imgSrcHover alt="bg image").product__slide-bg-img
+                    ul.product__slide-hover-list
+                      each list in slide.list
+                        li.product__slide-hover-info
+                          img(src=list.iconSrc alt="icon").product__slide-hover-icon
+                          .product__slide-hover-column
+                            p.product__slide-hover-info-title
+                              strong= list.infoTitle
+                            p.product__slide-hover-info-text= list.infoText

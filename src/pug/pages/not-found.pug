@@ -1,0 +1,18 @@
+extends ../layout/index
+
+block constants
+  - const title = "Страница не найдена"
+
+block page
+  section.not-found
+    .container
+      .not-found__content
+        p.not-found__uppertitle страница не найдена
+        h1.not-found__title
+          | 4
+          img(src="assets/icons/logo-3d.png" alt="icon")
+          | 4
+        p.not-found__text
+          | возможно, она была перемещена,
+          | или неверно указан адрес
+        a(href="/#").not-found__home-button Вернуться на главную

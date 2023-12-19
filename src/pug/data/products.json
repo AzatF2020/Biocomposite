@@ -1,0 +1,101 @@
+{
+  "product": [
+    {
+      "title": "Биокомпозит для автопрома",
+      "sliders": [
+        {
+          "imgSrc": "assets/img/product-1.png",
+          "imgSrcHover": "assets/img/product-hover-1.png",
+          "title": "Альтернатива традиционным материалам",
+          "tag": "Элементы интерьера",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "экологичность, прочность, длительный срок службы"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внутренней отделки автомобиля"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        },
+        {
+          "imgSrc": "assets/img/product-2.png",
+          "imgSrcHover": "assets/img/product-hover-2.png",
+          "title": "Повышение топливной эффективности автомобиля",
+          "tag": "Элементы кузова",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "экологичность, прочность, длительный срок службы"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внутренней отделки автомобиля"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        },
+        {
+          "imgSrc": "assets/img/product-3.png",
+          "imgSrcHover": "assets/img/product-hover-3.png",
+          "title": "Экологически и технически правильный выбор",
+          "tag": "Элементы периферийных решений",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "повышение эффективности работы автомобиля"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внедрения новой периферии"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        },
+        {
+          "imgSrc": "assets/img/product-3.png",
+          "imgSrcHover": "assets/img/product-hover-3.png",
+          "title": "Экологически и технически правильный выбор",
+          "tag": "Элементы периферийных решений",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "повышение эффективности работы автомобиля"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внедрения новой периферии"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

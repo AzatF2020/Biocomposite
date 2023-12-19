@@ -11,17 +11,26 @@ export default function initSlider() {
       slidesPerView: sliderPerView,
     },
     769: {
+      slidesPerView: "auto",
       spaceBetween: 10,
     },
     320: {
+      slidesPerView: "auto",
       spaceBetween: 8,
     }
   })
   
+  function initMobileOptions(options) {
+    if(window.matchMedia("(max-width: 768px)").matches) {
+      return options
+    }
+  }
+  
   function swiperInit(slider, options) {
-    
     new Swiper(slider, {
       parallax: true,
+      watchOverflow: true,
+      loop: initMobileOptions(options)?.loopMobile,
       speed: 800,
       breakpoints: sliderBreakpointsOptions(options?.slidesPerView),
       navigation: {
@@ -33,9 +42,10 @@ export default function initSlider() {
   
   function prepareSwiperSettings(slider) {
     if(!slider) return
+
+    const loopMobile = Boolean(slider?.dataset.mobileloop)
+    const slidesPerView = Number(slider?.dataset.perview) || 3
     
-    const slidesPerView = slider?.dataset.perview || 3
-    const limitSliders = slider?.dataset.navigationlimit || 3
     const totalSliders = slider?.querySelector(".swiper-wrapper")?.children.length
     const currentSliderNavigation =
       slider?.previousElementSibling.classList.contains("js-navigation")
@@ -45,11 +55,11 @@ export default function initSlider() {
     const prevButton = currentSliderNavigation?.querySelector(".js-prev") || null
     const nextButton = currentSliderNavigation?.querySelector(".js-next") || null
     
-    if(totalSliders <= limitSliders) {
-      swiperInit(slider, { slidesPerView })
+    if(totalSliders <= slidesPerView) {
+      swiperInit(slider, { slidesPerView, loopMobile })
       currentSliderNavigation?.remove()
     } else {
-      swiperInit(slider, { prevButton, nextButton, slidesPerView })
+      swiperInit(slider, { prevButton, nextButton, slidesPerView, loopMobile })
     }
   }
   
