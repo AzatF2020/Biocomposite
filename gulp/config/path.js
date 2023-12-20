@@ -39,8 +39,8 @@ module.exports = {
   },
 
   icons: {
-    src: pathSrc + "/assets/icons/*.svg",
-    watch: pathSrc + "/assets/icons/**/*.svg",
+    src: pathSrc + "/assets/icons/*.{svg,png}",
+    watch: pathSrc + "/assets/icons/**/*.{svg,png}",
     dist: pathDist + "/assets/icons",
   },
   

@@ -1,13 +1,14 @@
 block constants
 
 doctype html
-html(lang="ru")
+html(lang="ru").no-scroll
   include ../components/head
   body
+    include ../components/loader
     .page-content
-      include ../components/header.pug
+      include ../components/header
       main.page-main
         block page
-      include ../components/footer.pug
+      include ../components/footer
   script(src="https://api-maps.yandex.ru/2.1/?apikey=83ae1ece-dbbb-4e2c-888f-09f022a9613f&lang=ru_RU" type="text/javascript" defer=true)
   script(type="module", src="js/main.js")
