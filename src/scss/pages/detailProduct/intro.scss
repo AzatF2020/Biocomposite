@@ -180,7 +180,7 @@
     }
 
     @include breakpoint(mobile) {
-      left: calc((100vw - 58.6rem) / 2);
+      left: calc((100vw - 62.6rem) / 2);
     }
   }
 
@@ -191,6 +191,7 @@
     height: auto;
     object-fit: cover;
   }
+
 
   &__slot {
     position: absolute;
