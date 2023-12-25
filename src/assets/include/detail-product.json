@@ -1,0 +1,110 @@
+[
+  {
+    "iconSrc": "assets/icons/recycling.svg",
+    "iconText": "Долговечность изделий",
+    "iconInfo": {
+      "title": "Легкая переработка",
+      "text": "Метод переработки - прямое прессование"
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  },
+  {
+    "iconSrc": "assets/icons/service.svg",
+    "iconText": "Дешевое обслуживание",
+    "iconInfo": {
+      "title": "Дешевое обслуживание",
+      "text": "Изделия не требуют дополнительного ухода"
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  },
+  {
+    "iconSrc": "assets/icons/stability.svg",
+    "iconText": "Устойчивость к коррозии",
+    "iconInfo": {
+      "title": "Устойчивость к коррозии",
+      "text": "Изделиям не страшна влага, они не гниют и не ржавеют"
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  },
+  {
+    "iconSrc": "assets/icons/durability.svg",
+    "iconText": "Высокая прочность",
+    "iconInfo": {
+      "title": "Высокая прочность",
+      "text": "Композиты имеют высокую прочность на удар и на изгиб"
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  },
+  {
+    "iconSrc": "assets/icons/durability.svg",
+    "iconText": "Высокая прочность",
+    "iconInfo": {
+      "title": "Высокая прочность",
+      "text": "Композиты имеют высокую прочность на удар и на изгиб"
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  },
+  {
+    "iconSrc": "assets/icons/size.svg",
+    "iconText": "Стабильность размеров",
+    "iconInfo": {
+      "title": "Стабильность размеров",
+      "text": "Материалы длительное время сохраняют форму и размеры "
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  },
+  {
+    "iconSrc": "assets/icons/fire-resistance.svg",
+    "iconText": "Огнестойкость",
+    "iconInfo": {
+      "title": "Огнестойкость",
+      "text": "Огнеупорность имеет значение HB-VO на каждые 1,6 мм"
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  },
+  {
+    "iconSrc": "assets/icons/flexibility.svg",
+    "iconText": "Гибкость",
+    "iconInfo": {
+      "title": "Гибкость",
+      "text": "Изделия из композитов гибкие и прочные"
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  },
+  {
+    "iconSrc": "assets/icons/longvety.svg",
+    "iconText": "Долговечность изделий ",
+    "iconInfo": {
+      "title": "Простое проектирование",
+      "text": "Изделия выдерживают высокие и низкие температуры"
+    },
+    "position": {
+      "top": "",
+      "left": ""
+    }
+  }
+]

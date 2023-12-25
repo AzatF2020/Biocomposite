@@ -1,19 +1,9 @@
 import Map from "../vendor/map";
+import fetchingJson from "../helpers/fetchingJson";
 
 export default function connectMap() {
   if(!ymaps) return
   const map = document.querySelectorAll(".js-map")
-  
-  async function getMapJson(path) {
-    try {
-      if(!path) return
-      
-      const response = await fetch(path)
-      return response.json()
-    } catch (error) {
-      console.error("Error while fetch map json", error)
-    }
-  }
   
   function initMap() {
     map?.forEach(async (elementMap) => {
@@ -21,7 +11,7 @@ export default function connectMap() {
       const zoom = Number(elementMap?.dataset.zoom)
       const mapIconPath = elementMap?.dataset.icon
       const mapCenter = elementMap?.dataset.center.split(", ")
-      const mapCoordinates = await getMapJson(jsonPath)
+      const mapCoordinates = await fetchingJson(jsonPath)
       
       const isMapCenterExists = mapCenter.length !== 1 ? mapCenter : [55.786430, 49.124335]
       const isZoomExists = zoom ? zoom : 5

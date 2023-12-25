@@ -1,0 +1,36 @@
+extends ../layout/index
+
+block constants
+  - const title = "Детальная продукта"
+
+block page
+  section.detail-intro.js-detail-product(data-path-json="assets/include/detail-product.json")
+    .container
+      .detail-intro__content
+        .detail-intro__column.detail-intro__column--first
+          h1.detail-intro__title SMC/BMC
+          p.detail-intro__text
+            | Лёгкие и&nbsp;долговечные композитные материалы, снижают стоимость обслуживания
+            | изделий и&nbsp;облегчают переработку. SMC и&nbsp;BMC служат альтернативой традиционным
+            | металлическим и&nbsp;деревянным решениям.
+          button.detail-intro__button
+            span.detail-intro__button-text Заказать проект
+            span.detail-intro__button-icon &#8594;
+          .detail-intro__warning-block
+            img(src="assets/icons/warning.svg" alt="icon").detail-intro__warning-icon
+            p.detail-intro__warning-text
+              | Для подробной информации
+              | нажимайте на&nbsp;иконки
+        .detail-intro__column.detail-intro__column--second
+          .detail-intro__column-info-block.js-detail-container
+            template
+              .detail-intro__slot.js-detail-slot
+                .detail-intro__slot-wrapper
+                  p.detail-intro__slot-text
+                  .detail-intro__slot-icon-wrapper
+                    img(src="" alt="icon")
+                .detail-intro__slot-info
+                  h4.detail-intro__slot-info-title
+                  p.detail-intro__slot-info-text
+
+            img(src="assets/img/detail-intro-image.png" alt="image").detail-intro__image
