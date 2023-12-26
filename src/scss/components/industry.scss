@@ -193,6 +193,8 @@
     padding: 0 1.5rem;
     background-color: var(--white);
     border-radius: 3rem;
+    position: relative;
+    z-index: 1;
 
     @include breakpoint(mobile) {
       font-size: 1.2rem;
@@ -210,7 +212,7 @@
     bottom: 0;
 
     right: 0;
-    z-index: 1;
+    z-index: 0;
 
     @include breakpoint(small-tablet) {
       width: 100%;

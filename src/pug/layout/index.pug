@@ -2,13 +2,13 @@ block constants
 
 doctype html
 html(lang="ru")
-  include ../components/head
+  include ../parts/head
   body
-    include ../components/loader
+    include ../parts/loader
     .page-content
-      include ../components/header
+      include ../parts/header
       main.page-main
         block page
-      include ../components/footer
+      include ../parts/footer
   script(src="https://api-maps.yandex.ru/2.1/?apikey=83ae1ece-dbbb-4e2c-888f-09f022a9613f&lang=ru_RU" type="text/javascript" defer=true)
   script(type="module", src="js/main.js")

@@ -25,12 +25,17 @@ block page
           .detail-intro__column-info-block.js-detail-container
             template
               .detail-intro__slot.js-detail-slot
-                .detail-intro__slot-wrapper
-                  p.detail-intro__slot-text
-                  .detail-intro__slot-icon-wrapper
-                    img(src="" alt="icon")
-                .detail-intro__slot-info
-                  h4.detail-intro__slot-info-title
-                  p.detail-intro__slot-info-text
+                .detail-info__slot-container
+                  .detail-intro__slot-wrapper
+                    p.detail-intro__slot-text
+                    button.detail-intro__slot-icon-wrapper
+                      img(src="" alt="icon")
+                  .detail-intro__slot-info
+                    .text-wrapper
+                      h4.detail-intro__slot-info-title
+                    .text-wrapper
+                      p.detail-intro__slot-info-text
 
             img(src="assets/img/detail-intro-image.png" alt="image").detail-intro__image
+
+  include ../components/notification

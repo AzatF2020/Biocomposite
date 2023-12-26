@@ -1,0 +1,85 @@
+.notification {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 4.6rem;
+  z-index: 5;
+
+  display: none;
+
+  @include breakpoint(laptop) {
+    display: block;
+  }
+
+  &__content {
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding: 1rem 1rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__column {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 2rem;
+  }
+
+  &__icon-wrapper {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green-2);
+    border-radius: 1rem;
+  }
+
+  &__icon {
+    object-fit: cover;
+    width: 2.2rem;
+    height: auto;
+  }
+
+  &__text-info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 1.2rem;
+  }
+
+  &__title {
+    color: var(--black);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -.1rem;
+    width: 100%;
+    max-width: 23rem;
+  }
+
+  &__text {
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    width: 100%;
+    max-width: 23rem;
+  }
+
+  &__close-button {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+
+.js-notification {
+}
+
+.text-wrapper {
+}

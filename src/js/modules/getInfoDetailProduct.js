@@ -1,4 +1,5 @@
 import fetchingJson from "../helpers/fetchingJson";
+import enableMobileNotification from "./enableMobileNotification";
 
 export default async function initDetailProductSlots() {
   const detailProductContainer = document.querySelector(".js-detail-product")
@@ -10,12 +11,14 @@ export default async function initDetailProductSlots() {
   const template = detailProductContainer.querySelector("template")
   const data = await fetchingJson(jsonPath)
   
-  function createSlot(dataValues) {
-    const templateContainer = template?.content
-       .cloneNode(true)
-       .querySelector(".js-detail-slot")
-    const slotContainer = templateContainer.querySelector(".detail-intro__slot-wrapper")
-    
+  const addClassBasedDirection = {
+    "row": (tag) => null,
+    "row-reverse": (tag) => tag?.classList.add("is-row-revert"),
+    "column": (tag) => tag?.classList.add("is-column"),
+    "column-reverse": (tag) => tag?.classList.add("is-column-revert")
+  }
+  
+  function addStyleBasedDirection(templateContainer, slotContainer, dataValues) {
     if(!templateContainer || !slotContainer) return
     
     if(window.matchMedia("(max-width: 1200px)").matches) {
@@ -36,8 +39,16 @@ export default async function initDetailProductSlots() {
        flex-direction: ${dataValues?.options?.direction};
       `
     }
+  }
+  
+  function createSlot(dataValues) {
+    const templateContainer = template?.content
+       .cloneNode(true)
+       .querySelector(".js-detail-slot")
+    const slotContainer = templateContainer.querySelector(".detail-intro__slot-wrapper")
     
     const imageTag = templateContainer.querySelector("img")
+    const slotInfo = templateContainer.querySelector(".detail-intro__slot-info")
     const slotText = templateContainer.querySelector(".detail-intro__slot-text")
     const slotInfoTitle = templateContainer.querySelector(".detail-intro__slot-info-title")
     const slotInfoText = templateContainer.querySelector(".detail-intro__slot-info-text")
@@ -46,6 +57,9 @@ export default async function initDetailProductSlots() {
     slotText.textContent = dataValues?.iconText
     slotInfoTitle.textContent = dataValues?.iconInfo?.title
     slotInfoText.textContent = dataValues?.iconInfo?.text
+    
+    addClassBasedDirection[dataValues?.options?.direction](slotInfo)
+    addStyleBasedDirection(templateContainer, slotContainer, dataValues)
     
     return templateContainer
   }
@@ -56,4 +70,6 @@ export default async function initDetailProductSlots() {
   })
   
   template.remove()
+  
+  await enableMobileNotification()
 }

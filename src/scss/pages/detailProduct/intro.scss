@@ -1,5 +1,4 @@
 .detail-intro {
-  overflow-x: hidden;
 
   &__content {
     padding: var(--content-padding);
@@ -192,9 +191,12 @@
     object-fit: cover;
   }
 
-
   &__slot {
     position: absolute;
+  }
+
+  &__slot-container {
+    position: relative;
   }
 
   &__slot-wrapper {
@@ -220,6 +222,7 @@
     letter-spacing: -.1rem;
     width: 100%;
     max-width: 17.2rem;
+    transition: opacity .15s ease;
 
     @include breakpoint(laptop) {
       font-size: 1.3rem;
@@ -238,6 +241,13 @@
     justify-content: center;
     min-width: 5.8rem;
     min-height: 5.8rem;
+    position: relative;
+    z-index: 1;
+    transition: background-color .45s ease;
+
+    cursor: pointer;
+    pointer-events: visible;
+
     img {
       object-fit: cover;
       width: 2.2rem;
@@ -255,16 +265,132 @@
     }
   }
 
+  &__slot-icon-wrapper:hover {
+    z-index: 3;
+    background-color: var(--green-2);
+  }
+
+  @supports(selector(:has(*))) {
+    &__slot-wrapper:has(&__slot-icon-wrapper:hover) ~ &__slot-info  {
+      opacity: 1;
+      overflow: visible;
+      visibility: visible;
+
+      transition: .15s ease opacity,
+                  .15s ease overflow,
+                  .15s ease visibility;
+
+      .detail-intro__slot-info-title {
+        transform: translateY(0);
+        transition-delay: .075s;
+      }
+      .detail-intro__slot-info-text {
+        transform: translateY(0);
+        transition-delay: .075s;
+      }
+    }
+
+    &__slot-wrapper:has(&__slot-icon-wrapper:hover) > &__slot-text {
+      opacity: 0;
+
+      @include breakpoint(laptop) {
+        opacity: 1;
+      }
+    }
+  }
+
   &__slot-info {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    bottom: -2rem;
+    right: -1rem;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 2rem;
+    z-index: 2;
+    overflow: hidden;
+    visibility: hidden;
+
+    width: 35.5rem;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include breakpoint(laptop) {
+      display: none;
+    }
+  }
+
+  &__slot-info.is-row-revert {
+    left: -1rem;
+    align-items: flex-start;
+    padding-left: 7.5rem;
+
+    .detail-intro__slot-info-title {
+      text-align: left;
+    }
+
+    .detail-intro__slot-info-text {
+      text-align: left;
+    }
+  }
+
+  &__slot-info.is-column-revert {
+    align-items: start;
+    top: -2rem;
+    left: auto;
+    right: 3rem;
+
+    .detail-intro__slot-info-title {
+      text-align: left;
+    }
+
+    .detail-intro__slot-info-text {
+      text-align: left;
+    }
+  }
+
+  &__slot-info.is-column {
+    align-items: start;
+    top: -2rem;
+    left: auto;
+    right: 5rem;
+
+    .detail-intro__slot-info-title {
+      text-align: left;
+    }
+
+    .detail-intro__slot-info-text {
+      text-align: left;
+    }
   }
 
   &__slot-info-title {
-
+    color: var(--black);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h6);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -.1rem;
+    margin-bottom: 1.2rem;
+    transform: translateY(10rem);
+    transition: .4s ease transform;
   }
 
   &__slot-info-text {
-
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    width: 100%;
+    max-width: 22.8rem;
+    transform: translateY(10rem);
+    transition: .4s ease transform;
   }
 }
 

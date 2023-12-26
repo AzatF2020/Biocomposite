@@ -77,13 +77,19 @@
                 <div class="detail-intro__column-info-block js-detail-container">
                   <template>
                     <div class="detail-intro__slot js-detail-slot">
-                      <div class="detail-intro__slot-wrapper">
-                        <p class="detail-intro__slot-text"></p>
-                        <div class="detail-intro__slot-icon-wrapper"><img src="" alt="icon"></div>
-                      </div>
-                      <div class="detail-intro__slot-info">
-                        <h4 class="detail-intro__slot-info-title"></h4>
-                        <p class="detail-intro__slot-info-text"></p>
+                      <div class="detail-info__slot-container">
+                        <div class="detail-intro__slot-wrapper">
+                          <p class="detail-intro__slot-text"></p>
+                          <button class="detail-intro__slot-icon-wrapper"><img src="" alt="icon"></button>
+                        </div>
+                        <div class="detail-intro__slot-info">
+                          <div class="text-wrapper">
+                            <h4 class="detail-intro__slot-info-title"></h4>
+                          </div>
+                          <div class="text-wrapper">
+                            <p class="detail-intro__slot-info-text"></p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </template><img class="detail-intro__image" src="assets/img/detail-intro-image.png" alt="image">
@@ -92,6 +98,22 @@
             </div>
           </div>
         </section>
+        <div class="notification js-notification">
+          <div class="notification__content">
+            <div class="notification__column">
+              <div class="notification__icon-wrapper"><img class="notification__icon" alt="icon" src=""></div>
+              <div class="notification__text-info">
+                <div class="text-wrapper">
+                  <h4 class="notification__title"></h4>
+                </div>
+                <div class="text-wrapper">
+                  <p class="notification__text"></p>
+                </div>
+              </div>
+            </div>
+            <button class="notification__close-button"><img alt="close icon" src="assets/icons/icon-close.svg"></button>
+          </div>
+        </div>
       </main>
       <footer class="footer">
         <div class="container">
