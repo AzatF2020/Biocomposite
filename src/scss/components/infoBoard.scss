@@ -1,0 +1,85 @@
+.info-board {
+  margin-bottom: 12rem;
+  column-gap: 6rem;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 6rem;
+  }
+
+  &__content {
+    padding: 0 var(--content-padding-two);
+    display: flex;
+    align-items: flex-start;
+    column-gap: 12rem;
+
+    @include breakpoint(laptop) {
+      flex-direction: column;
+      row-gap: 4rem;
+    }
+  }
+
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--light-green);
+    border-radius: 8rem;
+    position: relative;
+
+    @include breakpoint(tablet) {
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+
+    img {
+      width: 2.8rem;
+      height: auto;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 8rem;
+      border: .15rem solid var(--green-2);
+      left: 4.5rem;
+
+      @include breakpoint(tablet) {
+        left: 3.5rem;
+        width: 5.6rem;
+        height: 5.6rem;
+      }
+    }
+  }
+
+  &__text {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-p-t1);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -.1rem;
+    width: 100%;
+    max-width: 96.6rem;
+
+    @include breakpoint(tablet) {
+      font-size: 2.4rem;
+    }
+
+    @include breakpoint(small-tablet) {
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      letter-spacing: -0.1rem;
+      max-width: 31.9rem;
+    }
+  }
+}

@@ -2,7 +2,7 @@ const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default;
 const config = require("./path")
-const { isDev } = require("./constants")
+const { isDev, isProd } = require("./constants")
 
 const { js: jsConfig } = config
 
@@ -11,14 +11,14 @@ const webpackConfig = {
     usedExports: true,
     minimize: true,
     minimizer: [
-      new TerserPlugin()
+      // new TerserPlugin()
     ]
   },
   entry: {
     main: jsConfig.entryPoint
   },
   plugins: [
-    // new StatoscopeWebpackPlugin()
+    isProd && new StatoscopeWebpackPlugin(),
   ],
   output: {
     path: path.resolve(__dirname, jsConfig.dist),

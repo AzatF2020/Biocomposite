@@ -1,0 +1,111 @@
+.slider-digits {
+  margin-bottom: 12rem;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 6rem;
+  }
+
+  &__content {
+    padding: var(--content-padding-two);
+  }
+
+  &__slider-navigation {
+    display: flex;
+    align-items: center;
+    column-gap: .4rem;
+    width: 100%;
+    position: relative;
+    justify-content: flex-end;
+    bottom: 10.5rem;
+
+    @include breakpoint(laptop) {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h2);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -.3rem;
+    margin-bottom: 6rem;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-h6);
+      font-style: normal;
+      line-height: 90%;
+      letter-spacing: -0.175rem;
+    }
+  }
+
+  &__slider {
+    width: 102.5%;
+
+    @include breakpoint(laptop) {
+      width: 100%;
+      max-width: 38.5rem;
+    }
+
+    @include breakpoint(tablet) {
+      max-width: 26.5rem;
+    }
+  }
+
+  &__slide {
+    padding: 4rem;
+    border-radius: 2rem;
+    background: var(--green-2);
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    width: 100%;
+    max-width: 38.5rem;
+    height: 19.6rem;
+    overflow: hidden;
+
+    @include breakpoint(tablet) {
+      max-width: 26.5rem;
+      height: 12.5rem;
+      padding: 2rem 2rem 1.4rem 2rem;
+      row-gap: .8rem;
+    }
+  }
+
+  &__slide-name {
+    color: var(--black);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h3);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -.16rem;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-h5);
+      font-style: normal;
+      line-height: 90%;
+      letter-spacing: -0.16rem;
+    }
+  }
+
+  &__slide-text {
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+      font-size: 1.3rem;
+      line-height: 120%;
+      max-width: 21rem;
+    }
+  }
+}

@@ -1,12 +1,13 @@
-.notification.js-notification
-  .notification__content
-    .notification__column
-      .notification__icon-wrapper
-        img(alt="icon" src="").notification__icon
-      .notification__text-info
-        .text-wrapper
-          h4.notification__title
-        .text-wrapper
-          p.notification__text
-    button.notification__close-button
-      img(alt="close icon" src="assets/icons/icon-close.svg")
+mixin notification
+  .notification.js-notification
+    .notification__content
+      .notification__column
+        .notification__icon-wrapper
+          img(alt="icon" src="").notification__icon
+        .notification__text-info
+          .text-wrapper
+            h4.notification__title
+          .text-wrapper
+            p.notification__text
+      button.notification__close-button
+        img(alt="close icon" src="assets/icons/icon-close.svg")

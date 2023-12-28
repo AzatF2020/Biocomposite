@@ -1,0 +1,17 @@
+mixin slider-digits(title, sliders)
+  section.slider-digits
+    .container
+      .slider-digits__content
+        h2.slider-digits__title= title
+        .slider-digits__slider-navigation.js-navigation
+          button.slider-navigation-button.js-prev
+            img(src="assets/icons/left-white-arrow.svg" alt="icon")
+          button.slider-navigation-button.js-next
+            img(src="assets/icons/right-white-arrow.svg" alt="icon")
+        .slider-digits__slider.js-init-slider(data-perview="4")
+          .swiper-wrapper
+            each slide in sliders
+              .swiper-slide
+                .slider-digits__slide
+                  h4.slider-digits__slide-name= slide.name
+                  p.slider-digits__slide-text= slide.text

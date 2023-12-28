@@ -1,0 +1,18 @@
+mixin slider-media-full(sliders)
+  .slider-media-full.js-zoom-scroll
+    .slider-media-full__rectangle.js-mask-rectangle
+    .container
+      .slider-media-full__content
+        .slider-media-full__slider-navigation.js-navigation
+          button.slider-navigation-button.slider-navigation-button--white-bg.js-prev
+            img(src="assets/icons/arrow-left-black.svg" alt="icon")
+          button.slider-navigation-button.slider-navigation-button--white-bg.js-next
+            img(src="assets/icons/arrow-right-black.svg" alt="icon")
+        .slider-media-full__slider.js-init-slider(data-perview="1" data-fadeeffect="true" data-speed="500")
+          .swiper-wrapper
+            each slide in sliders
+              .swiper-slide
+                .slider-media-full__slide
+                  h3.slider-media-full__title= slide.name
+                  img(src=slide.imgSrc alt="image").slider-media-full__image
+

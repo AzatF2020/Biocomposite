@@ -1,5 +1,12 @@
 extends ../layout/index
 
+include ../components/notification
+include ../components/info-board
+include ../components/slider
+include ../components/slider-media-full
+include ../components/slider-digits
+include ../components/slider-simple
+
 block constants
   - const title = "Детальная продукта"
 
@@ -28,7 +35,7 @@ block page
                 .detail-info__slot-container
                   .detail-intro__slot-wrapper
                     p.detail-intro__slot-text
-                    button.detail-intro__slot-icon-wrapper
+                    button.detail-intro__slot-icon-wrapper.js-detail-button
                       img(src="" alt="icon")
                   .detail-intro__slot-info
                     .text-wrapper
@@ -37,5 +44,16 @@ block page
                       p.detail-intro__slot-info-text
 
             img(src="assets/img/detail-intro-image.png" alt="image").detail-intro__image
+  +info-board(detailProduct.infoBoard.imgSrc, detailProduct.infoBoard.text)
+  +slider(
+    detailProduct.slider.title,
+    detailProduct.slider.text,
+    detailProduct.slider.textUppertitle,
+    detailProduct.slider.sliders
+  )
+  +slider-media-full(detailProduct.sliderMediaFull)
+  +slider-digits(detailProduct.sliderDigits.title, detailProduct.sliderDigits.sliders)
+  +slider-simple(detailProduct.sliderSimple.title, detailProduct.sliderSimple.sliders)
 
-  include ../components/notification
+  +notification
+

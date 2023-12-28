@@ -1,8 +1,14 @@
 .detail-intro {
+  margin-bottom: 12rem;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 7rem;
+  }
 
   &__content {
-    padding: var(--content-padding);
+    padding: 0 var(--content-padding);
     min-height: calc(100vh - 8.8rem);
+    max-height: 90rem;
     margin-top: 8.8rem;
 
     display: grid;
@@ -18,14 +24,10 @@
     }
 
     @include breakpoint(tablet) {
-      min-height: calc(100vh - 4.9rem);
+      height: fit-content;
+      min-height: auto;
       margin-top: 13.5rem;
     }
-  }
-  &__column {
-  }
-
-  &__column--first {
   }
 
   &__title {
@@ -243,7 +245,7 @@
     min-height: 5.8rem;
     position: relative;
     z-index: 1;
-    transition: background-color .45s ease;
+    transition: background-color .5s ease;
 
     cursor: pointer;
     pointer-events: visible;
@@ -265,8 +267,17 @@
     }
   }
 
-  &__slot-icon-wrapper:hover {
-    z-index: 3;
+
+  &__slot-icon-wrapper {
+    @include breakpointMF(laptop) {
+      &:hover {
+        z-index: 3;
+        background-color: var(--green-2);
+      }
+    }
+  }
+
+  &__slot-icon-wrapper.--active {
     background-color: var(--green-2);
   }
 
@@ -275,10 +286,6 @@
       opacity: 1;
       overflow: visible;
       visibility: visible;
-
-      transition: .15s ease opacity,
-                  .15s ease overflow,
-                  .15s ease visibility;
 
       .detail-intro__slot-info-title {
         transform: translateY(0);
@@ -317,6 +324,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    transition: .5s ease opacity,
+                .5s ease overflow,
+                .5s ease visibility;
 
     @include breakpoint(laptop) {
       display: none;

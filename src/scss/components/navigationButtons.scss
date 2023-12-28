@@ -8,9 +8,28 @@
   justify-content: center;
   transition: .25s linear opacity;
 
+  @include breakpoint(tablet) {
+    width: 4rem;
+    height: 4rem;
+
+    img {
+      width: 1.3rem;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
   &[disabled=""] {
     opacity: .45;
     pointer-events: none;
     cursor: default;
+  }
+
+  &--black {
+    border: .15rem solid var(--black);
+  }
+
+  &--white-bg {
+    background-color: var(--white);
   }
 }

@@ -1,0 +1,23 @@
+mixin slider(title, text, textUppertitle, sliders)
+  section.slider-block
+    .container
+      .slider-block__content
+        h2.slider-block__title= title
+
+        .slider-block__text-info
+          p.slider-block__text-main= text
+          p.slider-block__text-uppertitle= textUppertitle
+
+        .slider-block__navigation.js-navigation
+          button.slider-navigation-button.slider-navigation-button--black.js-prev
+            img(src="assets/icons/arrow-left-black.svg" alt="icon")
+          button.slider-navigation-button.slider-navigation-button--black.js-next
+            img(src="assets/icons/arrow-right-black.svg" alt="icon")
+
+        .slider-block__slider.js-init-slider(data-perview="4")
+          .swiper-wrapper
+            each slide in sliders
+              .swiper-slide
+                .slider-block__slide
+                  h5.slider-block__slide-title= slide.name
+                  img(src=slide.imgSrc alt="icon-slider").slider-block__slide-image

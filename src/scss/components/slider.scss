@@ -1,0 +1,200 @@
+.slider-block {
+  margin-bottom: .6rem;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 0;
+  }
+
+  &__content {
+    padding: var(--content-padding-two);
+    border-radius: 3rem;
+    background-color: white;
+    display: grid;
+    min-height: max-content;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    overflow-x: hidden;
+    align-items: flex-end;
+
+    @include breakpoint(laptop) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    color: var(--black);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h2);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -.3rem;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-h6);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 90%;
+      letter-spacing: -0.175rem;
+    }
+  }
+
+  &__text-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 4rem;
+
+    grid-column: 7 / 11;
+    grid-row: 3 / 4;
+
+    margin-top: 8.1rem;
+
+    @include breakpoint(tablet) {
+      margin-top: 4rem;
+    }
+  }
+
+  &__text-main {
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t5);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.02rem;
+
+    width: 100%;
+    max-width: 44rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: 0.013rem;
+      max-width: 28.2rem;
+    }
+  }
+
+  &__text-uppertitle {
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t5);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: 0.02rem;
+
+    width: 100%;
+    max-width: 36rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      letter-spacing: 0.013rem;
+      max-width: 24.6rem;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    column-gap: .4rem;
+
+    grid-column: 11 / 13;
+    grid-row: 3 / 4;
+    justify-content: flex-end;
+
+    @include breakpoint(laptop) {
+      display: none;
+    }
+  }
+
+  &__slider {
+    margin-top: 4rem;
+    grid-column: 1 / 13;
+    grid-row: 5 / 7;
+    width: 102%;
+
+    @include breakpoint(laptop) {
+      width: 100%;
+      max-width: 39.5rem;
+    }
+
+    @include breakpoint(tablet) {
+      max-width: 26.5rem;
+    }
+  }
+
+  &__slide {
+    height: 38.5rem;
+    width: 100%;
+    max-width: 38.5rem;
+
+    border-radius: 3rem;
+    background-color: #F3F3F3;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+
+    @include breakpoint(tablet) {
+      max-width: 26.5rem;
+      height: 26.5rem;
+      padding: 1rem;
+      border-radius: 2rem;
+    }
+  }
+
+  &__slide-title {
+    color: var(--black);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h6);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -.1rem;
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-p-t2);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      letter-spacing: -.1rem;
+      max-width: 24.5rem;
+    }
+  }
+
+  &__slide-image {
+    width: 70%;
+
+    object-fit: cover;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.container {
+}
+
+.js-init-slider {
+}
+
+.swiper-wrapper {
+}
+
+.swiper-slide {
+}

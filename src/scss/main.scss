@@ -1,3 +1,5 @@
+@import '../../node_modules/swiper/modules/effect-fade';
+
 @import "utils/reset";
 @import "utils/fontface";
 @import "utils/mixins";
@@ -14,6 +16,11 @@
 @import "components/map";
 @import "components/product";
 @import "components/notification";
+@import "components/infoBoard";
+@import "components/slider";
+@import "components/sliderMediaFull";
+@import "components/sliderDigits";
+@import "components/simpleSlider";
 
 @import "pages/solutions/intro";
 @import "pages/contacts/contacts";

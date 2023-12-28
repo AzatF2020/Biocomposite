@@ -2,6 +2,7 @@ import gsap from "gsap";
 
 export default async function enableMobileNotification() {
   const slots = document.querySelectorAll(".js-detail-slot")
+  const slotButtons = document.querySelectorAll(".js-detail-button")
   const notificationBlock = document.querySelector(".js-notification")
   
   if(window.matchMedia("(min-width: 1200px)").matches || !notificationBlock) return
@@ -23,6 +24,7 @@ export default async function enableMobileNotification() {
   }
   
   function closeNotification(notificationBlock) {
+    slotButtons.forEach((button) => button.classList.remove("--active"))
     gsap.to(notificationBlock, {
       y: 150,
       opacity: 0,
@@ -31,12 +33,18 @@ export default async function enableMobileNotification() {
   }
   
   slots?.forEach((slot) => {
-    const slotButton = slot.querySelector(".detail-intro__slot-icon-wrapper")
+    const slotButton = slot.querySelector(".js-detail-button")
     const slotIconSrc = slotButton.querySelector("img").src
     const slotTitle = slot.querySelector(".detail-intro__slot-info-title")
     const slotText = slot.querySelector(".detail-intro__slot-info-text")
     
-    slot.addEventListener("click", () => {
+    
+    slotButton.addEventListener("click", (event) => {
+      const currentButton = event.currentTarget
+      slotButtons.forEach((button) => button.classList.remove("--active"))
+      
+      currentButton.classList.add("--active")
+      
       gsap.to(notificationBlock, {
         y: 150,
         opacity: 0,
@@ -52,5 +60,6 @@ export default async function enableMobileNotification() {
     })
   })
   
-  notificationButtonClose?.addEventListener("click", () => closeNotification(notificationBlock))
+  notificationButtonClose?.addEventListener("click", () =>
+    closeNotification(notificationBlock))
 }

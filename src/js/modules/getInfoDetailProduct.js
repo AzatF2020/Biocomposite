@@ -3,10 +3,10 @@ import enableMobileNotification from "./enableMobileNotification";
 
 export default async function initDetailProductSlots() {
   const detailProductContainer = document.querySelector(".js-detail-product")
+  const jsonPath = detailProductContainer?.dataset.pathJson
   
-  if(!detailProductContainer) return
+  if(!detailProductContainer || !jsonPath) return
   
-  const jsonPath = detailProductContainer.dataset.pathJson
   const container = detailProductContainer.querySelector(".js-detail-container")
   const template = detailProductContainer.querySelector("template")
   const data = await fetchingJson(jsonPath)
@@ -15,7 +15,7 @@ export default async function initDetailProductSlots() {
     "row": (tag) => null,
     "row-reverse": (tag) => tag?.classList.add("is-row-revert"),
     "column": (tag) => tag?.classList.add("is-column"),
-    "column-reverse": (tag) => tag?.classList.add("is-column-revert")
+    "column-reverse": (tag) => tag?.classList.add("is-column-revert"),
   }
   
   function addStyleBasedDirection(templateContainer, slotContainer, dataValues) {
