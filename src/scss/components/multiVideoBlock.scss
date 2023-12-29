@@ -1,0 +1,134 @@
+.multi-video-block {
+  margin-bottom: 2rem;
+  &__content {
+    padding: var(--content-padding-two);
+
+    width: 100%;
+    min-height: calc(100vh - 8.8rem);
+    min-height: calc(100svh - 8.8rem);
+    border-radius: 3rem;
+    margin-top: 8.8rem;
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h1);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -0.16rem;
+
+    width: 100%;
+    max-width: 67rem;
+  }
+
+  &__wrapper-large {
+    padding: var(--content-padding-two);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    border-radius: 3rem;
+
+    .multi-video-block__button-controller {
+      @include breakpointMF(tablet) {
+        display: none;
+      }
+    }
+
+    video {
+
+    }
+  }
+
+  &__video-bottom-container {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  &__wrapper-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__wrapper-bottom-title {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h6);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.1rem;
+  }
+
+  &__wrapper-bottom--large {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__button-controller {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 4.8rem;
+    background-color: var(--green-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .3s ease;
+
+    &:hover {
+      background-color: var(--green-1);
+    }
+
+    img {
+      width: 1.3rem;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &__wrapper {
+    width: 38.5rem;
+    position: relative;
+    border-radius: 3rem;
+    height: 32.5rem;
+    padding: 1rem;
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+}
+
+.container {
+}
+
+.lazyload {
+}

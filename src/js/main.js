@@ -7,6 +7,7 @@ import initSlider from "./modules/slider";
 import initLoader from "./modules/loader";
 import initDetailProductSlots from "./modules/getInfoDetailProduct";
 import scrollingIncrease from "./modules/scrollingIncrease";
+import initHorizontalScrollingSlider from "./modules/horizontalScrolling";
 
 document.addEventListener("DOMContentLoaded", () => {
   window.biocompositeApi = {}
@@ -18,4 +19,5 @@ document.addEventListener("DOMContentLoaded", () => {
   
   initDetailProductSlots()
   scrollingIncrease()
+  initHorizontalScrollingSlider()
 });

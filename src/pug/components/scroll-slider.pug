@@ -1,0 +1,49 @@
+mixin scroll-slider(tag, title, sliders)
+  section.scroll-slider
+    .container
+      .scroll-slider__content
+        span.scroll-slider__tag= tag
+        h2.scroll-slider__title= title
+        .scroll-slider__slider-section.js-scroll-slider-trigger
+          .scroll-slider__navigation-bar
+            span.scroll-slider__navigation-line
+            each slide in sliders
+              .scroll-slider__navigation-name
+                p= slide.navigationTitle
+
+          .scroll-slider__slider.js-scroll-slider(data-slider-mobile="true")
+            .swiper-wrapper
+              each slide in sliders
+                .swiper-slide.js-slide
+
+                  div(class={"scroll-slider__slide": !slide.modeReversed, "scroll-slider__slide scroll-slider__slide--reversed": slide.modeReversed})
+                    .scroll-slider__slide-column
+                      if slide.images.length > 1
+                        each image in slide.images
+                          .scroll-slider__slide-image-wrapper
+                            img(alt="image slider" src=image).scroll-slider__slide-image.scroll-slider__slide-image--rounded
+                      else
+                        .scroll-slider__slide-image-wrapper.scroll-slider__slide-image-wrapper--large
+                          img(alt="image slider" src=slide.images[0]).scroll-slider__slide-image
+
+                    .scroll-slider__slide-column
+                      if slide.title
+                        h2.scroll-slider__slide-title= slide.title
+
+                      if slide.text
+                        p.scroll-slider__slide-text= slide.text
+
+                      if slide.percentageInfo.number || slide.percentageInfo.text
+                        .scroll-slider__slide-info-percentage
+                          h4.scroll-slider__slide-percentage-number= slide.percentageInfo.number
+                          p.scroll-slider__slide-percentage-text= slide.percentageInfo.text
+
+                      if slide.listInfo.listHead || slide.listInfo.list[0].imgSrc || slide.listInfo.list[0].text
+                        .scroll-slider__slide-list-label
+                          p.scroll-slider__slide-list-head= slide.listInfo.listHead
+                          ul.scroll-slider__slide-list
+                            each list in slide.listInfo.list
+                              li.scroll-slider__slide-info-list
+                                div.scroll-slider__slide-list-icon-wrapper
+                                  img(alt="icon" src= list.imgSrc)
+                                p.scroll-slider__slide-list-text= list.text

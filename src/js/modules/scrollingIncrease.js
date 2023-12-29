@@ -6,11 +6,11 @@ gsap.registerPlugin(ScrollTrigger)
 export default function scrollingIncrease() {
   const zoomBlocksScroll = document.querySelectorAll(".js-zoom-scroll")
   
+  if(!zoomBlocksScroll.length) return
+  
   gsap.set(zoomBlocksScroll, { y: 150, autoAlpha: 0 })
   
   function initAnimation(block, rectangleMask) {
-    if(!block) return
-    
     const tl = gsap.timeline({})
     
     tl.to(block, {
@@ -25,6 +25,8 @@ export default function scrollingIncrease() {
         once: true,
       }
     })
+    
+    if(!rectangleMask) return
     
     tl.to(rectangleMask, {
       scale: 2,
@@ -44,7 +46,10 @@ export default function scrollingIncrease() {
   
   zoomBlocksScroll?.forEach((block) => {
     const rectangleMask = block.querySelector(".js-mask-rectangle")
-    gsap.set(rectangleMask, { scale: 1 })
+    
+    if(rectangleMask) {
+      gsap.set(rectangleMask, { scale: 1 })
+    }
     initAnimation(block, rectangleMask)
   })
 }

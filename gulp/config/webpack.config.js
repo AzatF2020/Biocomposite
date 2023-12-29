@@ -11,14 +11,14 @@ const webpackConfig = {
     usedExports: true,
     minimize: true,
     minimizer: [
-      // new TerserPlugin()
+      new TerserPlugin()
     ]
   },
   entry: {
     main: jsConfig.entryPoint
   },
   plugins: [
-    isProd && new StatoscopeWebpackPlugin(),
+    // isProd && new StatoscopeWebpackPlugin(),
   ],
   output: {
     path: path.resolve(__dirname, jsConfig.dist),

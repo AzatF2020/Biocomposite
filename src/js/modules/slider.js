@@ -47,6 +47,7 @@ export default function initSlider() {
 
     const loopMobile = Boolean(slider?.dataset.mobileloop)
     const fadeEffect = Boolean(slider?.dataset.fadeeffect)
+    const isMobileSlider = Boolean(slider?.dataset.sliderMobile)
     const slidesPerView = Number(slider?.dataset.perview) || 3
     const speed = Number(slider?.dataset.speed)
     
@@ -58,6 +59,28 @@ export default function initSlider() {
     
     const prevButton = currentSliderNavigation?.querySelector(".js-prev") || null
     const nextButton = currentSliderNavigation?.querySelector(".js-next") || null
+    
+    if(isMobileSlider && window.matchMedia("(max-width: 768px)").matches) {
+      if(totalSliders <= slidesPerView) {
+        swiperInit(slider, {
+          slidesPerView,
+          loopMobile,
+          fadeEffect,
+          speed
+        })
+        currentSliderNavigation?.remove()
+      } else {
+        swiperInit(slider, {
+          prevButton,
+          nextButton,
+          slidesPerView,
+          loopMobile,
+          fadeEffect,
+          speed
+        })
+      }
+      return
+    }
     
     if(totalSliders <= slidesPerView) {
       swiperInit(slider, {

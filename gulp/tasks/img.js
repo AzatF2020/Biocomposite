@@ -7,7 +7,7 @@ const imagemin = require("gulp-imagemin")
 const newer = require("gulp-newer")
 const webp = require("gulp-webp")
 const gulpif = require("gulp-if")
-const { isProd } = require("../config/constants")
+const { isProd, enableImageMinification } = require("../config/constants")
 
 const { img: imgConfig } = config
 
@@ -24,7 +24,7 @@ const img = async function() {
     .pipe(gulp.dest(imgConfig.dist))
     .pipe(gulp.src(imgConfig.src))
     .pipe(newer(imgConfig.dist))
-    .pipe(gulpif(isProd, imagemin(imgConfig.imagemin)))
+    .pipe(gulpif(isProd && enableImageMinification, imagemin(imgConfig.imagemin)))
     .pipe(gulp.dest(imgConfig.dist))
 }
 

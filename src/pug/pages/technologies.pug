@@ -1,0 +1,15 @@
+extends ../layout/index
+
+include ../components/multi-video-block
+include ../components/scroll-slider
+
+block constants
+  - const title = "Технологии"
+
+block page
+  +multi-video-block(technologies.multiVideoBlock)
+  +scroll-slider(
+    technologies.scrollSlider.tag,
+    technologies.scrollSlider.title,
+    technologies.scrollSlider.sliders
+  )

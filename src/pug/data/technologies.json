@@ -1,0 +1,101 @@
+{
+  "multiVideoBlock": [
+    {
+      "name": "Технологиии производства",
+      "videoSrc": "assets/video/video-industry-second.MP4",
+      "large": true
+    },
+    {
+      "name": "С производства",
+      "videoSrc": "assets/video/video-industry-third.MP4"
+    },
+    {
+      "name": "Про продукт",
+      "videoSrc": "assets/video/video-industry-first.MP4"
+    }
+  ],
+  "scrollSlider": {
+    "tag": "О технологии",
+    "title": "Что такое биокомпозит?",
+    "sliders": [
+      {
+        "navigationTitle": "О технологии",
+        "images": [
+          "assets/img/board-hover.png",
+          "assets/img/board-hover.png",
+          "assets/img/board-hover.png",
+          "assets/img/board-hover.png"
+        ],
+        "title": "Мы предлагаем инновационные, устойчивые и высокоэффективные материалы на биологической основе. ",
+        "text": "Композит представляет собой комбинацию двух или более материалов, которые при объединении обладают улучшенными свойствами.",
+        "percentageInfo": {
+          "number": "",
+          "text": ""
+        },
+        "listInfo": {
+          "listHead": "",
+          "list": [
+            {
+              "imgSrc": "",
+              "text": ""
+            }
+          ]
+        }
+      },
+      {
+        "navigationTitle": "биологическая основа",
+        "images": [
+          "assets/img/board-hover.png",
+          "assets/img/board-hover.png",
+          "assets/img/board-hover.png",
+          "assets/img/board-hover.png"
+        ],
+        "title": "Биокомпозиты включают в себя возобновляемые волокна древесины на биологической основе в качестве компонента. ",
+        "text": "",
+        "percentageInfo": {
+          "number": ">50%",
+          "text": "сырья поступает из возобновляемых источников"
+        },
+        "listInfo": {
+          "listHead": "",
+          "list": [
+            {
+              "imgSrc": "",
+              "text": ""
+            }
+          ]
+        }
+      },
+      {
+        "modeReversed": true,
+        "navigationTitle": "комбинации биокомпозита",
+        "images": [
+          "assets/img/board-hover.png"
+        ],
+        "title": "Биокомпозитные материалы можно определить как композитные материалы, в которых хотя бы один из компонентов получен из природных источников",
+        "text": "",
+        "percentageInfo": {
+          "number": "",
+          "text": ""
+        },
+        "listInfo": {
+          "listHead": "Сюда входят композитные материалы, изготовленные из комбинации:",
+          "list": [
+            {
+              "imgSrc": "assets/icons/leaf.svg",
+              "text": "Полимеры нефтяного происхождения, армированные натуральным волокном"
+            },
+            {
+              "imgSrc": "assets/icons/tree.svg",
+              "text": "Биополимеры, армированные натуральным волокном"
+            },
+            {
+              "imgSrc": "assets/icons/biopolymers.svg",
+              "text": "Биополимеры, армированные синтетическим волокном \n(например, стеклом, углеродом)"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
