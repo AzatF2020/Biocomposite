@@ -2,8 +2,9 @@ mixin scroll-slider(tag, title, sliders)
   section.scroll-slider
     .container
       .scroll-slider__content
-        span.scroll-slider__tag= tag
-        h2.scroll-slider__title= title
+        .scroll-slider__upper.container
+          span.scroll-slider__tag= tag
+          h2.scroll-slider__title= title
         .scroll-slider__slider-section.js-scroll-slider-trigger
           .scroll-slider__navigation-bar
             span.scroll-slider__navigation-line
@@ -17,7 +18,7 @@ mixin scroll-slider(tag, title, sliders)
                 .swiper-slide.js-slide
 
                   div(class={"scroll-slider__slide": !slide.modeReversed, "scroll-slider__slide scroll-slider__slide--reversed": slide.modeReversed})
-                    .scroll-slider__slide-column
+                    .scroll-slider__slide-column.js-scroll-slider-images
                       if slide.images.length > 1
                         each image in slide.images
                           .scroll-slider__slide-image-wrapper

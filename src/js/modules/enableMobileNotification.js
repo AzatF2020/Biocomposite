@@ -38,7 +38,6 @@ export default async function enableMobileNotification() {
     const slotTitle = slot.querySelector(".detail-intro__slot-info-title")
     const slotText = slot.querySelector(".detail-intro__slot-info-text")
     
-    
     slotButton.addEventListener("click", (event) => {
       const currentButton = event.currentTarget
       slotButtons.forEach((button) => button.classList.remove("--active"))

@@ -2,7 +2,7 @@ import 'swiper/css';
 import "./vendor/lazyload"
 
 import smoothScrolling from "./vendor/smoothScroll";
-import connectMap from "./modules/mapInit";
+import connectMap from "./vendor/mapInit";
 import initSlider from "./modules/slider";
 import initLoader from "./modules/loader";
 import initDetailProductSlots from "./modules/getInfoDetailProduct";

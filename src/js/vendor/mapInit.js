@@ -1,4 +1,4 @@
-import Map from "../vendor/map";
+import Map from "./map";
 import fetchingJson from "../helpers/fetchingJson";
 
 export default function connectMap() {

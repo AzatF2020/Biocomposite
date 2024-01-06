@@ -2,8 +2,8 @@
 
   &__content {
     padding: 2.5rem 0 2rem;
-    background-color: white;
     border-radius: 3rem;
+    background-color: white;
   }
 
   &__tag {
@@ -41,9 +41,19 @@
   }
 
   &__navigation-bar {
-    width: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
+
+    @supports (width: max(20vw, 100px)) {
+      margin-right: max(env(safe-area-inset-right, 1.4rem), var(--content-padding-two));
+      margin-left: max(env(safe-area-inset-left, 1.4rem), var(--content-padding-two));
+
+      @include breakpoint(tablet) {
+        margin-right: max(env(safe-area-inset-right, 1.4rem), 1rem);
+        margin-left: max(env(safe-area-inset-left, 1.4rem), 1rem);
+      }
+    }
 
     position: relative;
     height: 10rem;
@@ -123,7 +133,7 @@
       width: 10rem;
       height: 10rem;
       border-radius: 10rem;
-      background-color: var(--green-2);
+      background-color: var(--white-grey);
       text-align: center;
       font-family: "PP Pangram Sans Rounded", sans-serif;
       font-size: var(--fz-p-t1);
@@ -132,19 +142,33 @@
       line-height: 100%;
       letter-spacing: -0.16rem;
       left: -7.5rem;
+      transform: translateX(1.5rem);
+
+      transition: background-color .75s ease,
+                  transform .75s ease;
+    }
+
+    &--active {
+      &::before {
+        background-color: var(--green-2);
+        transform: translateX(0);
+      }
     }
   }
 
   &__slider-section {
-
+    height: 85vh !important;
+    max-height: none !important;
   }
 
   &__slider {
-    height: 67.5vh;
     width: 100%;
     padding: 0 var(--content-padding-two);
-    overflow: hidden;
-
+    overflow-x: hidden;
+    overflow-y: visible;
+    max-height: 70.5lvh;
+    height: 100%;
+    padding-bottom: 2.5rem;
 
     .swiper-slide {
       @include breakpointMF(tablet) {
@@ -158,6 +182,7 @@
     height: 100%;
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     column-gap: 4rem;
   }
 
@@ -177,6 +202,7 @@
     flex-basis: 100%;
     position: relative;
     height: 100%;
+    max-height: 60rem;
 
     display: flex;
     flex-direction: column;
@@ -189,6 +215,7 @@
   }
 
   &__slide-image-wrapper {
+
   }
 
   &__slide-image-wrapper--large {
@@ -207,6 +234,10 @@
 
 
   &__slide-image {
+    -webkit-clip-path: inset(0px 0px 650px 0px);
+    clip-path: inset(0px 0px 650px 0px);
+
+    transition: clip-path 1.5s ease
   }
 
   &__slide-image--rounded {
@@ -214,7 +245,6 @@
     position: absolute;
     z-index: -1;
   }
-
 
   &__slide-image-wrapper:nth-child(1) > &__slide-image--rounded {
     width: 45rem;
@@ -231,7 +261,7 @@
     object-fit: cover;
     border-radius: 32.5rem;
     left: -20.25rem;
-    bottom: 10rem;
+    top: 20rem;
   }
 
   &__slide-image-wrapper:nth-child(3) > &__slide-image--rounded {
@@ -240,7 +270,7 @@
     object-fit: cover;
     border-radius: 32.5rem;
     left: 10rem;
-    bottom: -17.25rem;
+    top: 48rem;
   }
 
   &__slide-image-wrapper:nth-child(4) > &__slide-image--rounded {
@@ -248,8 +278,8 @@
     height: 32.5rem;
     object-fit: cover;
     border-radius: 32.5rem;
-    right: -5rem;
-    bottom: -13.25rem;
+    right: -15rem;
+    top: 30rem;
   }
 
   &__slide-title {
@@ -280,6 +310,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 4rem;
+    padding-bottom: 2rem;
   }
 
   &__slide-percentage-number {
@@ -307,7 +338,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 
   &__slide--reversed > &__slide-column:last-child  > &__slide-list-label {
@@ -325,7 +356,7 @@
     line-height: 110%;
     width: 100%;
     max-width: 40.5rem;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
   }
 
   &__slide-list {
@@ -353,6 +384,7 @@
     border-radius: 8rem;
     width: 8rem;
     height: 8rem;
+
     img {
       width: 2.8rem;
       height: auto;
