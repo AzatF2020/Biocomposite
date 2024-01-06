@@ -135,8 +135,12 @@
     }
   }
 
+  &__slider-section {
+
+  }
+
   &__slider {
-    height: 61.5rem;
+    height: 67.5vh;
     width: 100%;
     padding: 0 var(--content-padding-two);
     overflow: hidden;

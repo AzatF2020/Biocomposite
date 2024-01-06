@@ -1,6 +1,6 @@
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Swiper from "swiper";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Parallax } from "swiper/modules"
 
 Swiper.use([Parallax])
@@ -25,16 +25,18 @@ export default function initHorizontalScrollingSlider() {
     const tl = gsap.timeline({ })
     
     const sliderInstance = initSlider(currentSlider)
+    const scrollSliderHeight = window.innerHeight * 1.5 * slides.length
     
     tl.to(slides, {
       ease: "none",
       zIndex: -1,
       scrollTrigger: {
         trigger: sliderContainer,
-        end: () => `+=${window.innerHeight * 1.25 * slides.length} top`,
+        start: "top 15% center",
+        end: () => `+=${scrollSliderHeight} top`,
         scrub: 1,
         pin: true,
-        start: "top 15%",
+        markers: true,
         onUpdate: (self) => {
           const progress = self.progress;
           const slidesCount = slides.length;
