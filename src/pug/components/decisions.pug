@@ -1,0 +1,17 @@
+mixin decisions(title, sliders)
+  section.decisions
+    .container
+      .decisions__content
+        h2.decisions__title= title
+        .decisions__slider.js-init-slider(data-slider-mobile="true")
+          .swiper-wrapper.js-decision-cards-animation
+            each slide in sliders
+              .swiper-slide
+                .decisions__slide
+                  .decisions__slide-upper
+                    span.decisions__slide-counter
+                    span.decisions__slide-icon-wrapper
+                      img(src=slide.iconSrc alt="icon").decisions__slide-icon
+                  .decisions__slide-bottom
+                    p.decisions__slide-text= slide.text
+

@@ -18,8 +18,8 @@ export default function initHorizontalScrollingSlider() {
       allowTouchMove: false,
     })
   }
-  
-  if(!slidersTrigger.length) return
+
+  if(!slidersTrigger.length || window.matchMedia("(max-width: 768px)").matches) return
 
   function setActiveCircleClass(circleBarElements, sliderInstance) {
     circleBarElements?.forEach((circle, circleIndex) => {

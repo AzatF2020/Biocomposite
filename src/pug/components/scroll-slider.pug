@@ -12,7 +12,7 @@ mixin scroll-slider(tag, title, sliders)
               .scroll-slider__navigation-name
                 p= slide.navigationTitle
 
-          .scroll-slider__slider.js-scroll-slider(data-slider-mobile="true")
+          .scroll-slider__slider.js-init-slider.js-scroll-slider(data-slider-mobile="true")
             .swiper-wrapper
               each slide in sliders
                 .swiper-slide.js-slide

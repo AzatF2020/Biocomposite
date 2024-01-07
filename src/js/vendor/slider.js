@@ -50,17 +50,19 @@ export default function initSlider() {
     const isMobileSlider = Boolean(slider?.dataset.sliderMobile)
     const slidesPerView = Number(slider?.dataset.perview) || 3
     const speed = Number(slider?.dataset.speed)
-    
+
     const totalSliders = slider?.querySelector(".swiper-wrapper")?.children.length
     const currentSliderNavigation =
-      slider?.previousElementSibling.classList.contains("js-navigation")
+      slider?.previousElementSibling?.classList.contains("js-navigation")
         ? slider?.previousElementSibling
         : slider.querySelector(".js-navigation")
     
     const prevButton = currentSliderNavigation?.querySelector(".js-prev") || null
     const nextButton = currentSliderNavigation?.querySelector(".js-next") || null
     
-    if(isMobileSlider && window.matchMedia("(max-width: 768px)").matches) {
+    if(isMobileSlider && !window.matchMedia("(max-width: 768px)").matches) {
+      return
+    } else {
       if(totalSliders <= slidesPerView) {
         swiperInit(slider, {
           slidesPerView,
@@ -79,26 +81,6 @@ export default function initSlider() {
           speed
         })
       }
-      return
-    }
-    
-    if(totalSliders <= slidesPerView) {
-      swiperInit(slider, {
-        slidesPerView,
-        loopMobile,
-        fadeEffect,
-        speed
-      })
-      currentSliderNavigation?.remove()
-    } else {
-      swiperInit(slider, {
-        prevButton,
-        nextButton,
-        slidesPerView,
-        loopMobile,
-        fadeEffect,
-        speed
-      })
     }
   }
   

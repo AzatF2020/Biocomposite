@@ -2,6 +2,7 @@ extends ../layout/index
 
 include ../components/multi-video-block
 include ../components/scroll-slider
+include ../components/decisions
 
 block constants
   - const title = "Технологии"
@@ -12,4 +13,8 @@ block page
     technologies.scrollSlider.tag,
     technologies.scrollSlider.title,
     technologies.scrollSlider.sliders
+  )
+  +decisions(
+    technologies.decisions.title,
+    technologies.decisions.sliders
   )
