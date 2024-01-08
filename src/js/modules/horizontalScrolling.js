@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import Swiper from "swiper";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Parallax } from "swiper/modules"
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {Parallax} from "swiper/modules"
 
 Swiper.use([Parallax])
 gsap.registerPlugin(ScrollTrigger)
@@ -19,11 +19,11 @@ export default function initHorizontalScrollingSlider() {
     })
   }
 
-  if(!slidersTrigger.length || window.matchMedia("(max-width: 768px)").matches) return
+  if (!slidersTrigger.length || window.matchMedia("(max-width: 768px)").matches) return
 
   function setActiveCircleClass(circleBarElements, sliderInstance) {
     circleBarElements?.forEach((circle, circleIndex) => {
-      if(!circle) return
+      if (!circle) return
 
       circle.classList.remove("scroll-slider__navigation-name--active")
 
@@ -34,9 +34,9 @@ export default function initHorizontalScrollingSlider() {
     })
 
     function initAnimation(circle, options) {
-      const { sliderIndex = 0, circleIndex = 0 } = options
+      const {sliderIndex = 0, circleIndex = 0} = options
 
-      if(sliderIndex === circleIndex) {
+      if (sliderIndex === circleIndex) {
         circle.classList.add("scroll-slider__navigation-name--active")
       }
     }
@@ -46,22 +46,22 @@ export default function initHorizontalScrollingSlider() {
     const sliderActiveIndex = sliderInstance?.activeIndex
 
     sliderImages.forEach((imageContainer, index) => {
-      if(!imageContainer) return
+      if (!imageContainer) return
 
       const images = [...imageContainer.children]
 
-      if(sliderActiveIndex === index) {
+      if (sliderActiveIndex === index) {
         images.forEach((image) => {
 
           setTimeout(() => {
             image.firstElementChild.classList.add("--active")
             image.firstElementChild.style.clipPath = "inset(0 0 0 0)"
-          }, (index / 2) * 1000)
+          }, 150)
         })
       }
     })
   }
-  
+
   function initScrollingHorizontalSlide(items) {
     const {
       sliderContainer,
@@ -71,11 +71,11 @@ export default function initHorizontalScrollingSlider() {
       sliderImages
     } = items
 
-    const tl = gsap.timeline({ ease: "none" })
+    const tl = gsap.timeline({ease: "none"})
 
     const sliderInstance = initSlider(currentSlider)
     const scrollSliderHeight = window.innerHeight * 1.5 * slides.length
-    
+
     tl.to(slides, {
       scrollTrigger: {
         trigger: sliderContainer,
@@ -97,7 +97,7 @@ export default function initHorizontalScrollingSlider() {
       },
     })
   }
-  
+
   slidersTrigger?.forEach((sliderContainer) => {
     const currentSlider = sliderContainer.querySelector(".js-scroll-slider")
     const slides = sliderContainer.querySelectorAll(".js-slide")
@@ -109,7 +109,7 @@ export default function initHorizontalScrollingSlider() {
       slides,
       currentSlider,
       circleBarElements,
-      sliderImages}
-    )
+      sliderImages
+    })
   })
 }

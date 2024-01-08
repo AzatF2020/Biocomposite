@@ -1,0 +1,128 @@
+.advantages {
+  margin-bottom: 2rem;
+  &__content {
+    width: 100%;
+    height: 55rem;
+    border-radius: 3rem;
+  }
+
+  &__slider {
+    height: 100%;
+  }
+
+  &__slider-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+    top: 7rem;
+    right: 2rem;
+    column-gap: .4rem;
+    z-index: 2;
+  }
+
+  &__slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 3.5rem;
+    overflow: hidden;
+    padding: 4rem var(--content-padding-two) 2rem;
+  }
+
+  &__overlay {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  &__slide-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 2rem;
+    margin-bottom: 15rem;
+  }
+
+  &__slide-uppertitle {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-p-t4);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+  }
+
+  &__slide-title {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h2);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -.3rem;
+  }
+
+  &__slide-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__slide-column {
+
+  }
+
+  &__slide-info {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 5rem;
+  }
+
+  &__slide-list {
+
+  }
+
+  &__slide-list-number {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h3);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -.16rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__slide-list-text {
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    width: 100%;
+    max-width: 21.3rem;
+  }
+
+  &__slide-text {
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t5);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: .02rem;
+
+    width: 100%;
+    max-width: 40.1rem;
+  }
+}

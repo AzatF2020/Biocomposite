@@ -1,0 +1,20 @@
+mixin slider-hover(title, sliders)
+  section.slider-hover
+    .container
+      .slider-hover__content
+        h2.slider-hover__title= title
+        .slider-hover__navigation.js-navigation
+          button.slider-navigation-button.slider-navigation-button--black.js-prev
+            img(src="assets/icons/arrow-left-black.svg" alt="icon")
+          button.slider-navigation-button.slider-navigation-button--black.js-next
+            img(src="assets/icons/arrow-right-black.svg" alt="icon")
+        .slider-hover__slider.js-init-slider(data-perview="4")
+          .swiper-wrapper
+            each slide in sliders
+              .swiper-slide
+                .slider-hover__slide
+                  span.slider-hover__slide-tag= slide.tag
+                  img(alt="slide image" src=slide.imgSrc).slider-hover__slide-image
+                  .slider-hover__slide-info
+                    span.slider-hover__slide-counter
+                    p.slider-hover__slide-text= slide.text

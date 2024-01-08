@@ -6,10 +6,10 @@ gsap.registerPlugin(ScrollTrigger)
 export default function occurrenceCardsDecision() {
   const cardsWrapper = document.querySelectorAll(".js-decision-cards-animation")
 
-  if(!cardsWrapper.length) return
+  if (!cardsWrapper.length) return
 
   function animateCardOccur(wrapper) {
-    if(!wrapper) return
+    if (!wrapper) return
     const cards = [...wrapper?.children]
 
     cards.forEach((card, index) => {
@@ -22,7 +22,8 @@ export default function occurrenceCardsDecision() {
         scrollTrigger: {
           trigger: wrapper,
           start: "top 50%"
-        }})
+        }
+      })
 
       tl.from(card, {
         opacity: 0,

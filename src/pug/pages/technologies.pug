@@ -3,12 +3,15 @@ extends ../layout/index
 include ../components/multi-video-block
 include ../components/scroll-slider
 include ../components/decisions
+include ../components/advantages
 
 block constants
   - const title = "Технологии"
 
 block page
-  +multi-video-block(technologies.multiVideoBlock)
+  +multi-video-block(
+    technologies.multiVideoBlock
+  )
   +scroll-slider(
     technologies.scrollSlider.tag,
     technologies.scrollSlider.title,
@@ -17,4 +20,7 @@ block page
   +decisions(
     technologies.decisions.title,
     technologies.decisions.sliders
+  )
+  +advantages(
+    technologies.advantages.sliders
   )

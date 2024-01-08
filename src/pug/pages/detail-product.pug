@@ -44,16 +44,26 @@ block page
                       p.detail-intro__slot-info-text
 
             img(src="assets/img/detail-intro-image.png" alt="image").detail-intro__image
-  +info-board(detailProduct.infoBoard.imgSrc, detailProduct.infoBoard.text)
+  +info-board(
+    detailProduct.infoBoard.imgSrc,
+    detailProduct.infoBoard.text
+  )
   +slider(
     detailProduct.slider.title,
     detailProduct.slider.text,
     detailProduct.slider.textUppertitle,
     detailProduct.slider.sliders
   )
-  +slider-media-full(detailProduct.sliderMediaFull)
-  +slider-digits(detailProduct.sliderDigits.title, detailProduct.sliderDigits.sliders)
-  +slider-simple(detailProduct.sliderSimple.title, detailProduct.sliderSimple.sliders)
-
+  +slider-media-full(
+    detailProduct.sliderMediaFull
+  )
+  +slider-digits(
+    detailProduct.sliderDigits.title,
+    detailProduct.sliderDigits.sliders
+  )
+  +slider-simple(
+    detailProduct.sliderSimple.title,
+    detailProduct.sliderSimple.sliders
+  )
   +notification
 

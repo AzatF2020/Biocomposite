@@ -3,18 +3,17 @@ import "./vendor/lazyload"
 
 import smoothScrolling from "./vendor/smoothScroll";
 import connectMap from "./vendor/mapInit";
-import initSlider from "./vendor/slider";
 import initLoader from "./modules/loader";
 import initDetailProductSlots from "./modules/getInfoDetailProduct";
 import scrollingIncrease from "./modules/scrollingIncrease";
 import initHorizontalScrollingSlider from "./modules/horizontalScrolling";
 import occurrenceCardsDecision from "./modules/occurrenceCardsDecision";
+import Slider from "./vendor/slider";
 
 document.addEventListener("DOMContentLoaded", () => {
   window.biocompositeApi = {}
 
   smoothScrolling()
-  initSlider()
   connectMap()
 
   initLoader()
@@ -22,4 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollingIncrease()
   initHorizontalScrollingSlider()
   occurrenceCardsDecision()
+
+  const sliderInstance = new Slider()
+  sliderInstance.initializeSliders()
 });

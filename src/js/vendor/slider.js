@@ -1,54 +1,103 @@
 import Swiper from "swiper";
-import { Navigation, Parallax, EffectFade } from "swiper/modules"
+import gsap from "gsap";
+import {Navigation, Parallax, EffectFade} from "swiper/modules"
 
 Swiper.use([Navigation, Parallax, EffectFade])
 
-export default function initSlider() {
-  const sliders = document.querySelectorAll(".js-init-slider");
-  
-  const sliderBreakpointsOptions = (sliderPerView) => ({
-    1200: {
-      slidesPerView: sliderPerView,
-    },
-    769: {
-      slidesPerView: "auto",
-      spaceBetween: 10,
-    },
-    320: {
-      slidesPerView: "auto",
-      spaceBetween: 8,
-    }
-  })
-  
-  function initMobileOptions(options) {
-    if(window.matchMedia("(max-width: 768px)").matches) {
-      return options
-    }
-  }
-  
-  function swiperInit(slider, options) {
-    new Swiper(slider, {
-      parallax: true,
-      fadeEffect: options?.fadeEffect ? { crossFade: true } : null,
-      watchOverflow: true,
-      effect: options?.fadeEffect ? "fade" : null,
-      loop: initMobileOptions(options)?.loopMobile,
-      speed: options?.speed || 1000,
-      breakpoints: sliderBreakpointsOptions(options?.slidesPerView),
-      navigation: {
-        prevEl: options?.prevButton,
-        nextEl: options?.nextButton,
+class Slider {
+  sliders;
+  sliderBreakpointsOptions;
+
+  constructor() {
+    this.sliders = document.querySelectorAll(".js-init-slider");
+    this.sliderBreakpointsOptions = (sliderPerView) => ({
+      1200: {
+        slidesPerView: sliderPerView,
+      },
+      769: {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+      },
+      320: {
+        slidesPerView: "auto",
+        spaceBetween: 8,
       }
     })
   }
-  
-  function prepareSwiperSettings(slider) {
-    if(!slider) return
+
+  #initTextAnimation(text, options) {
+    const {slideIndex, activeIndex} = options
+
+    text.forEach((item, index) => {
+      const tl = gsap.timeline({ease: "power3.out"})
+
+      if (slideIndex === activeIndex) {
+        tl.to(item, {
+          yPercent: 0,
+          delay: 1 * (index / 20),
+        })
+      }
+    })
+  }
+
+  #slideChangeConfig(swiperInstance, slider, options) {
+    return () => {
+      const currentSlider = swiperInstance
+      const activeIndex = currentSlider.activeIndex || 0
+
+      if (options?.enableTextAnimation) {
+        const slides = slider.querySelectorAll(".swiper-slide")
+
+        slides.forEach((slide, slideIndex) => {
+          const text = slide.querySelectorAll(".text-wrapper *")
+          gsap.set(text, {yPercent: 150})
+
+          this.#initTextAnimation(text, {slideIndex, activeIndex})
+        })
+      }
+    }
+  }
+
+  #initMobileOptions(options) {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      return options
+    }
+  }
+
+  #swiperInit(slider, options) {
+    const {
+      fadeEffect,
+      speed,
+      prevButton,
+      nextButton,
+      slidesPerView
+    } = options
+
+    const swiperInstance = new Swiper(slider, {
+      parallax: true,
+      fadeEffect: fadeEffect ? {crossFade: true} : null,
+      watchOverflow: true,
+      effect: fadeEffect ? "fade" : null,
+      loop: this.#initMobileOptions(options)?.loopMobile,
+      speed: speed || 1000,
+      breakpoints: this.sliderBreakpointsOptions(slidesPerView),
+      navigation: {
+        prevEl: prevButton,
+        nextEl: nextButton,
+      },
+    })
+
+    swiperInstance.on('slideChange', this.#slideChangeConfig(swiperInstance, slider, options))
+  }
+
+  #prepareSwiperSettings(slider) {
+    if (!slider) return
 
     const loopMobile = Boolean(slider?.dataset.mobileloop)
-    const fadeEffect = Boolean(slider?.dataset.fadeeffect)
+    const fadeEffect = Boolean(slider?.dataset.fadeEffect)
     const isMobileSlider = Boolean(slider?.dataset.sliderMobile)
     const slidesPerView = Number(slider?.dataset.perview) || 3
+    const enableTextAnimation = Boolean(slider?.dataset.textAnimation)
     const speed = Number(slider?.dataset.speed)
 
     const totalSliders = slider?.querySelector(".swiper-wrapper")?.children.length
@@ -56,33 +105,38 @@ export default function initSlider() {
       slider?.previousElementSibling?.classList.contains("js-navigation")
         ? slider?.previousElementSibling
         : slider.querySelector(".js-navigation")
-    
+
     const prevButton = currentSliderNavigation?.querySelector(".js-prev") || null
     const nextButton = currentSliderNavigation?.querySelector(".js-next") || null
-    
-    if(isMobileSlider && !window.matchMedia("(max-width: 768px)").matches) {
+
+    if (isMobileSlider && window.matchMedia("(min-width: 768px)").matches) {
       return
+    }
+    if (totalSliders <= slidesPerView) {
+      this.#swiperInit(slider, {
+        slidesPerView,
+        loopMobile,
+        fadeEffect,
+        speed,
+        enableTextAnimation
+      })
+      currentSliderNavigation?.remove()
     } else {
-      if(totalSliders <= slidesPerView) {
-        swiperInit(slider, {
-          slidesPerView,
-          loopMobile,
-          fadeEffect,
-          speed
-        })
-        currentSliderNavigation?.remove()
-      } else {
-        swiperInit(slider, {
-          prevButton,
-          nextButton,
-          slidesPerView,
-          loopMobile,
-          fadeEffect,
-          speed
-        })
-      }
+      this.#swiperInit(slider, {
+        prevButton,
+        nextButton,
+        slidesPerView,
+        loopMobile,
+        fadeEffect,
+        speed,
+        enableTextAnimation
+      })
     }
   }
-  
-  sliders?.forEach((slider) => prepareSwiperSettings(slider))
+
+  initializeSliders() {
+    return this.sliders.forEach((slider) => this.#prepareSwiperSettings(slider))
+  }
 }
+
+export default Slider

@@ -141,7 +141,7 @@
 
   &__slide-counter {
     &::before {
-      content: "0"counter(simple-slider-counter)"";
+      content: "0" counter(simple-slider-counter) "";
       display: flex;
       align-items: center;
       justify-content: center;
@@ -180,31 +180,4 @@
     }
 
   }
-}
-
-.container {
-}
-
-.js-navigation {
-}
-
-.slider-navigation-button {
-}
-
-.slider-navigation-button--black {
-}
-
-.js-prev {
-}
-
-.js-next {
-}
-
-.js-init-slider {
-}
-
-.swiper-wrapper {
-}
-
-.swiper-slide {
 }

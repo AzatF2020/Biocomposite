@@ -1,0 +1,32 @@
+mixin advantages(sliders)
+  section.advantages
+    .container
+      .advantages__content
+        .advantages__slider-navigation.js-navigation
+          button.slider-navigation-button.js-prev
+            img(src="assets/icons/left-white-arrow.svg" alt="icon")
+          button.slider-navigation-button.js-next
+            img(src="assets/icons/right-white-arrow.svg" alt="icon")
+        .advantages__slider.js-init-slider(data-fade-effect="true" data-perview="1" data-text-animation="true")
+          .swiper-wrapper
+            each slide in sliders
+              .swiper-slide
+                .advantages__slide
+                  img(src=slide.imgSrc alt="image").advantages__overlay
+                  .advantages__slide-upper
+                    .text-wrapper
+                      p.advantages__slide-uppertitle= slide.uppertitle
+                    .text-wrapper
+                      h3.advantages__slide-title= slide.title
+                  .advantages__slide-bottom
+                    .advantages__slide-column
+                      ul.advantages__slide-info
+                        each list in slide.lists
+                          li.advantages__slide-list
+                            .text-wrapper
+                              p.advantages__slide-list-number= list.number
+                            .text-wrapper
+                              p.advantages__slide-list-text= list.text
+                    .advantages__slide-column
+                      .text-wrapper
+                        p.advantages__slide-text= slide.text
