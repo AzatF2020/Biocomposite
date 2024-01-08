@@ -5,6 +5,7 @@ include ../components/scroll-slider
 include ../components/decisions
 include ../components/advantages
 include ../components/slider-hover
+include ../components/info-block
 
 block constants
   - const title = "Технологии"
@@ -28,4 +29,8 @@ block page
   +slider-hover(
     technologies.sliderHover.title,
     technologies.sliderHover.sliders
+  )
+  +info-block(
+    technologies.infoBlock.title,
+    technologies.infoBlock.list
   )

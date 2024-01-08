@@ -8,6 +8,7 @@ import initDetailProductSlots from "./modules/getInfoDetailProduct";
 import scrollingIncrease from "./modules/scrollingIncrease";
 import initHorizontalScrollingSlider from "./modules/horizontalScrolling";
 import occurrenceCardsDecision from "./modules/occurrenceCardsDecision";
+import enableParallax from "./vendor/enableParallax";
 import Slider from "./vendor/slider";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollingIncrease()
   initHorizontalScrollingSlider()
   occurrenceCardsDecision()
+  enableParallax()
 
   const sliderInstance = new Slider()
   sliderInstance.initializeSliders()

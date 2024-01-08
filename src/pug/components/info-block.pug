@@ -1,0 +1,11 @@
+mixin info-block(title, data)
+  section.info-block
+    .container
+      .parallax-wrapper.js-parallax
+        .info-block__content
+          h2.info-block__title= title
+          ul.info-block__info
+            each list in data
+              li.info-block__list
+                p.info-block__list-number= list.number
+                p.info-block__list-text= list.text
