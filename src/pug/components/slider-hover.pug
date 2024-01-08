@@ -13,8 +13,8 @@ mixin slider-hover(title, sliders)
             each slide in sliders
               .swiper-slide
                 .slider-hover__slide
-                  span.slider-hover__slide-tag= slide.tag
                   img(alt="slide image" src=slide.imgSrc).slider-hover__slide-image
                   .slider-hover__slide-info
                     span.slider-hover__slide-counter
-                    p.slider-hover__slide-text= slide.text
+                    .slider-hover__slide-wrapper-text
+                      p.slider-hover__slide-text= slide.text

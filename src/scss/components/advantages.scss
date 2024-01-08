@@ -2,7 +2,7 @@
   margin-bottom: 2rem;
   &__content {
     width: 100%;
-    height: 55rem;
+    height: max-content;
     border-radius: 3rem;
   }
 
@@ -28,7 +28,8 @@
     height: 100%;
     border-radius: 3.5rem;
     overflow: hidden;
-    padding: 4rem var(--content-padding-two) 2rem;
+    padding: 4rem var(--content-padding-two) 8rem;
+    min-height: 55rem;
   }
 
   &__overlay {

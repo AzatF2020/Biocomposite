@@ -4,6 +4,7 @@ include ../components/multi-video-block
 include ../components/scroll-slider
 include ../components/decisions
 include ../components/advantages
+include ../components/slider-hover
 
 block constants
   - const title = "Технологии"
@@ -23,4 +24,8 @@ block page
   )
   +advantages(
     technologies.advantages.sliders
+  )
+  +slider-hover(
+    technologies.sliderHover.title,
+    technologies.sliderHover.sliders
   )
