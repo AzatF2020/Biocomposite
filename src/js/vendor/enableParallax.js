@@ -9,16 +9,16 @@ export default function enableParallax() {
   if (!parallaxContainers.length) return
 
   function initParallaxAnimation(wrapper) {
-    const tl = gsap.timeline({})
+    const tl = gsap.timeline({ease: "none"})
 
     tl.to(wrapper, {
       duration: 1,
-      y: () => wrapper.offsetHeight * 0.2,
+      y: () => wrapper.offsetHeight * 0.15,
       scrollTrigger: {
         trigger: wrapper,
         start: "top 0%",
         end: "bottom top",
-        scrub: true,
+        scrub: 1.25,
       }
     });
   }

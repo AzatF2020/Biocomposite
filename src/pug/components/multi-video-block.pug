@@ -1,22 +1,23 @@
 mixin multi-video-block(videos)
-  section.multi-video-block
+  section.multi-video-block.js-multi-video-block
     .container
       .multi-video-block__content
         each video in videos
           if video.large
-            .multi-video-block__wrapper-large
+            .multi-video-block__wrapper-large.js-video-wrapper
               video(muted="" loop playsinline preload="none").multi-video-block__video.lazyload
                 source(src=video.videoSrc type="video/mp4")
               .multi-video-block__wrapper-bottom.multi-video-block__wrapper-bottom--large
-                h1.multi-video-block__title= video.name
+                .text-wrapper
+                  h1.multi-video-block__title= video.name
                 button.multi-video-block__button-controller
                   img(alt="icon video" src="assets/icons/video-triangle.svg")
 
         .multi-video-block__video-bottom-container
           each video in videos
             if !video.large
-              .multi-video-block__wrapper
-                video(muted="" data-autoplay="" loop playsinline preload="none").multi-video-block__video.lazyload
+              .multi-video-block__wrapper.js-video-wrapper
+                video(muted="" loop playsinline preload="none").multi-video-block__video.lazyload
                   source(src=video.videoSrc type="video/mp4")
                 .multi-video-block__wrapper-bottom
                   h5.multi-video-block__wrapper-bottom-title= video.name

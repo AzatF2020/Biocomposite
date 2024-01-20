@@ -25,6 +25,10 @@
     height: 4.8rem;
 
     margin-bottom: 2rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.3rem;
+    }
   }
 
   &__title {
@@ -39,6 +43,16 @@
     max-width: 76rem;
 
     margin-bottom: 8rem;
+
+    @include breakpoint(tablet) {
+      font-family: "PP Pangram Sans Rounded", sans-serif;
+      font-size: var(--fz-h6);
+      font-weight: 400;
+      line-height: 90%;
+      letter-spacing: -.0175rem;
+      margin-bottom: 5rem;
+      max-width: 28.5rem;
+    }
   }
 
   &__navigation-bar {
@@ -60,10 +74,19 @@
     height: 10rem;
     padding-left: 8.5rem;
     padding-right: 1rem;
-    column-gap: 24rem;
 
     margin-bottom: 6rem;
+    overflow: hidden;
     counter-reset: scroll-slider;
+
+    @include breakpoint(laptop) {
+      padding: 0;
+    }
+
+    @include breakpoint(tablet) {
+      overflow: visible;
+      margin-bottom: 4rem;
+    }
   }
 
   &__navigation-line {
@@ -74,6 +97,10 @@
     transform: translateY(-50%);
     left: 0;
     right: 0;
+
+    @include breakpoint(laptop) {
+      display: none;
+    }
 
     &::before {
       content: "";
@@ -102,6 +129,36 @@
     }
   }
 
+  &__navigation-bar-slider {
+    @include breakpoint(laptop) {
+      width: 100%;
+      max-width: 60rem;
+    }
+
+    @include breakpoint(small-tablet) {
+      max-width: 30rem;
+    }
+
+    .swiper-wrapper {
+      @include breakpointMF(desktop) {
+        display: flex;
+        align-items: center;
+        column-gap: 24rem;
+      }
+    }
+
+    .swiper-slide {
+      width: fit-content;
+    }
+
+    .swiper-slide-active > .scroll-slider__navigation-name  {
+      @include breakpoint(laptop) {
+        transition: .3s ease background-color;
+        background-color: var(--green-2);
+      }
+    }
+  }
+
   &__navigation-name {
     background-color: var(--white);
     width: fit-content;
@@ -118,12 +175,47 @@
 
     color: var(--dark-green);
     font-family: "PP Pangram Sans Rounded", sans-serif;
-    font-size: var(--fz-i-t6);
+    font-size: var(--fz-p-t3);
     font-style: normal;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+
+    @include breakpoint(small-laptop) {
+      width: fit-content;
+
+      color: var(--dark-green);
+      font-family: "PP Pangram Sans Rounded", sans-serif;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+
+      text-transform: uppercase;
+
+      border-radius: 3rem;
+      padding: 1.2rem 1.5rem;
+      height: fit-content;
+    }
+
+    @include breakpoint(small-tablet) {
+      width: fit-content;
+
+      color: var(--dark-green);
+      font-family: "PP Pangram Sans Rounded", sans-serif;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      text-transform: uppercase;
+
+      border-radius: 3rem;
+      padding: 1.2rem 1.5rem;
+      height: fit-content;
+    }
 
     &::before {
       content: "0"counter(scroll-slider)"";
@@ -147,6 +239,10 @@
 
       transition: background-color .75s ease,
                   transform .75s ease;
+
+      @include breakpoint(laptop) {
+        display: none;
+      }
     }
 
     &--active {
@@ -158,8 +254,13 @@
   }
 
   &__slider-section {
-    height: 85vh !important;
-    max-height: none !important;
+    height: 85vh;
+    max-height: none;
+
+    @include breakpoint(laptop) {
+      height: fit-content;
+      overflow-y: hidden;
+    }
   }
 
   &__slider {
@@ -167,9 +268,15 @@
     padding: 0 var(--content-padding-two);
     overflow-x: hidden;
     overflow-y: visible;
-    max-height: 70.5lvh;
+    max-height: 70.5vh;
     height: 100%;
     padding-bottom: 2.5rem;
+
+    @include breakpoint(laptop) {
+      max-width: none;
+      height: auto;
+      overflow-y: hidden;
+    }
 
     .swiper-slide {
       @include breakpointMF(tablet) {
@@ -185,18 +292,27 @@
     flex-direction: row;
     align-items: flex-end;
     column-gap: 4rem;
+
+    @include breakpoint(laptop) {
+      align-items: flex-end;
+      flex-direction: column;
+    }
   }
 
   &__slide--reversed {
-    flex-direction: row-reverse;;
+    @include breakpointMF(desktop) {
+      flex-direction: row-reverse;
+    }
   }
 
   &__slide--reversed > &__slide-column:last-child {
-    align-items: flex-start;
-    padding-right: 0;
-    margin-top: 0;
-    flex-direction: column;
-    justify-content: space-between;
+    @include breakpointMF(desktop) {
+      align-items: flex-start;
+      padding-right: 0;
+      margin-top: 0;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
   &__slide-column {
@@ -212,6 +328,17 @@
       padding-right: 14rem;
       align-items: flex-end;
       margin-top: 10rem;
+
+      @include breakpoint(laptop) {
+        margin-top: 0;
+        padding-right: 0;
+        align-items: flex-start;
+      }
+    }
+
+    @include breakpoint(laptop) {
+      margin-top: 0;
+      width: 100%;
     }
   }
 
@@ -226,6 +353,10 @@
     border-radius: 3rem;
     overflow: hidden;
     padding-bottom: 2rem;
+
+    @include breakpoint(laptop) {
+      display: none;
+    }
 
     img {
       width: 100%;
@@ -293,6 +424,12 @@
     letter-spacing: -0.1rem;
     width: 100%;
     max-width: 60rem;
+
+    @include breakpoint(small-tablet) {
+      font-size: 1.8rem;
+      letter-spacing: -.03rem;
+      max-width: 32rem;
+    }
   }
 
   &__slide-text {
@@ -305,6 +442,16 @@
     width: 100%;
     max-width: 38.5rem;
     margin-top: 4rem;
+
+    @include breakpoint(small-tablet) {
+      margin-left: auto;
+      margin-top: 2rem;
+      font-size: var(--fz-i-t6);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      max-width: 19rem;
+    }
   }
 
   &__slide-info-percentage {
@@ -312,6 +459,10 @@
     flex-direction: column;
     margin-top: 4rem;
     padding-bottom: 2rem;
+
+    @include breakpoint(small-tablet) {
+      margin-left: auto;
+    }
   }
 
   &__slide-percentage-number {
@@ -322,6 +473,10 @@
     font-weight: 600;
     line-height: 90%;
     letter-spacing: -0.16rem;
+
+    @include breakpoint(small-tablet) {
+      font-size: var(--fz-h5);
+    }
   }
 
   &__slide-percentage-text {
@@ -333,6 +488,14 @@
     line-height: 120%;
     width: 100%;
     max-width: 20rem;
+
+    @include breakpoint(small-tablet) {
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      max-width: 14rem;
+    }
   }
 
   &__slide-list-label {

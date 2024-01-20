@@ -19,7 +19,7 @@ export default function initHorizontalScrollingSlider() {
     })
   }
 
-  if (!slidersTrigger.length || window.matchMedia("(max-width: 768px)").matches) return
+  if (!slidersTrigger.length || window.matchMedia("(max-width: 1200px)").matches) return
 
   function setActiveCircleClass(circleBarElements, sliderInstance) {
     circleBarElements?.forEach((circle, circleIndex) => {

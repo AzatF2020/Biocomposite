@@ -13,6 +13,14 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: normal;
+      padding: 0;
+    }
   }
 
   &__title {
@@ -25,7 +33,12 @@
     letter-spacing: -0.16rem;
 
     width: 100%;
-    max-width: 67rem;
+    max-width: 76rem;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-h5);
+      font-weight: 400;
+    }
   }
 
   &__wrapper-large {
@@ -38,15 +51,20 @@
     bottom: 0;
     overflow-x: hidden;
     border-radius: 3rem;
+    transition: .4s ease height;
 
     .multi-video-block__button-controller {
-      @include breakpointMF(tablet) {
+      @include breakpointMF(laptop) {
         display: none;
       }
+      display: flex;
     }
 
-    video {
-
+    @include breakpoint(tablet) {
+      position: relative;
+      width: 100%;
+      padding: 1rem;
+      height: 17rem;
     }
   }
 
@@ -56,6 +74,15 @@
     column-gap: 2rem;
     position: relative;
     z-index: 1;
+
+    @include breakpoint(tablet) {
+      flex-direction: column;
+      justify-content: normal;
+      align-items: flex-start;
+      row-gap: 2rem;
+      column-gap: 0;
+      width: 100%;
+    }
   }
 
   &__video {
@@ -90,10 +117,18 @@
   &__wrapper-bottom--large {
     position: relative;
     z-index: 1;
+
+    @include breakpoint(tablet) {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
   }
 
   &__button-controller {
-    width: 4.8rem;
+    min-width: 4.8rem;
     height: 4.8rem;
     border-radius: 4.8rem;
     background-color: var(--green-2);
@@ -110,6 +145,15 @@
       width: 1.3rem;
       height: auto;
       object-fit: cover;
+
+      @include breakpoint(tablet) {
+        width: 1.2rem;
+      }
+    }
+
+    @include breakpoint(tablet) {
+      min-width: 4rem;
+      height: 4rem;
     }
   }
 
@@ -117,18 +161,28 @@
     width: 38.5rem;
     position: relative;
     border-radius: 3rem;
-    height: 32.5rem;
     padding: 1rem;
     overflow: hidden;
+    height: 32rem;
 
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
+
+    @include breakpoint(tablet) {
+      width: 100%;
+      height: 17rem;
+    }
   }
-}
 
-.container {
-}
+  .js-video-wrapper {
+    @include breakpoint(tablet) {
+      transition: .3s ease all;
+      min-height: auto;
+    }
+  }
 
-.lazyload {
+  .js-video-wrapper.--active {
+    height: 57rem;
+  }
 }
