@@ -1,9 +1,11 @@
 .advantages {
   margin-bottom: 2rem;
+
   &__content {
     width: 100%;
     height: max-content;
     border-radius: 3rem;
+    position: relative;
   }
 
   &__slider {
@@ -20,6 +22,12 @@
     right: 2rem;
     column-gap: .4rem;
     z-index: 2;
+
+    @include breakpoint(tablet) {
+      position: absolute;
+      top: auto;
+      bottom: 2rem;
+    }
   }
 
   &__slide {
@@ -30,11 +38,15 @@
     overflow: hidden;
     padding: 4rem var(--content-padding-two) 8rem;
     min-height: 55rem;
+
+    @include breakpoint(tablet) {
+      padding: 4rem var(--content-padding-two) 9.5rem;
+    }
   }
 
   &__overlay {
     width: 100%;
-    height: auto;
+    height: inherit;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -50,6 +62,11 @@
     align-items: flex-start;
     row-gap: 2rem;
     margin-bottom: 15rem;
+
+    @include breakpoint(tablet) {
+      row-gap: 4rem;
+      margin-bottom: 4rem;
+    }
   }
 
   &__slide-uppertitle {
@@ -61,6 +78,21 @@
     line-height: 100%;
     letter-spacing: .1rem;
     text-transform: uppercase;
+
+    @include breakpoint(tablet) {
+      max-width: 25.5rem;
+    }
+
+    @include breakpoint(small-mobile) {
+      font-size: 1.1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+      width: 100%;
+      max-width: 20.5rem;
+    }
   }
 
   &__slide-title {
@@ -71,25 +103,38 @@
     font-weight: 500;
     line-height: 90%;
     letter-spacing: -.3rem;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-h5);
+      font-style: normal;
+      letter-spacing: 0;
+    }
+
+    @include breakpoint(tablet) {
+      max-width: 25.5rem;
+    }
   }
 
   &__slide-bottom {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
-  &__slide-column {
-
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      row-gap: 6rem;
+    }
   }
 
   &__slide-info {
     display: flex;
     align-items: flex-start;
     column-gap: 5rem;
-  }
 
-  &__slide-list {
-
+    @include breakpoint(tablet) {
+      column-gap: 3rem;
+    }
   }
 
   &__slide-list-number {
@@ -101,6 +146,11 @@
     line-height: 90%;
     letter-spacing: -.16rem;
     margin-bottom: 1.5rem;
+
+    @include breakpoint(tablet) {
+      font-family: "PP Pangram Sans Rounded";
+      font-size: var(--fz-h5);
+    }
   }
 
   &__slide-list-text {
@@ -112,6 +162,12 @@
     line-height: 120%;
     width: 100%;
     max-width: 21.3rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.3rem;
+      font-style: normal;
+      max-width: 14rem;
+    }
   }
 
   &__slide-text {
@@ -125,5 +181,11 @@
 
     width: 100%;
     max-width: 40.1rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.3rem;
+      line-height: 110%;
+      max-width: 27.5rem;
+    }
   }
 }

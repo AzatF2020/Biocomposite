@@ -2,10 +2,12 @@
   margin-bottom: 2rem;
   &__content {
     padding: var(--content-padding-two);
+    @include breakpointMF(laptop) {
+      min-height: calc(100vh - 8.8rem);
+      min-height: calc(100svh - 8.8rem);
+    }
 
     width: 100%;
-    min-height: calc(100vh - 8.8rem);
-    min-height: calc(100svh - 8.8rem);
     border-radius: 3rem;
     margin-top: 8.8rem;
     position: relative;

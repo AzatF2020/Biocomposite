@@ -1,9 +1,17 @@
 .decisions {
   margin-bottom: 12rem;
 
+  @include breakpoint(tablet) {
+    margin-bottom: 6rem;
+  }
+
   &__content {
     padding: var(--content-padding-two);
     border-radius: 3rem;
+
+    @include breakpoint(tablet) {
+      padding: 0;
+    }
   }
 
   &__title {
@@ -17,17 +25,38 @@
     width: 100%;
     max-width: 133rem;
     margin-bottom: 6rem;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-h6);
+      font-style: normal;
+      line-height: 90%;
+      letter-spacing: -.175rem;
+      max-width: 31.7rem;
+    }
   }
 
   &__slider {
     counter-set: decisions-counter;
+    width: 100%;
+    @include breakpoint(small-tablet) {
+      max-width: 53rem;
+    }
+
     .swiper-wrapper {
-      @include breakpointMF(tablet) {
+      @include breakpointMF(laptop) {
         display: grid;
         grid-template-columns: repeat(9, minmax(0, 1fr));
         grid-auto-rows: auto;
         row-gap: 2rem;
         column-gap: 2rem;
+      }
+
+      @include breakpointMF(tablet) {
+        display: grid;
+        grid-template-columns: repeat(9, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        row-gap: 1rem;
+        column-gap: 1rem;
       }
     }
 
@@ -37,6 +66,11 @@
       border-radius: 2rem;
       height: 38rem;
       counter-increment: decisions-counter;
+
+      @include breakpoint(tablet) {
+        height: 26.5rem;
+        max-width: 26.5rem;
+      }
     }
 
     .swiper-slide:nth-child(1) {
@@ -93,6 +127,8 @@
       background: var(--white);
       width: 8rem;
       height: 8rem;
+      position: relative;
+      z-index: 1;
 
       color: var(--black);
       font-family: "PP Pangram Sans Rounded", sans-serif;
@@ -101,6 +137,14 @@
       font-weight: 500;
       line-height: 100%;
       letter-spacing: -.16rem;
+
+      @include breakpoint(tablet) {
+        width: 4.8rem;
+        height: 4.8rem;
+        font-size: var(--fz-i-t6);
+        letter-spacing: 0;
+        line-height: 0;
+      }
     }
   }
 
@@ -115,15 +159,18 @@
     justify-content: center;
     position: relative;
     left: -2rem;
+
+    @include breakpoint(tablet) {
+      width: 4.8rem;
+      height: 4.8rem;
+      left: -.5rem;
+    }
   }
 
   &__slide-icon {
     width: 1.9rem;
     height: 2.4rem;
     object-fit: contain;
-  }
-
-  &__slide-bottom {
   }
 
   &__slide-text {
@@ -133,5 +180,15 @@
     font-weight: 600;
     line-height: 110%;
     letter-spacing: -.1rem;
+    width: 100%;
+
+    @include breakpoint(laptop) {
+      font-size: var(--fz-p-t3);
+    }
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-i-t6);
+      letter-spacing: 0;
+    }
   }
 }
