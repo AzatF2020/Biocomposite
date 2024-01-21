@@ -1,0 +1,24 @@
+mixin process(title, bgImage, sliders)
+  section.process
+    .container
+      .process__content
+        if(bgImage)
+          div(style="background-image: url(" + bgImage + ")").process__overlay-image
+        h2.process__title= title
+        .process__slider.js-init-slider(data-slider-mobile="true")
+          .swiper-wrapper.js-decision-cards-animation
+            each slide in sliders
+              .swiper-slide
+                .process__slide
+                  if(slide.bgImage)
+                    img(src=slide.bgImage alt="slide-image").process__slide-image
+                  .process__slide-upper
+                    span.process__slide-counter
+                    span.process__slide-icon-wrapper
+                      img(src=slide.iconSrc alt="icon").process__slide-icon
+                  .process__slide-bottom
+                    if(slide.title)
+                      p.process__slide-title= slide.title
+                    if(slide.text)
+                      p.process__slide-text= slide.text
+

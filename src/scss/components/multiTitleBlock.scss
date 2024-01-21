@@ -1,0 +1,197 @@
+.multi-title-block {
+  &__content {
+    overflow: hidden;
+    width: 100%;
+    min-height: calc(100vh - 2rem);
+    position: relative;
+
+    padding: 3.8rem 2rem;
+    margin: 2rem 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 3rem;
+
+    @include breakpoint(tablet) {
+      padding: 30px 15px;
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      width: 100%;
+      background: rgba(0, 0, 0, .4);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      z-index: -1;
+      border-radius: var(--block-radius);
+    }
+  }
+
+  &__bg-video {
+    width: 100%;
+    background-size: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    height: 100vh;
+    border-radius: var(--block-radius);
+  }
+
+  &__title {
+    color: var(--light-green);
+
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h1);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -0.16rem;
+    position: relative;
+    top: 20rem;
+
+    @include breakpoint(laptop) {
+      position: static;
+    }
+
+    span {
+      display: block;
+    }
+
+    @include breakpoint(laptop) {
+      font-size: var(--fz-h5);
+    }
+  }
+  &__title-upper {
+    width: 100%;
+    max-width: 80.3rem;
+    opacity: 0;
+
+    @include breakpoint(laptop) {
+      position: static;
+      max-width: 40rem;
+    }
+
+    @include breakpoint(small-tablet) {
+      max-width: 32rem;
+    }
+  }
+
+  &__title-bottom {
+    width: 100%;
+    max-width: 84.4rem;
+    position: relative;
+    left: 55rem;
+    bottom: 9.5rem;
+    opacity: 0;
+    @include breakpoint(laptop) {
+      position: static;
+      max-width: 60rem;
+      max-width: 32rem;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 16rem;
+
+    margin-top: 11.5rem;
+    opacity: 0;
+
+    @include breakpoint(laptop) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      column-gap: 0;
+      margin-top: 110px;
+    }
+    @include breakpoint(small-tablet) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      column-gap: 0;
+      margin-top: 50px;
+    }
+  }
+
+  &__text {
+    color: var(--light-green);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t5);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    width: 100%;
+    max-width: 38.5rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.3rem;
+      line-height: 110%;
+      max-width: 22rem;
+    }
+  }
+
+  &__link-hook {
+    display: flex;
+    overflow: hidden;
+    height: 4rem;
+    width: 3rem;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(tablet) {
+      min-height: 2.5rem;
+    }
+
+    svg {
+      width: 2.6rem;
+      height: 3rem;
+      animation: aniArrow01 2s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.2s;
+
+      @include breakpoint(tablet) {
+        width: 2.2rem;
+        height: 2.4rem;
+      }
+      @include breakpoint(small-tablet) {
+        width: 1.7rem;
+        height: 1.9rem;
+      }
+    }
+  }
+
+  &__circle {
+    width: 164.6rem;
+    height: 164.6rem;
+    border-radius: 50%;
+    position: absolute;
+    top: -82rem;
+    right: -82rem;
+    border: 22rem solid rgba(255, 255, 255, 0.10);
+
+    @include breakpoint(tablet) {
+      width: 55rem;
+      height: 55rem;
+      border: 10rem solid rgba(255, 255, 255, 0.10);
+      top: -22.5rem;
+      right: -22.5rem;
+    }
+  }
+
+  @keyframes aniArrow01 {
+    0% {
+      transform:translateY(-50px);
+    }
+    100% {
+      transform:translateY(50px);
+    }
+  }
+}

@@ -1,0 +1,32 @@
+mixin more(sliders)
+  .more
+    .container
+      .more__content
+        .more__slider-navigation.js-navigation
+          button.slider-navigation-button.slider-navigation-button--white-bg.js-prev
+            img(src="assets/icons/arrow-left-black.svg" alt="icon")
+          button.slider-navigation-button.slider-navigation-button--white-bg.js-next
+            img(src="assets/icons/arrow-right-black.svg" alt="icon")
+        .more__slider.js-init-slider(
+          data-perview="1"
+          data-fade-effect="true"
+          data-speed="1000"
+          data-text-animation="true"
+        )
+          .swiper-wrapper
+            each slide in sliders
+              .swiper-slide
+                .more__slide
+                  video.more__slide-video.lazyloaded(muted='' data-autoplay='' loop='loop' playsinline='playsinline' preload='auto' data-expand='-10')
+                    source(src=slide.videoSrc type='video/mp4')
+                  .more__slide-tags
+                    each tag in slide.tags
+                      span.more__slide-tag= tag
+                  .more__slide-bottom-info
+                    .text-wrapper
+                      h3.more__slide-title= slide.name
+                    .text-wrapper
+                      p.more__slide-text= slide.text
+                    .text-wrapper
+                      a(href="/#").more__link-more= slide.link
+

@@ -1,9 +1,27 @@
 extends ../layout/index
+
 include ../components/tags
+include ../components/multi-title-block
+include ../components/about
+include ../components/features
+include ../components/process
+include ../components/slider-hover
+include ../components/more
 
 block constants 
   - const title = "Главная"
 
-block page 
-  div.container
+block page
+  +multi-title-block()
+  +about(index.about)
+  +features(index.features)
+  +process(
+    index.process.title,
+    index.process.bgImage,
+    index.process.sliders
+  )
+  +slider-hover(index.sliderHover)
+  +more(index.sliderMediaFull)
+
+
 

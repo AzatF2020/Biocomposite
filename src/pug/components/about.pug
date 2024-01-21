@@ -1,0 +1,14 @@
+mixin about(data)
+  section.about
+    .container
+      .about__content
+        ul(data-direction="bottom").about__cards.js-decision-cards-animation
+          each card in data.cards
+            li.about__card
+              h5.about__card-upper-title= card.uppertitle
+              .about__card-images
+                img.about__card-image-main.lazyload(src=card.src alt='image')
+                img.about__card-image-bg.lazyload(src=card.srcBg alt='image')
+              .about__bottom
+                h4.about__card-title= card.title
+                p.about__card-text= card.text

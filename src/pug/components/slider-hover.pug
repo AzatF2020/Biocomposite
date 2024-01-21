@@ -1,8 +1,11 @@
-mixin slider-hover(title, sliders)
+mixin slider-hover(data)
   section.slider-hover
     .container
       .slider-hover__content
-        h2.slider-hover__title= title
+        h2.slider-hover__title= data.title
+        if(data.text)
+          .slider-hover__info
+            p.slider-hover__info-text= data.text
         .slider-hover__navigation.js-navigation
           button.slider-navigation-button.slider-navigation-button--black.js-prev
             img(src="assets/icons/arrow-left-black.svg" alt="icon")
@@ -10,7 +13,7 @@ mixin slider-hover(title, sliders)
             img(src="assets/icons/arrow-right-black.svg" alt="icon")
         .slider-hover__slider.js-init-slider(data-perview="4")
           .swiper-wrapper
-            each slide in sliders
+            each slide in data.sliders
               .swiper-slide
                 .slider-hover__slide
                   img(alt="slide image" src=slide.imgSrc).slider-hover__slide-image
