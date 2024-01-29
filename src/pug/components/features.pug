@@ -24,7 +24,9 @@ mixin features()
                   | C&ycy;&rcy;&softcy;&yacy; &pcy;&ocy;&scy;&tcy;&ucy;&pcy;&acy;&iecy;&tcy; &icy;&zcy;&nbsp;&vcy;&ocy;&zcy;&ocy;&bcy;&ncy;&ocy;&vcy;&lcy;&yacy;&iecy;&mcy;&ycy;&khcy; &icy;&scy;&tcy;&ocy;&chcy;&ncy;&icy;&kcy;&ocy;&vcy;
           li.features__column
             .features__image-wrapper
-              img.features__image(src='assets/img/green-logo.png' alt='icon')
+              video(playsinline="true" webkit-playsinline="true" preload="auto" muted="muted").features__video.js-video-background
+                source(src="assets/video/video-logo.mp4" type="video/mp4")
+              div#container
           li.features__column
             .features__card
               svg(xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewbox='0 0 48 48' fill='none')

@@ -1,7 +1,7 @@
 header.header
   .header__content
     .header__left-column
-      a(href="/#").header__logo-wrapper
+      a(href="/").header__logo-wrapper
         img(src="assets/icons/logo.svg" alt="logotype").header__logo
       a(href="/#").header__button-lang En
     a(href="/#").header__button-products
@@ -10,11 +10,11 @@ header.header
         img(src="assets/icons/arrow-right-black.svg" alt="icon").header__button-icon
     .header__right-column
       nav.header__navigation
-        a(href="/#").header__link Производство
+        a(href="/technologies.html").header__link Производство
         a(href="/#").header__link Решения для отраслей
         a(href="/#").header__link Контакты
 
-      button.header__button-contact
+      button(data-modal="#modal-contact").header__button-contact
         span.header__button-text Связаться
         .header__button-wrapper
           include ../../assets/icons/sms.svg

@@ -1,12 +1,8 @@
 .more {
   width: 100%;
-  margin: 0 auto 13.5rem;
+  margin: 0 auto 2rem;
   overflow: hidden;
   position: relative;
-
-  @include breakpoint(tablet) {
-    margin: 0 auto 6rem;
-  }
 
   &__content {
     position: relative;

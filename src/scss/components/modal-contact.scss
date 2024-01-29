@@ -1,0 +1,256 @@
+.modal-contact {
+  width: 106rem;
+  display: flex;
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    max-width: 38rem;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h4);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.1rem;
+    width: 100%;
+    max-width: 47.5rem;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-h5);
+      line-height: 90%;
+      max-width: 31rem;
+    }
+  }
+
+  &__form {
+    margin-top: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 3rem;
+    width: 100%;
+    max-width: 38rem;
+
+    @include breakpoint(tablet) {
+      margin-top: 4rem;
+    }
+  }
+
+  &__form-control {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    position: relative;
+
+    @include breakpoint(tablet) {
+      width: 100%;
+    }
+  }
+
+  &__form-label {
+    color: var(--light-green);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.3px;
+  }
+
+  &__form-input {
+    width: 52rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+    background-color: var(--grey);
+    border-radius: 10rem;
+
+    color: var(--light-green);
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.3px;
+
+    @include breakpoint(laptop) {
+      width: 100%;
+      max-width: 52rem;
+    }
+
+    @include breakpoint(tablet) {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  &__form-bottom {
+    width: 100%;
+    max-width: 52rem;
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 3rem;
+
+    @include breakpoint(tablet) {
+      row-gap: 2rem;
+    }
+  }
+
+  &__bottom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    width: 11.3rem;
+    height: 4.8rem;
+    background-color: var(--green-2);
+
+    color: var(--black);
+
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: 0.15px;
+    transition: .3s ease background-color;
+
+    &:hover {
+      background-color: var(--green-1);
+    }
+
+    @include breakpoint(tablet) {
+      width: 100%;
+      font-weight: 500;
+    }
+  }
+
+  &__form-checkmark-wrapper {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 1.2rem;
+    position: relative;
+    @include breakpoint(mobile) {
+      align-items: center;
+    }
+  }
+
+  &__form-checkmark-label {
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    font-size: 2.2rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &__form-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    border-radius: .2rem;
+    background-color: var(--grey);
+  }
+
+  &__form-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  &__form-checkmark-label .modal-contact__form-checkbox:checked ~ .modal-contact__form-checkmark {
+    background-color: var(--green-1);
+  }
+
+  &__form-checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  &__form-checkmark-label .modal-contact__form-checkbox:checked ~ .modal-contact__form-checkmark:after {
+    display: block;
+  }
+
+  &__form-checkmark-label .modal-contact__form-checkmark:after {
+    left: .65rem;
+    top: .25rem;
+    width: .7rem;
+    height: 1.3rem;
+    border: solid white;
+    border-width: 0 .25rem .25rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &__form-text {
+    color: rgba(255, 255, 255, 0.30);
+
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.15px;
+    width: 100%;
+
+    @include breakpoint(laptop) {
+      max-width: 35rem;
+    }
+
+    @include breakpoint(tablet) {
+      font-size: 1.2rem;
+    }
+
+    a {
+      color: var(--white);
+      font-family: "Inter", sans-serif;
+      font-size: var(--fz-i-t6);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: 0.15px;
+      text-decoration: underline;
+      transition: .3s ease color;
+      cursor: pointer;
+
+      @include breakpoint(tablet) {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        color: var(--green-2);
+      }
+    }
+  }
+
+  .parsley-errors-list {
+    color: red;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    position: absolute;
+    bottom: -2rem;
+
+    @include breakpoint(tablet) {
+      bottom: -1.5rem;
+    }
+  }
+}

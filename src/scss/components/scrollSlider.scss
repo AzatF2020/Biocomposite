@@ -277,10 +277,10 @@
     width: 100%;
     padding: 0 var(--content-padding-two);
     overflow-x: hidden;
-    overflow-y: visible;
     max-height: 70.5vh;
     height: 100%;
     padding-bottom: 2.5rem;
+    overflow: hidden;
 
     @include breakpoint(laptop) {
       max-width: none;
@@ -546,6 +546,7 @@
     line-height: 120%;
     width: 100%;
     max-width: 20rem;
+    margin-top: 2rem;
 
     @include breakpoint(small-tablet) {
       font-size: 1.3rem;

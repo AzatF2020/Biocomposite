@@ -1,0 +1,162 @@
+.partners {
+  width: 100%;
+  &__content {
+    background-color: var(--white);
+    border-radius: 2rem;
+    padding: var(--content-padding-two);
+
+    @include breakpoint(tablet) {
+      padding: 4rem var(--content-padding-two) 4rem;
+    }
+  }
+
+  &__title {
+    color: var(--black);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h2);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    letter-spacing: -.3rem;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-h6);
+      letter-spacing: -.175rem;
+    }
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 70rem;
+
+    @include breakpoint(laptop) {
+      height: 50rem;
+    }
+  }
+
+  &__icon-wrapper {
+    position: absolute;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      top: 5rem;
+      left: 0;
+      width: 25rem;
+      height: 25rem;
+      @include breakpoint(laptop) {
+        width: 11.4rem;
+        height: 11.4rem;
+        left: 1rem;
+      }
+    }
+    &:nth-child(2) {
+      bottom: 5rem;
+      left: 10rem;
+      width: 19rem;
+      height: 19rem;
+      @include breakpoint(laptop) {
+        width: 7.6rem;
+        height: 7.6rem;
+        left: 0;
+        top: 20rem;
+        bottom: auto;
+      }
+    }
+    &:nth-child(3) {
+      left: 30rem;
+      top: 10rem;
+      width: 39.5rem;
+      height: 39.5rem;
+
+      @include breakpoint(laptop) {
+        width: 14.7rem;
+        height: 14.7rem;
+        left: auto;
+        right: 2rem;
+        top: 3rem;
+      }
+    }
+    &:nth-child(4) {
+      left: 76.5rem;
+      top: 5rem;
+      width: 25rem;
+      height: 25rem;
+      @include breakpoint(laptop) {
+        width: 8.8rem;
+        height: 8.8rem;
+        left: 10rem;
+        top: 27rem;
+      }
+    }
+    &:nth-child(5) {
+      left: 70rem;
+      bottom: 5rem;
+      width: 15.6rem;
+      height: 15.6rem;
+
+      @include breakpoint(laptop) {
+        width: 6.4rem;
+        height: 6.4rem;
+        left: auto;
+        right: 4rem;
+        top: 20rem;
+      }
+    }
+    &:nth-child(6) {
+      right: 42.5rem;
+      bottom: 10rem;
+      width: 23rem;
+      height: 23rem;
+
+      @include breakpoint(laptop) {
+        right: 4rem;
+        left: auto;
+        width: 10.5rem;
+        height: 10.5rem;
+        bottom: 4rem;
+        bottom: 0rem;
+      }
+    }
+    &:nth-child(7) {
+      right: 30rem;
+      top: 15rem;
+      width: 19rem;
+      height: 19rem;
+
+      @include breakpoint(laptop) {
+        right: 0;
+        top: 30rem;
+        width: 7rem;
+        height: 7rem;
+      }
+    }
+    &:nth-child(8) {
+      right: 5rem;
+      top: 5rem;
+      width: 12.5rem;
+      height: 12.5rem;
+
+      @include breakpoint(laptop) {
+        width: 5.9rem;
+        height: 5.9rem;
+        top: 18rem;
+        left: 10rem;
+      }
+    }
+    &:nth-child(9) {
+      right: 0;
+      bottom: 5rem;
+      width: 34rem;
+      height: 34rem;
+
+      @include breakpoint(laptop) {
+        width: 13rem;
+        height: 13rem;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+

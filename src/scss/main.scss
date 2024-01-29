@@ -7,6 +7,11 @@
 @import "utils/fontface";
 @import "utils/global";
 
+@import "components/modal";
+@import "components/modal-contact";
+@import "components/modal-success";
+@import "components/modal-error";
+
 @import "components/loader";
 @import "components/header";
 @import "components/footer";
@@ -32,6 +37,7 @@
 @import "components/features";
 @import "components/process";
 @import "components/more";
+@import "components/partners";
 
 @import "pages/solutions/intro";
 @import "pages/contacts/contacts";

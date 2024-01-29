@@ -8,7 +8,7 @@
   &__content {
     padding: 6rem var(--content-padding-two) 0;
     width: 100%;
-    background: var(--green-2);
+    background: #6fee8a;
     color: var(--black);
     border-radius: 3rem;
 
@@ -211,11 +211,12 @@
     }
   }
 
-  &__image {
+  &__video {
     object-fit: cover;
     width: 52rem;
     height: auto;
     position: absolute;
+    transform: scale(1.4);
     top: 0;
     left: 0;
     right: 0;

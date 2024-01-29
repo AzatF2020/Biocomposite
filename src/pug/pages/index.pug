@@ -7,9 +7,11 @@ include ../components/features
 include ../components/process
 include ../components/slider-hover
 include ../components/more
+include ../components/partners
 
 block constants 
   - const title = "Главная"
+  - const barbaNamespace = "home"
 
 block page
   +multi-title-block()
@@ -21,7 +23,7 @@ block page
     index.process.sliders
   )
   +slider-hover(index.sliderHover)
-  +more(index.sliderMediaFull)
+  +partners(index.partners)
 
 
 

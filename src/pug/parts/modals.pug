@@ -1,0 +1,61 @@
+block modals
+  .modal(aria-hidden="false" id="modal-contact")
+    .modal__wrapper
+      .modal__window(role="dialog" aria-modal="true")
+        button(data-hystclose).modal__close
+          include ../../assets/icons/icon-close.svg
+        .modal__content
+          .modal-contact
+            h2.modal-contact__title Свяжитесь с нами и мы решим ваши задачи
+            form.modal-contact__form(action="" method="post" name="" novalidate data-need-validation)
+              label.modal-contact__form-control
+                span.modal-contact__form-label Ваше имя
+                input.modal-contact__form-input.js-input(name="name" type="text" data-parsley-minlength=2 required=true)
+              label.modal-contact__form-control
+                span.modal-contact__form-label Номер телефона
+                input.modal-contact__form-input.js-phone-input(name="name" type="phone" autocomplete="off" data-parsley-phone required=true)
+              .modal-contact__form-bottom
+                .modal-contact__form-checkmark-wrapper
+                  label.modal-contact__form-checkmark-label.js-validation-wrapper
+                    input(type="checkbox" name="policy" required=true).modal-contact__form-checkbox
+                    span.modal-contact__form-checkmark
+                  p.modal-contact__form-text
+                    | Нажимая на кнопку вы соглашаетсь с обработкой &nbsp;
+                    a(href="" target="_blank") персональных данных
+                button.modal-contact__bottom-button Отправить
+
+  .modal(aria-hidden="false" id="modal-success")
+    .modal__wrapper
+      .modal__window(role="dialog" aria-modal="true")
+        button(data-hystclose).modal__close
+          include ../../assets/icons/icon-close.svg
+        .modal__content
+          .modal-success
+            .modal-success__icons
+              .modal-success__icon.modal-success__icon-like
+                include ../../assets/icons/like.svg
+              .modal-success__icon.modal-success__icon-success
+                include ../../assets/icons/ok-green.svg
+            .modal-success__text-wrapper
+              h2.modal-success__title Спасибо за обращение
+              p.modal-success__text мы перезвоним вам в ближайшее время
+            a(href="#").modal-success__link Вернуться на страницу
+
+  .modal(aria-hidden="false" id="modal-error")
+    .modal__wrapper
+      .modal__window(role="dialog" aria-modal="true")
+        button(data-hystclose).modal__close
+          include ../../assets/icons/icon-close.svg
+        .modal__content
+          .modal-error
+            .modal-error__icons
+              .modal-error__icon.modal-error__icon-like
+                include ../../assets/icons/face.svg
+              .modal-error__icon.modal-error__icon-success
+                include ../../assets/icons/cross-green.svg
+            .modal-error__text-wrapper
+              h2.modal-error__title Не удалось отправить форму
+              p.modal-error__text повторите попытку
+            a(href="#").modal-error__link Вернуться на страницу
+
+

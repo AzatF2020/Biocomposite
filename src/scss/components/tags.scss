@@ -1,4 +1,8 @@
 .tags {
+  @include breakpoint(tablet) {
+    width: fit-content;
+    max-width: 50%;
+  }
   .swiper-wrapper {
     display: flex;
     align-items: center;
@@ -8,6 +12,7 @@
     @include breakpoint(tablet) {
       margin-bottom: 1.5rem;
       margin-left: var(--content-margin);
+      overflow: visible;
     }
   }
 

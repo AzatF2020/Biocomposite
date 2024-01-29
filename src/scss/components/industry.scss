@@ -115,6 +115,10 @@
     @include breakpoint(tablet) {
       margin-left: var(--content-margin);
     }
+
+    .swiper-slide {
+      width: fit-content;
+    }
   }
 
   &__slider-navigation {
@@ -193,8 +197,6 @@
     padding: 0 1.5rem;
     background-color: var(--white);
     border-radius: 3rem;
-    position: relative;
-    z-index: 1;
 
     @include breakpoint(mobile) {
       font-size: 1.2rem;

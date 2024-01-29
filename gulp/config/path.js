@@ -23,7 +23,10 @@ module.exports = {
   },
 
   js: {
-    entryPoint: pathSrc + "/js/main.js",
+    entryPoint: {
+      main: pathSrc + "/js/main.js",
+      pageTransition: pathSrc + "/js/pageTransition.js"
+    },
     src: pathSrc + "/js/*.js",
     watch: pathSrc + "/js/**/*.js",
     dist: pathDist + "/js"

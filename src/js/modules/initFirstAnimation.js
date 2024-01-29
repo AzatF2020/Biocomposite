@@ -6,8 +6,6 @@ export default function initFirstAnimation() {
 
   if(!header) return
 
-  gsap.set(header, {yPercent: -10, autoAlpha: 0})
-
   setTimeout(() => {
     gsap.to(header, {
       opacity: 1,
@@ -17,5 +15,5 @@ export default function initFirstAnimation() {
     })
     initSplitText()
     document.body.classList.remove("no-scroll")
-  }, 3000)
+  }, 1000)
 }

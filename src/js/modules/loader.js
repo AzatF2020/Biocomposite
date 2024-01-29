@@ -1,9 +1,13 @@
 import initFirstAnimation from "./initFirstAnimation";
+import gsap from "gsap";
 
 export default function initLoader() {
   const loader = document.querySelector(".js-loader")
+  const header = document.querySelector(".header");
 
-  if(!loader) return
+  if(!loader || !header) return
+
+  gsap.set(header, {yPercent: -10, autoAlpha: 0})
 
   const percentages = loader.querySelector(".loader__percentages")
   const progressBar = loader.querySelector(".loader__progress")

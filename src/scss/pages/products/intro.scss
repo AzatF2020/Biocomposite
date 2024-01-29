@@ -67,6 +67,14 @@
       min-width: 52.5rem;
       margin-left: 1rem;
     }
+
+    .swiper-wrapper {
+      column-gap: .75rem;
+
+      @include breakpoint(tablet) {
+        column-gap: 0;
+      }
+    }
   }
 
   &__slider-navigation {
@@ -125,10 +133,10 @@
     position: absolute;
     height: auto;
     object-fit: cover;
-    width: 55%;
+    width: 50%;
     top: 50%;
-    transform: translateY(-50%);
-    right: 0;
+    transform: translateY(-60%);
+    right: -2rem;
     z-index: 0;
 
     @include breakpoint(tablet) {

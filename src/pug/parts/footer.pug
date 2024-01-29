@@ -3,19 +3,19 @@ footer.footer
     .footer__content
       h2.footer__title Свяжитесь с&nbsp;нами и&nbsp;мы&nbsp;решим ваши задачи
       .footer__info
-        form.footer__form
+        form.footer__form(action="" method="post" name="" novalidate data-need-validation)
           .footer__form-fields
             label.footer__form-label
               span.footer__form-placeholder Ваше имя
-              input(name="name" type="text" required=true).footer__form-input
+              input.js-input(name="name" type="text" data-parsley-minlength=2 required=true).footer__form-input
             label.footer__form-label
               span.footer__form-placeholder Номер телефона
-              input(name="name" type="text" required=true).footer__form-input
+              input.js-phone-input(name="name" type="phone" autocomplete="off" data-parsley-phone required=true).footer__form-input
           .footer__form-bottom
             button.footer__bottom-button Отправить
             .footer__form-checkmark-wrapper
-              label.footer__form-checkmark-label
-                input(type="checkbox" name="policy").footer__form-checkbox
+              label.footer__form-checkmark-label.js-validation-wrapper
+                input(type="checkbox" name="policy" required=true).footer__form-checkbox
                 span.footer__form-checkmark
               p.footer__form-text
                 | Нажимая на кнопку вы соглашаетсь с обработкой &nbsp;

@@ -1,0 +1,149 @@
+.modal-success {
+  width: 106rem;
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    max-width: 38rem;
+  }
+
+  &__icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 13rem auto 0;
+
+    @include breakpoint(tablet) {
+      margin-top: 6rem;
+    }
+  }
+
+  &__icon {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(tablet) {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
+
+  &__icon-like {
+    background-color: var(--white);
+    position: relative;
+    z-index: 1;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+
+      @include breakpoint(tablet) {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+
+  &__icon-success {
+    border: .2rem solid var(--white);
+    position: relative;
+    left: -2rem;
+
+    @include breakpoint(tablet) {
+      left: -1rem;
+    }
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      @include breakpoint(tablet) {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+
+  &__text-wrapper {
+    width: 100%;
+    margin-top: 10rem;
+
+    @include breakpoint(tablet) {
+      margin-top: 8.5rem;
+    }
+  }
+
+  &__title {
+    color: var(--white);
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-h4);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.1rem;
+    margin: 0 auto;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+      color: var(--white);
+      text-align: center;
+      font-family: "PP Pangram Sans Rounded", sans-serif;
+      font-size: var(--fz-h5);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 90%;
+      letter-spacing: -0.16rem;
+    }
+  }
+
+  &__text {
+    color: var(--white);
+    text-align: center;
+    font-family: "PP Pangram Sans Rounded", sans-serif;
+    font-size: var(--fz-p-t2);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+
+    margin: 0 auto;
+
+    @include breakpoint(tablet) {
+      font-size: var(--fz-p-t3);
+      width: 100%;
+      max-width: 20.8rem;
+      margin-top: 1.6rem;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    width: 20.9rem;
+    height: 4.8rem;
+    background-color: var(--green-2);
+
+    color: var(--black);
+
+    font-family: "Inter", sans-serif;
+    font-size: var(--fz-i-t6);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: 0.15px;
+    transition: .3s ease background-color;
+    margin: 10rem auto 0;
+
+    &:hover {
+      background-color: var(--green-1);
+    }
+
+    @include breakpoint(tablet) {
+      margin-top: 16rem;
+    }
+
+  }
+}

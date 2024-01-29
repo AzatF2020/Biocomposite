@@ -11,11 +11,12 @@ export default function initHorizontalScrollingSlider() {
 
   function initSlider(currentSlide) {
     return new Swiper(currentSlide, {
-      spaceBetween: 200,
+      spaceBetween: 400,
       parallax: true,
       speed: 1000,
       slidesPerView: 1,
       allowTouchMove: false,
+
     })
   }
 

@@ -86,6 +86,8 @@
   }
 
   &__contact-info-link {
+    display: block;
+    word-break: break-word;
     color: var(--black);
 
     font-family: "PP Pangram Sans Rounded", sans-serif;

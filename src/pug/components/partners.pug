@@ -1,0 +1,9 @@
+mixin partners(data)
+  section.partners
+    .container
+      .partners__content
+        h2.partners__title Наши клиенты
+        .partners__container
+          each icon in data.icons
+            .partners__icon-wrapper
+              img(src=icon alt="icon")
