@@ -5,6 +5,11 @@ import Lenis from "@studio-freight/lenis";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function smoothScrolling() {
+  const body = document.querySelector('body');
+  if (body.classList.contains('is-admin')) {
+    return;
+  }
+
   const lenis = new Lenis();
   
   lenis.on("scroll", ScrollTrigger.update);

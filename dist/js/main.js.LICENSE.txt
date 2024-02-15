@@ -1,38 +1,38 @@
 /*!
- * CSSPlugin 3.12.4
+ * CSSPlugin 3.12.5
  * https://gsap.com
  *
- * Copyright 2008-2023, GreenSock. All rights reserved.
+ * Copyright 2008-2024, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /*!
- * GSAP 3.12.4
+ * GSAP 3.12.5
  * https://gsap.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2024, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /*!
- * Observer 3.12.4
+ * Observer 3.12.5
  * https://gsap.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2024, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /*!
- * ScrollTrigger 3.12.4
+ * ScrollTrigger 3.12.5
  * https://gsap.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2024, GreenSock. All rights reserved.
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -751,6 +751,10 @@
   !*** ./node_modules/swiper/modules/effect-coverflow.mjs ***!
   \**********************************************************/
 
+/*!***********************************************************!*\
+  !*** ./node_modules/@studio-freight/lenis/dist/lenis.mjs ***!
+  \***********************************************************/
+
 /*!************************************************************!*\
   !*** ./node_modules/swiper/shared/classes-to-selector.mjs ***!
   \************************************************************/
@@ -774,10 +778,6 @@
 /*!****************************************************************!*\
   !*** ./node_modules/imask/esm/core/continuous-tail-details.js ***!
   \****************************************************************/
-
-/*!******************************************************************!*\
-  !*** ./node_modules/@studio-freight/lenis/dist/lenis.modern.mjs ***!
-  \******************************************************************/
 
 /*!*******************************************************************!*\
   !*** ./node_modules/imask/esm/masked/pattern/fixed-definition.js ***!
