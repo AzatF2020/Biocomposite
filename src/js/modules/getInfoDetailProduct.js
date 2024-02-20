@@ -3,7 +3,11 @@ import enableMobileNotification from "./enableMobileNotification";
 
 export default async function initDetailProductSlots() {
   const detailProductContainer = document.querySelector(".js-detail-product")
-  const jsonPath = detailProductContainer?.dataset.pathJson
+  let jsonPath = detailProductContainer?.dataset.pathJson
+
+  if (!jsonPath){
+    jsonPath = window.location.pathname + 'slot/';
+  }
 
   if (!detailProductContainer || !jsonPath) return
 
