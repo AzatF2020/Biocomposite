@@ -98,7 +98,8 @@
     height: 35rem;
     overflow: hidden;
     border-radius: 3rem;
-    cursor: default;
+    cursor: pointer;
+    display: block;
 
     @include breakpoint(tablet) {
       min-width: 52.5rem;

@@ -1,4 +1,75 @@
 {
+  "product_hover": [
+    {
+      "imgSrc": "assets/img/eco-reg.png",
+      "imgSrcHover": "assets/img/eco-reg-hover.png",
+      "title": "Эффективное и экологичнное решение",
+      "tag": "Скамейки",
+      "list": [
+        {
+          "imgSrc": "assets/icons/advantages.svg",
+          "infoTitle": "Преимущества:",
+          "infoText": "выдерживают большие нагрузки, не гниют и не ржавеют"
+        },
+        {
+          "imgSrc": "assets/icons/purpose.svg",
+          "infoTitle": "Назначение:",
+          "infoText": "оснащение парков, дворов, прогулочных зон"
+        },
+        {
+          "imgSrc": "assets/icons/purpose.svg",
+          "infoTitle": "Сроки изготовления:",
+          "infoText": "по согласованию"
+        }
+      ]
+    },
+    {
+      "imgSrc": "assets/img/coverage.png",
+      "imgSrcHover": "assets/img/coverage-hover.png",
+      "title": "Инновационный подход к уличному освещению",
+      "tag": "Опоры и освещения",
+      "list": [
+        {
+          "imgSrc": "assets/icons/advantages.svg",
+          "infoTitle": "Преимущества:",
+          "infoText": "прочные, долговечные, требуют минимального техобслуживания"
+        },
+        {
+          "imgSrc": "assets/icons/purpose.svg",
+          "infoTitle": "Назначение:",
+          "infoText": "освещение дорог, парков, жилых кварталов, дворов"
+        },
+        {
+          "imgSrc": "assets/icons/purpose.svg",
+          "infoTitle": "Сроки изготовления:",
+          "infoText": "по согласованию"
+        }
+      ]
+    },
+    {
+      "imgSrc": "assets/img/board.png",
+      "imgSrcHover": "assets/img/board-hover.png",
+      "title": "Идеальный выбор для открытых зон",
+      "tag": "Террасная доска",
+      "list": [
+        {
+          "imgSrc": "assets/icons/advantages.svg",
+          "infoTitle": "Преимущества:",
+          "infoText": "материал не&nbsp;мокнет, не&nbsp;деформируется, не&nbsp;требует ухода"
+        },
+        {
+          "imgSrc": "assets/icons/purpose.svg",
+          "infoTitle": "Назначение:",
+          "infoText": "устройство настилов террас, балконов, парковых дорожек, зон отдыха"
+        },
+        {
+          "imgSrc": "assets/icons/purpose.svg",
+          "infoTitle": "Сроки изготовления:",
+          "infoText": "по согласованию"
+        }
+      ]
+    }
+  ],
   "product": [
     {
       "title": "Биокомпозит для автопрома",

@@ -3,7 +3,7 @@ mixin partners(data)
     .container
       .partners__content
         h2.partners__title Наши клиенты
-        .partners__container
+        .partners__container.js-clients
           each icon in data.icons
-            .partners__icon-wrapper
+            .partners__icon-wrapper.js-bubble
               img(src=icon alt="icon")

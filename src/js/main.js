@@ -5,13 +5,14 @@ import "./vendor/lazysized.unveilhooks";
 import "./vendor/libs/hystmodal.min.css";
 import "./vendor/libs/hystmodal.min.js";
 
+import documentReady from './vendor/documentReady.js';
 import smoothScrolling from "./vendor/smoothScroll";
 import enableParallax from "./vendor/enableParallax";
 import Slider from "./vendor/slider";
 import modals from "./vendor/modals";
 import validation from "./vendor/validation";
-import initLoader from './modules/loader.js';
 
+import initLoader from './modules/loader.js';
 import initDetailProductSlots from "./modules/getInfoDetailProduct";
 import scrollingIncrease from "./modules/scrollingIncrease";
 import initHorizontalScrollingSlider from "./modules/horizontalScrolling";
@@ -20,15 +21,13 @@ import toggleVideoBlock from "./modules/multiVideoBlock";
 import disclosureMultiVideoBlocks from "./modules/multiVideoBlockMobile";
 import scrollSliderMobile from "./modules/scrollSliderMobile";
 import controlVideoScrolling from "./modules/controlVideoScrolling";
-import documentReady from './vendor/documentReady.js';
+import setBubblesToClients from './modules/clientsBubbles.js';
 
 const runScripts = () => {
   window.biocompositeApi = {};
   
+  setBubblesToClients()
   controlVideoScrolling()
-  const sliderInstance = new Slider();
-  sliderInstance.initializeSliders();
-
   initDetailProductSlots();
   scrollingIncrease();
   initHorizontalScrollingSlider();
@@ -42,6 +41,10 @@ const runScripts = () => {
 
   modals()
   validation()
+
+  const sliderInstance = new Slider();
+  sliderInstance.initializeSliders();
+
 };
 
 documentReady(runScripts, initLoader)
