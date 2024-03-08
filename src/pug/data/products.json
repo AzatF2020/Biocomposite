@@ -96,6 +96,156 @@
           ]
         }
       ]
+    },
+
+    {
+      "title": "Биокомпозит для авиации",
+      "sliders": [
+        {
+          "imgSrc": "assets/img/product-4.png",
+          "imgSrcHover": "assets/img/product-hover-4.jpg",
+          "title": "Рост узнаваемости за счёт грамотного интерьера",
+          "tag": "Элементы интерьера",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "долговечность изделий, повышение технологичности полетов"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внутренней отделки самолетов"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        },
+        {
+          "imgSrc": "assets/img/product-5.png",
+          "imgSrcHover": "assets/img/product-hover-5.jpg",
+          "title": "Безопасность на большой высоте",
+          "tag": "Элементы фюзеляжа",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "полетовпротивостояние высоким нагрузкам авиационной среды"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внешней отделки самолетов"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        },
+        {
+          "imgSrc": "assets/img/airplane.png",
+          "imgSrcHover": "assets/img/product-hover-6.jpg",
+          "title": "Учёт всех деталей на производстве",
+          "tag": "Элементы периферийных решений",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "высокая прочность, хорошая эстетика"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внутренней периферии самолётов"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "title": "Биокомпозит для вагоностроения",
+      "sliders": [
+        {
+          "imgSrc": "assets/img/product-7.png",
+          "imgSrcHover": "assets/img/product-hover-7.jpg",
+          "title": "Простота и стиль в одном изделии",
+          "tag": "Элементы интерьера",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "повышение потребительского интереса"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внутренней отделки вагонов"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        },
+        {
+          "imgSrc": "assets/img/product-8.png",
+          "imgSrcHover": "assets/img/product-hover-8.jpg",
+          "title": "Только из передовых материалов",
+          "tag": "Элементы кузова",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "сокращение энергозатрат и увеличение прибыли"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для различных деталей кузова"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления: ",
+              "infoText": "по согласованию"
+            }
+          ]
+        },
+        {
+          "imgSrc": "assets/img/train.png",
+          "imgSrcHover": "assets/img/product-hover-9.jpg",
+          "title": "Современное оборудование для лучшего результата",
+          "tag": "Элементы периферийных решений",
+          "list": [
+            {
+              "iconSrc": "assets/icons/advantages.svg",
+              "infoTitle": "Преимущества:",
+              "infoText": "экологичность, прочность, длительный срок службы"
+            },
+            {
+              "iconSrc": "assets/icons/purpose.svg",
+              "infoTitle": "Назначение:",
+              "infoText": "материалы для внешних деталей вагона"
+            },
+            {
+              "iconSrc": "assets/icons/calendar.svg",
+              "infoTitle": "Сроки изготовления:",
+              "infoText": "по согласованию"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

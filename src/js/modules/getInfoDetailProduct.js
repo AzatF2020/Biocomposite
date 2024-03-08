@@ -13,6 +13,9 @@ export default async function initDetailProductSlots() {
 
   const container = detailProductContainer.querySelector(".js-detail-container")
   const template = detailProductContainer.querySelector("template")
+  
+  if(!template) return 
+
   const data = await fetchingJson(jsonPath)
 
   const addClassBasedDirection = {
@@ -49,7 +52,9 @@ export default async function initDetailProductSlots() {
     const templateContainer = template?.content
       .cloneNode(true)
       .querySelector(".js-detail-slot")
-    const slotContainer = templateContainer.querySelector(".detail-intro__slot-wrapper")
+    const slotContainer = templateContainer?.querySelector(".detail-intro__slot-wrapper")
+
+    if(!slotContainer) return
 
     const imageTag = templateContainer.querySelector("img")
     const slotInfo = templateContainer.querySelector(".detail-intro__slot-info")
@@ -70,7 +75,10 @@ export default async function initDetailProductSlots() {
 
   data?.forEach((slot) => {
     const renderedSlot = createSlot(slot)
-    container.appendChild(renderedSlot)
+    
+    if(renderedSlot) {
+      container.appendChild(renderedSlot)
+    }
   })
 
   template.remove()

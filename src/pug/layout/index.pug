@@ -1,20 +1,18 @@
 block constants
 
 doctype html
-html(lang="ru")
+html(lang="en")
   include ../parts/head
   include ../parts/loader
-  body.no-scroll(data-barba="wrapper")
-    block loader
-    .transition
-    .page-content
-      include ../parts/header
-      main(data-barba="container" data-barba-namespace=barbaNamespace ).page-main
-        block page
-      include ../parts/footer
-      include ../parts/modals
-
-  script(src="https://api-maps.yandex.ru/2.1/?apikey=83ae1ece-dbbb-4e2c-888f-09f022a9613f&lang=ru_RU" type="text/javascript" defer=true)
-  script(src="https://unpkg.com/@barba/core")
-  script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
-  script(src="js/pageTransition.js")
+  body
+    div(id="swup" class="transition-main")
+      .page-content
+        include ../parts/header
+        main.page-main
+          block page
+        include ../parts/footer
+        include ../parts/modals
+      script(src="js/main.js")
+    .overlay.transition-overlay
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=83ae1ece-dbbb-4e2c-888f-09f022a9613f&lang=ru_RU" type="text/javascript" defer=true)
+  

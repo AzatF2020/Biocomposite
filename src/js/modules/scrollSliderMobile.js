@@ -34,10 +34,6 @@ export default function scrollSliderMobile() {
     const navigationInstance = initNavigationSwiper(navigationBarSlider)
     const scrollSwiperInstance = initScrollSwiper(scrollSlider)
 
-    navigationInstance.on("slideChange", (value) => {
-      console.log(value)
-    })
-
     navigationInstance.controller.control = scrollSwiperInstance
     scrollSwiperInstance.controller.control = navigationInstance
   }

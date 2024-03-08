@@ -1,7 +1,7 @@
 ### Call Api
 
 window.biocompositeApi
-_____
+
 
 ### Map
 class: <strong>.js-map</strong>

@@ -8,7 +8,7 @@ dayjs.extend(customParseFormat);
 const phoneMasks = document.querySelectorAll(".js-phone-input")
 
 phoneMasks?.forEach((mask) => {
-  IMask(mask, {mask: '+{7}(000)000-00-00'})
+  IMask(mask, { mask: '+{7}(000)000-00-00' })
 })
 
 window.Parsley.addValidator('requiredIfChecked', {
@@ -82,7 +82,33 @@ Parsley.addMessages('ru', {
   equalto: 'Это значение должно совпадать.',
 });
 
-Parsley.setLocale('ru');
+Parsley.addMessages('en', {
+  defaultMessage: 'Incorrect value.',
+  type: {
+    email: 'This field can only contain E-mail',
+    url: 'The site address is incorrect.',
+    number: 'Enter a number',
+    integer: 'Enter an integer.',
+    digits: 'Enter digits only.',
+    alphanum: 'Enter an alphanumeric value.'
+  },
+  notblank: 'This field must be filled in.',
+  required: 'Required field',
+  pattern: 'This value is invalid.',
+  min: 'This value must be at least %s.',
+  max: 'This value must be no more than %s.',
+  range: 'This value must be between %s and %s.',
+  minlength: 'This value must contain at least %s characters.',
+  maxlength: 'This value must contain no more than %s characters.',
+  length: 'This value must contain between %s and %s characters.',
+  mincheck: 'Select at least %s values.',
+  maxcheck: 'Select no more than %s values.',
+  check: 'Select between %s and %s values.',
+  equalto: 'This value must match.'
+});
+
+const localeLang = document.getElementsByTagName('html')[0].getAttribute('lang').toLowerCase() || 'ru'
+Parsley.setLocale(localeLang);
 
 export default function validation() {
   const formsToValidate = Array.from(document.querySelectorAll('form[data-need-validation]'));

@@ -20,14 +20,14 @@ const webpackConfig = {
   },
   entry: {
     main: jsConfig.entryPoint.main,
-    pageTransition: jsConfig.entryPoint.pageTransition
   },
   plugins: [
     isProd && new StatoscopeWebpackPlugin({
       compressor: false
     }),
     new webpack.ProvidePlugin({
-      $: 'jquery',
+      $: "jquery",
+      jQuery: "jquery"
     })
   ],
   output: {
@@ -45,25 +45,10 @@ const webpackConfig = {
         exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
         loader: 'babel-loader'
       },
-      {
-        test: require.resolve('jquery'),
-        use: [{
-          loader: 'expose-loader',
-          options: 'jQuery'
-        },
-          {
-            loader: 'expose-loader',
-            options: '$'
-          }
-        ]
-      }
     ]
   },
   devtool: isDev ? 'eval-source-map' : false,
   mode: "development",
-  externals: {
-    jquery: 'jQuery'
-  },
 }
 
 module.exports = webpackConfig;

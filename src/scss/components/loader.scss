@@ -7,12 +7,6 @@
   bottom: 0;
   background-color: var(--black);
   z-index: 100;
-  transition: opacity 1s ease;
-  transition-delay: 1s;
-
-  &.--is-disabled {
-    opacity: 0;
-  }
 
   &__content {
     padding: var(--content-padding-two);
@@ -75,11 +69,9 @@
   }
 
   &__progress {
-    width: var(--bar-width);
     height: 1rem;
     background-color: var(--green-2);
     border-radius: .5rem;
-    transition: 1s ease width;
 
     @include breakpoint(tablet) {
       height: .7rem;
