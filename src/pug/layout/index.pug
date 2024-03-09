@@ -8,10 +8,13 @@ html(lang="en")
     div(id="swup" class="transition-main")
       .page-content
         include ../parts/header
+        
         main.page-main
           block page
+
         include ../parts/footer
         include ../parts/modals
+        include ../parts/burger-modal
       script(src="js/main.js")
     .overlay.transition-overlay
     script(src="https://api-maps.yandex.ru/2.1/?apikey=83ae1ece-dbbb-4e2c-888f-09f022a9613f&lang=ru_RU" type="text/javascript" defer=true)

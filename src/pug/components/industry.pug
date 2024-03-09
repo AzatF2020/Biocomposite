@@ -1,7 +1,7 @@
 mixin industry(data)
   section.industry
     .container
-      video(muted="" data-autoplay="" loop playsinline preload="none").industry__video.lazyload
+      video(muted="" data-autoplay="" loop playsinline preload="none").industry__video.lazyloaded
         source(src=data.videoSrc type="video/mp4")
       .industry__content
         h2.industry__title= data.title

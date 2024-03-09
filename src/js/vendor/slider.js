@@ -50,7 +50,7 @@ class Slider {
 
         slides.forEach((slide, slideIndex) => {
           const text = slide.querySelectorAll(".text-wrapper *")
-          gsap.set(text, {yPercent: 150})
+          gsap.set(text, { yPercent: 150 })
 
           this.#initTextAnimation(text, {slideIndex, activeIndex})
         })
@@ -75,7 +75,7 @@ class Slider {
 
     const swiperInstance = new Swiper(slider, {
       parallax: true,
-      fadeEffect: fadeEffect ? {crossFade: true} : null,
+      fadeEffect: fadeEffect ? { crossFade: true } : null,
       watchOverflow: true,
       effect: fadeEffect ? "fade" : null,
       loop: this.#initMobileOptions(options)?.loopMobile,

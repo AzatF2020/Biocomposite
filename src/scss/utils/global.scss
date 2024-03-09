@@ -31,8 +31,6 @@
 
   --fz-i-t5: 2rem;
   --fz-i-t6: 1.5rem;
-
-  scrollbar-gutter: stable;
 }
 
 html { 
@@ -101,20 +99,6 @@ body {
 
 .page-content {
   overflow: hidden;
-}
-
-.no-scroll {
-  overflow-y: scroll;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-
-  body {
-    height: auto;
-    overflow: hidden;
-  }
 }
 
 .text-wrapper {

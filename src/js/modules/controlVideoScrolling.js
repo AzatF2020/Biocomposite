@@ -1,68 +1,30 @@
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function controlVideoScrolling() {
-  window.addEventListener("load", () => {
-    const video = document.querySelector(".js-video-background");
-    if(!video) return
-    let src = video.currentSrc || video.src;
+  const videoContainers = document.querySelectorAll('.js-scroll-video-container')
 
-    function once(el, event, fn, opts) {
-      var onceFn = function (e) {
-        el.removeEventListener(event, onceFn);
-        fn.apply(this, arguments);
-      };
-      el.addEventListener(event, onceFn, opts);
-      return onceFn;
-    }
+  if(!videoContainers.length) return
 
-    once(document.documentElement, "touchstart", function (e) {
-      video.play();
-      video.pause();
-    });
+  videoContainers.forEach((container) => {
+    const video = container.querySelector(".js-video-background");
+    video.currentTime = 0;
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    let tl = gsap.timeline({
-      defaults: { duration: 10 },
-      scrollTrigger: {
-        trigger: "",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true
-      }
-    });
-
-    once(video, "loadedmetadata", () => {
-      tl.fromTo(
-        video,
-        {
-          currentTime: 0
-        },
-        {
-          currentTime: video.duration || 1
+    ScrollTrigger.create({
+      trigger: container,
+      scrub: true,
+      onUpdate: (self) => {
+        let scrollPos = self.progress;
+        let videoDuration = video.duration;
+        let videoCurrentTime = videoDuration * scrollPos;
+        
+        if(videoCurrentTime) {
+          video.currentTime = videoCurrentTime;
         }
-      );
-    });
-
-    setTimeout(function () {
-      if (window["fetch"]) {
-        fetch(src)
-          .then((response) => response.blob())
-          .then((response) => {
-            var blobURL = URL.createObjectURL(response);
-
-            var t = video.currentTime;
-            once(document.documentElement, "touchstart", function (e) {
-              video.play();
-              video.pause();
-            });
-
-            video.setAttribute("src", blobURL);
-            video.currentTime = t + 0.01;
-          });
       }
-    }, 100);
+    })
   })
 }
 

@@ -19,4 +19,11 @@ export default function smoothScrolling() {
   });
   
   gsap.ticker.lagSmoothing(0);
+
+  window.scroll = {
+    stopScroll: null,
+    startScroll: null,
+  }
+  window.scroll.stopScroll = () => lenis.stop()
+  window.scroll.startScroll = () => lenis.start()
 }
