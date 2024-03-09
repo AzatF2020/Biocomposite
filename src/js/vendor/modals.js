@@ -1,8 +1,15 @@
 export default function modals() {
-  const instance = new HystModal({
+  const modalInstance = new HystModal({
     linkAttributeName: 'data-modal',
     closeOnEsc: true,
+    waitTransitions: true,
+    beforeOpen: () => {
+      window.scroll.stopScroll()
+    },
+    afterClose: () => {
+      window.scroll.startScroll()
+    }
   });
 
-  window.modals = instance;
+  window.biocompositeApi.modal = modalInstance;
 }

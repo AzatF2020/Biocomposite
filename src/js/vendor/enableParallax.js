@@ -9,7 +9,7 @@ export default function enableParallax() {
   if (!parallaxContainers.length) return
 
   function initParallaxAnimation(wrapper) {
-    const tl = gsap.timeline({ease: "none"})
+    const tl = gsap.timeline({ ease: "none" })
 
     tl.to(wrapper, {
       duration: 1,
@@ -24,7 +24,7 @@ export default function enableParallax() {
   }
 
   parallaxContainers?.forEach((wrapper) => {
-    gsap.set(wrapper, {y: 0})
+    gsap.set(wrapper, { y: 0 })
 
     initParallaxAnimation(wrapper)
   })

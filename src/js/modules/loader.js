@@ -7,7 +7,8 @@ export default function initLoader() {
 
   if(!loader || !header) return
 
-  document.body.classList.add('no-scroll')
+  window.scrollTo(0, 0)
+  window.scroll.stopScroll()
 
   const percentages = loader.querySelector(".loader__percentages")
   const progressBar = loader.querySelector(".loader__progress")
@@ -20,7 +21,7 @@ export default function initLoader() {
 
   return tl
     .from(counter, {
-      duration: 1,
+      duration: 1.5,
       ease: "none",
       value: 0,
       roundProps: "value",
@@ -42,7 +43,7 @@ export default function initLoader() {
       duration: .25,
       onComplete: () => {
         initFirstAnimation()
-        document.body.classList.remove('no-scroll')
+        window.scroll.startScroll()
       }
     });
 }

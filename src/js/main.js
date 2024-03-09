@@ -6,12 +6,12 @@ import "./vendor/libs/hystmodal.min.css";
 import "./vendor/libs/hystmodal.min.js";
 
 import documentReady from './vendor/documentReady.js';
-import smoothScrolling from "./vendor/smoothScroll";
 import enableParallax from "./vendor/enableParallax";
 import Slider from "./vendor/slider";
 import modals from "./vendor/modals";
 import validation from "./vendor/validation";
 
+import initBurgerModalAnimation from './modules/burgerModalAnimation.js';
 import initLoader from './modules/loader.js';
 import initDetailProductSlots from "./modules/getInfoDetailProduct";
 import scrollingIncrease from "./modules/scrollingIncrease";
@@ -24,8 +24,20 @@ import controlVideoScrolling from "./modules/controlVideoScrolling";
 import setBubblesToClients from './modules/clientsBubbles.js';
 
 const runScripts = () => {
-  window.biocompositeApi = {};
+  window.biocompositeApi = {
+    modal: null,
+    menu: {
+      openMenu: null,
+      closeMenu: null,
+    }
+  };
+
+  modals()
+  validation()
+  const sliderInstance = new Slider();
+  sliderInstance.initializeSliders();
   
+  initBurgerModalAnimation()
   setBubblesToClients()
   controlVideoScrolling()
   initDetailProductSlots();
@@ -34,17 +46,9 @@ const runScripts = () => {
   occurrenceCardsDecision();
   toggleVideoBlock();
 
-  smoothScrolling();
   enableParallax();
   disclosureMultiVideoBlocks();
   scrollSliderMobile()
-
-  modals()
-  validation()
-
-  const sliderInstance = new Slider();
-  sliderInstance.initializeSliders();
-
 };
 
 documentReady(runScripts, initLoader)

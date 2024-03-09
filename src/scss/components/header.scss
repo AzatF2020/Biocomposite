@@ -8,7 +8,6 @@
   width: 100%;
   background-color: var(--black);
   z-index: 5;
-  //opacity: 0;
 
   &__content {
     width: 100%;
@@ -88,7 +87,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
-    letter-spacing: 0.15px;
+    letter-spacing: 0.015rem;
     transition: .3s ease background-color;
 
     width: 4.7rem;
@@ -147,7 +146,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 120%;
-    letter-spacing: 0.15px;
+    letter-spacing: 0.015rem;
   }
 
   &__button-wrapper {
@@ -191,7 +190,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
-    letter-spacing: 0.15px;
+    letter-spacing: 0.015rem;
     transition: .3s ease opacity;
 
     &:hover {
@@ -211,6 +210,7 @@
     width: 12.7rem;
     justify-content: center;
   }
+
   &__button-contact > .header__button-wrapper {
     background-color: var(--light-green);
     transition: background-color .3s ease;
@@ -237,11 +237,65 @@
     height: 4.7rem;
     background-color: var(--grey);
     border-radius: 50%;
+    transition: .5s ease-in-out;
+    position: relative;
 
     span {
-      width: 2rem;
-      height: .1rem;
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 50%;
       background-color: var(--white);
+      border-radius: 9px;
+      opacity: 1;
+      left: 50%;
+      translate: -50%;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+    }
+
+    & span:nth-child(1) {
+      top: 20px;
+    }
+    
+    & span:nth-child(2),& span:nth-child(3) {
+      top: 26px;
+    }
+    
+    & span:nth-child(4) {
+      top: 32px;
+    }
+    
+    &.--is-active span:nth-child(1) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+    
+    &.--is-active span:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    
+    &.--is-active span:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    
+    &.--is-active span:nth-child(4) {
+      top: 32px;
+      width: 0%;
+      left: 50%;
     }
 
     @include breakpoint(laptop) {
