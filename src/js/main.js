@@ -22,6 +22,7 @@ import disclosureMultiVideoBlocks from "./modules/multiVideoBlockMobile";
 import scrollSliderMobile from "./modules/scrollSliderMobile";
 import controlVideoScrolling from "./modules/controlVideoScrolling";
 import setBubblesToClients from './modules/clientsBubbles.js';
+import enableReveal from './modules/revealBlocks.js';
 
 const runScripts = () => {
   window.biocompositeApi = {
@@ -47,6 +48,7 @@ const runScripts = () => {
   toggleVideoBlock();
 
   enableParallax();
+  enableReveal()
   disclosureMultiVideoBlocks();
   scrollSliderMobile()
 };

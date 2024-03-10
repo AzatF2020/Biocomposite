@@ -12,20 +12,26 @@ export default function controlVideoScrolling() {
     const video = container.querySelector(".js-video-background");
     video.currentTime = 0;
 
-    ScrollTrigger.create({
-      trigger: container,
-      scrub: true,
-      onUpdate: (self) => {
-        let scrollPos = self.progress;
-        let videoDuration = video.duration;
-        let videoCurrentTime = videoDuration * scrollPos;
-        
-        if(videoCurrentTime) {
-          video.currentTime = videoCurrentTime;
+    const tl = gsap.timeline({
+      defaults: { duration: 1 },
+      scrollTrigger: {
+        trigger: container,
+        scrub: true,
+      }
+    })
+
+    tl.fromTo(video, {
+      currentTime: 0
+    }, {
+      currentTime: () => {
+        if(video.duration) {
+          return video.duration
         }
+        return 0
       }
     })
   })
 }
+
 
 
