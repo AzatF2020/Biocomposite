@@ -1,0 +1,37 @@
+mixin products-hover(data)
+  section.products-intro
+    .container
+      .products-intro__overlay
+      .products-intro__content
+        h1.products-intro__title Продукция
+        .products-intro__slider-navigation.js-navigation
+          button.slider-navigation-button.js-prev
+            img(src="assets/icons/left-white-arrow.svg" alt="icon")
+          button.slider-navigation-button.js-next
+            img(src="assets/icons/right-white-arrow.svg" alt="icon")
+        div(
+          class="products-intro__slider js-init-slider"
+          data-perview="2"
+          data-navigationlimit="2"
+          data-mobileloop="true")
+          .swiper-wrapper
+            each slide in data
+              .swiper-slide
+                a(href="/#").products-intro__slide
+                  .products-intro__slide-main
+                    img(src=slide.imgSrc alt="slide-image").products-intro__slide-main-image
+                    h3.products-intro__slide-main-title= slide.title
+                  .products-intro__slide-hover
+                    img(src=slide.imgSrcHover alt="slide-image").products-intro__slide-hover-image
+                    ul.products-intro__slide-hover-list
+                      each list in slide.list
+                        li.products-intro__slide-list-info
+                          .products-intro__slide-list-name
+                            img(src=list.imgSrc alt="icon")
+                            p
+                              strong= list.infoTitle
+                          p.products-intro__slide-list-text= list.infoText
+                  span.products-intro__slide-tag= slide.tag
+                  .products-intro__slide-bottom
+                    .products-intro__slide-link
+                      img(src="assets/icons/arrow-right-black.svg" alt="icon")
