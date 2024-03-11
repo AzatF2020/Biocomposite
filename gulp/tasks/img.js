@@ -20,11 +20,11 @@ const img = async function() {
       }))
     }))
     .pipe(newer(imgConfig.dist))
-    .pipe(gulpif(isProd, webp()))
     .pipe(gulp.dest(imgConfig.dist))
     .pipe(gulp.src(imgConfig.src))
     .pipe(newer(imgConfig.dist))
     .pipe(gulpif(isProd && enableImageMinification, imagemin(imgConfig.imagemin)))
+    .pipe(gulpif(isProd, webp()))
     .pipe(gulp.dest(imgConfig.dist))
 }
 
