@@ -13,7 +13,7 @@ export default function controlVideoScrolling() {
     video.currentTime = 0;
 
     const tl = gsap.timeline({
-      defaults: { duration: 1 },
+      defaults: { duration: .5, ease: 'none' },
       scrollTrigger: {
         trigger: container,
         scrub: true,

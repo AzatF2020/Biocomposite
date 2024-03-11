@@ -104,12 +104,8 @@
       max-width: 52rem;
     }
 
-    @include breakpoint(tablet) {
-
-    }
-
     @include breakpoint(mobile) {
-      max-width: 26.5rem;
+      max-width: 30.5rem;
     }
 
     @include breakpoint(tablet) {

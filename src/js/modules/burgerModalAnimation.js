@@ -65,8 +65,8 @@ export default function initBurgerModalAnimation() {
       })
       .to(burgerModal, {
         yPercent: -95,
-        duration: 1,
-        ease: "power2.in",
+        duration: .75,
+        ease: "power1.in",
         
         onComplete: () => {
           burgerButton.disabled = false

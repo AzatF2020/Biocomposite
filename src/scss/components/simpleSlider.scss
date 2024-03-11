@@ -53,12 +53,13 @@
     }
 
     @include breakpoint(tablet) {
-      max-width: 26.5rem;
+      max-width: 52.5rem;
     }
 
     counter-set: simple-slider-counter;
 
     .swiper-slide {
+      width: fit-content;
       counter-increment: simple-slider-counter;
     }
   }

@@ -103,7 +103,7 @@
     }
 
     @include breakpoint(tablet) {
-      font-size: var(--fz-h5);
+      font-size: var(--fz-h6);
       font-style: normal;
       line-height: 120%;
     }

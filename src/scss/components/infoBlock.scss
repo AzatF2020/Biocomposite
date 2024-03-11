@@ -78,9 +78,11 @@
     font-weight: 600;
     line-height: 90%;
     letter-spacing: -.16rem;
+    margin-bottom: 1.5rem;
 
     @include breakpoint(tablet) {
       font-size: var(--fz-h5);
+      margin-bottom: 0;
     }
   }
 
