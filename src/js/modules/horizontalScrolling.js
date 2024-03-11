@@ -2,6 +2,7 @@ import gsap from "gsap";
 import Swiper from "swiper";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Parallax } from "swiper/modules"
+import { delay } from "../vendor/constants";
 
 Swiper.use([Parallax])
 gsap.registerPlugin(ScrollTrigger)
@@ -51,15 +52,14 @@ export default function initHorizontalScrollingSlider() {
     sliderImages.forEach((imageContainer, index) => {
       if (!imageContainer) return
 
-      const images = [...imageContainer.children]
+      
+      const images = [...imageContainer.querySelectorAll('img')]
 
       if (sliderActiveIndex === index) {
-        images.forEach((image) => {
-
-          setTimeout(() => {
-            image.firstElementChild.classList.add("--active")
-            image.firstElementChild.style.clipPath = "inset(0 0 0 0)"
-          }, 150)
+        images.forEach(async (image) => {
+          await delay(150)
+          image.classList.add("--active")
+          image.style.clipPath = "inset(0 0 0 0)"
         })
       }
     })

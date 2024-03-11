@@ -386,6 +386,21 @@
     }
   }
 
+  picture {
+    clip-path: inset(0px 0px 650px 0px);
+
+    transition: clip-path 1.5s ease;
+
+    @include breakpoint(laptop) {
+      clip-path: none;
+      display: none;
+    }
+
+    @include breakpoint(small-tablet) {
+      display: block;
+    }
+  }
+
   &__slide-image--rounded {
     width: 100%;
     position: absolute;
