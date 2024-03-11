@@ -17,7 +17,7 @@ mixin more(sliders)
             each slide in sliders
               .swiper-slide
                 .more__slide
-                  video.more__slide-video.lazyloaded(muted='' data-autoplay='' loop='loop' playsinline='playsinline' preload='auto' data-expand='-10')
+                  video.more__slide-video.lazyload(muted='' data-autoplay='' loop='loop' playsinline='playsinline' preload='auto' data-expand='-10')
                     source(src=slide.videoSrc type='video/mp4')
                   .more__slide-tags
                     each tag in slide.tags

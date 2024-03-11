@@ -1,9 +1,8 @@
 
 import 'swiper/css';
-import "./vendor/lazyload";
-import "./vendor/lazysized.unveilhooks";
-import "./vendor/libs/hystmodal.min.css";
-import "./vendor/libs/hystmodal.min.js";
+import "./vendor/libs/Lazyload/lazyload.js";
+import "./vendor/libs/HystModal/hystmodal.min.css";
+import "./vendor/libs/HystModal/hystmodal.min.js";
 
 import documentReady from './vendor/documentReady.js';
 import enableParallax from "./vendor/enableParallax";

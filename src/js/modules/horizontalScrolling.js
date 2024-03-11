@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import Swiper from "swiper";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {Parallax} from "swiper/modules"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Parallax } from "swiper/modules"
 
 Swiper.use([Parallax])
 gsap.registerPlugin(ScrollTrigger)
@@ -11,12 +11,11 @@ export default function initHorizontalScrollingSlider() {
 
   function initSlider(currentSlide) {
     return new Swiper(currentSlide, {
-      spaceBetween: 400,
+      spaceBetween: 700,
       parallax: true,
-      speed: 1000,
+      speed: 1400,
       slidesPerView: 1,
       allowTouchMove: false,
-
     })
   }
 
@@ -75,7 +74,7 @@ export default function initHorizontalScrollingSlider() {
     const tl = gsap.timeline({ease: "none"})
 
     const sliderInstance = initSlider(currentSlider)
-    const scrollSliderHeight = window.innerHeight * 1.5 * slides.length
+    const scrollSliderHeight = window.innerHeight * 2.5 * slides.length
 
     tl.to(slides, {
       scrollTrigger: {

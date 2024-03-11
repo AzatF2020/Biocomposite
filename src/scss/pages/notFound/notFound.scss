@@ -1,5 +1,4 @@
 .not-found {
-
   &__content {
     width: 100%;
     min-height: calc(80vh - 8.8rem);
@@ -12,6 +11,11 @@
     margin: 8.8rem auto 0;
 
     padding: 4rem 0;
+
+    @include breakpoint(mobile) {
+      min-height: 0;
+    height: 100%;
+  }
   }
 
   &__uppertitle {

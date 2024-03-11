@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { delay } from "../vendor/constants";
 
 export default async function enableMobileNotification() {
   const slots = document.querySelectorAll(".js-detail-slot")
@@ -18,7 +19,7 @@ export default async function enableMobileNotification() {
     gsap.to(notificationBlock, {
       y: 0,
       opacity: 1,
-      delay: .5,
+      delay: .25,
       ease: "power3.out",
     })
   }
@@ -48,7 +49,8 @@ export default async function enableMobileNotification() {
         y: 150,
         opacity: 0,
         duration: .5,
-        onComplete: () => {
+        onUpdate: async () => {
+          await delay(250)
           notificationTitle.textContent = slotTitle.textContent
           notificationText.textContent = slotText.textContent
           notificationIcon.src = slotIconSrc
@@ -59,6 +61,13 @@ export default async function enableMobileNotification() {
     })
   })
 
-  notificationButtonClose?.addEventListener("click", () =>
-    closeNotification(notificationBlock))
+  notificationButtonClose?.addEventListener("click", () => {
+    closeNotification(notificationBlock)
+  })
+
+  window.addEventListener('scroll', (event) => {
+    if(event.currentTarget.scrollY >= 550) {
+      closeNotification(notificationBlock)
+    }
+  })
 }

@@ -5,7 +5,7 @@ mixin multi-video-block(videos)
         each video in videos
           if video.large
             .multi-video-block__wrapper-large.js-video-wrapper
-              video(muted="" loop playsinline preload="none").multi-video-block__video.lazyload
+              video(muted="" loop playsinline preload="none" autoplay).multi-video-block__video.lazyload
                 source(src=video.videoSrc type="video/mp4")
               .multi-video-block__wrapper-bottom.multi-video-block__wrapper-bottom--large
                 .text-wrapper
