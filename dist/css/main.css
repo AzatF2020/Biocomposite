@@ -3791,25 +3791,6 @@ html.is-animating .transition-main {
     display: block;
   }
 }
-.scroll-slider picture {
-  -webkit-clip-path: inset(0px 0px 650px 0px);
-          clip-path: inset(0px 0px 650px 0px);
-  transition: -webkit-clip-path 1.5s ease;
-  transition: clip-path 1.5s ease;
-  transition: clip-path 1.5s ease, -webkit-clip-path 1.5s ease;
-}
-@media only screen and (max-width: 1200px) {
-  .scroll-slider picture {
-    -webkit-clip-path: none;
-            clip-path: none;
-    display: none;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .scroll-slider picture {
-    display: block;
-  }
-}
 .scroll-slider__slide-image--rounded {
   width: 100%;
   position: absolute;
