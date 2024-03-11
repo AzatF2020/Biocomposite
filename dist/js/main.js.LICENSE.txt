@@ -29,6 +29,16 @@
 */
 
 /*!
+ * ScrollToPlugin 3.12.4
+ * https://gsap.com
+ *
+ * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * Subject to the terms at https://gsap.com/standard-license or for
+ * Club GSAP members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
  * ScrollTrigger 3.12.4
  * https://gsap.com
  *
@@ -300,7 +310,11 @@
 
 /*! ./modules/revealBlocks.js */
 
+/*! ./modules/scrollAnchor.js */
+
 /*! ./modules/scrollSliderMobile */
+
+/*! ./modules/scrollToBottom.js */
 
 /*! ./modules/scrollingIncrease */
 
@@ -385,6 +399,8 @@
 /*! delegate-it */
 
 /*! gsap */
+
+/*! gsap/ScrollToPlugin */
 
 /*! gsap/ScrollTrigger */
 
@@ -475,6 +491,10 @@
   \****************************************/
 
 /*!****************************************!*\
+  !*** ./src/js/modules/scrollAnchor.js ***!
+  \****************************************/
+
+/*!****************************************!*\
   !*** ./src/js/vendor/documentReady.js ***!
   \****************************************/
 
@@ -502,6 +522,10 @@
   !*** ./src/js/modules/clientsBubbles.js ***!
   \******************************************/
 
+/*!******************************************!*\
+  !*** ./src/js/modules/scrollToBottom.js ***!
+  \******************************************/
+
 /*!*******************************************!*\
   !*** ./node_modules/delegate-it/index.js ***!
   \*******************************************/
@@ -517,6 +541,10 @@
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
   \********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/gsap/ScrollToPlugin.js ***!
+  \*********************************************/
 
 /*!*********************************************!*\
   !*** ./node_modules/lazysizes/lazysizes.js ***!

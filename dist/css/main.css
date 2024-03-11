@@ -1773,11 +1773,19 @@ html.is-animating .transition-main {
   line-height: normal;
   letter-spacing: -0.3px;
   position: absolute;
-  bottom: -2rem;
+  top: 9rem;
 }
 @media only screen and (max-width: 1024px) {
   .footer .parsley-errors-list {
-    bottom: -1.5rem;
+    top: 8.75rem;
+  }
+}
+.footer .footer__form-checkmark-wrapper .parsley-errors-list {
+  top: 2.5rem;
+}
+@media only screen and (max-width: 1024px) {
+  .footer .footer__form-checkmark-wrapper .parsley-errors-list {
+    top: 3rem;
   }
 }
 
@@ -1840,6 +1848,7 @@ html.is-animating .transition-main {
   width: fit-content;
 }
 .tags__slide {
+  display: block;
   color: var(--white);
   font-family: "Inter", sans-serif;
   font-size: var(--fz-i-t6);
@@ -1866,14 +1875,14 @@ html.is-animating .transition-main {
 .industry {
   margin-top: 2rem;
   position: relative;
-  min-height: -moz-max-content;
-  min-height: max-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }
 @media only screen and (max-width: 1024px) {
   .industry {
     margin-top: 1rem;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
   }
 }
 .industry__content {
@@ -1881,7 +1890,7 @@ html.is-animating .transition-main {
   display: grid;
   align-content: flex-end;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, 0.85fr));
   align-items: flex-end;
   overflow-x: hidden;
 }
@@ -1908,7 +1917,7 @@ html.is-animating .transition-main {
   right: 0;
   bottom: 0;
   z-index: -1;
-  min-height: 100%;
+  height: 100%;
   border-radius: 2rem;
 }
 @media only screen and (max-width: 1200px) {
@@ -2255,6 +2264,8 @@ html.is-animating .transition-main {
   right: 0;
   bottom: 0;
   z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 .product__slide-hover-list {
   display: flex;
@@ -3433,7 +3444,7 @@ html.is-animating .transition-main {
 }
 @media only screen and (max-width: 1024px) {
   .scroll-slider__content {
-    padding: 2.5rem 0 0;
+    padding: 1.5rem 0 0;
     overflow: hidden;
   }
 }
@@ -6118,6 +6129,11 @@ html.is-animating .transition-main {
   text-align: center;
   padding: 1.2rem 3.7rem;
   border-radius: 3.4rem;
+  transition: ease 0.3s background-color, ease 0.3s color;
+}
+.burger-modal__button-contact:hover {
+  background-color: var(--light-grey);
+  color: var(--white);
 }
 
 .intro {

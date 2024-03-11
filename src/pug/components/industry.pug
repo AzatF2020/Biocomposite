@@ -1,10 +1,10 @@
 mixin industry(data)
   section.industry
     .container
-      video(muted="" data-autoplay="" loop playsinline preload="none").industry__video.lazyloaded
+      video(muted="" data-autoplay="" loop playsinline preload="none").industry__video.lazyload
         source(src=data.videoSrc type="video/mp4")
       .industry__content
-        h2.industry__title= data.title
+        h2.industry__title(id=data.block_id)= data.title
         p.industry__text= data.text
         .industry__slider-navigation.js-navigation
           button.slider-navigation-button.js-prev

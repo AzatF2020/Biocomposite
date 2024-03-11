@@ -180,6 +180,12 @@
     text-align: center;
     padding: 1.2rem 3.7rem;
     border-radius: 3.4rem;
+    transition: ease .3s background-color, ease .3s color;
+
+    &:hover {
+      background-color: var(--light-grey);
+      color: var(--white);
+    }
   }
 }
   

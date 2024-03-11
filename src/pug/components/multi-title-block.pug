@@ -2,10 +2,10 @@ mixin multi-title-block()
   section.multi-title-block
     .container
       .multi-title-block__content
-        video.multi-title-block__bg-video.js-parallax(autoplay='' muted='' loop='loop' data-parallax-strong="0.35")
+        video.multi-title-block__bg-video.js-parallax(autoplay='' muted='' loop='loop' data-parallax-strong="0.325")
           source(src="assets/video/intro.mp4" type='video/mp4')
           | Your browser not supported video tag.
-        div.js-parallax(data-parallax-strong="0.135")
+        div.js-parallax(data-parallax-strong="0.145")
           h1.multi-title-block__title
             span.multi-title-block__title-upper.js-split-text
               | Биокомпозит — рождение новых технологий
@@ -15,7 +15,7 @@ mixin multi-title-block()
             p.multi-title-block__text
               | Мы создаем продукцию, которая не вредит окружающей среде, а высокая прочность
               | и качество продукта также идеальны как и сама природа
-            a.multi-title-block__link-hook(href='/#')
+            button.multi-title-block__link-hook.js-scroll-bottom
               svg(xmlns='http://www.w3.org/2000/svg' width='26' height='30' viewbox='0 0 26 30' fill='none' class="multi-title-block__arrow multi-title-block__arrow--first")
                 path(d='M14.2029 0V25.3689L24.2754 15.233L26 16.9515L12.9855 30L0 16.9515L1.68116 15.233L11.7681 25.3689V0H14.2029Z' fill='white')
           .multi-title-block__circle

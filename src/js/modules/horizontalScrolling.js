@@ -8,6 +8,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function initHorizontalScrollingSlider() {
   const slidersTrigger = document.querySelectorAll(".js-scroll-slider-trigger")
+  const slidersNavigation = document.querySelectorAll(".js-navigation-appearances")
+
+  if(!slidersTrigger.length) return
 
   function initSlider(currentSlide) {
     return new Swiper(currentSlide, {
@@ -111,5 +114,27 @@ export default function initHorizontalScrollingSlider() {
       circleBarElements,
       sliderImages
     })
+  })
+
+  function initAppearancesBar(slides, navigation) {
+    slides.forEach((slide, index) => {
+      gsap.to(slide, 2.5, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power4.out',
+        x: 0,
+        delay: .5,
+        scrollTrigger: {
+          trigger: navigation,
+        }
+      })
+    })
+  }
+
+  slidersNavigation?.forEach((navigation) => {
+    const slides = [...navigation.children]
+    gsap.set(slides, { opacity: 0, x: -20 })
+
+    initAppearancesBar(slides, navigation)
   })
 }

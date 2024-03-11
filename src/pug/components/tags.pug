@@ -3,4 +3,4 @@ mixin tags(data)
     .swiper-wrapper
       each tag in data
         .swiper-slide
-          .tags__slide #{tag}
+          a.tags__slide.js-anchor(href=`#to-` + tag.block_id) #{tag.name}

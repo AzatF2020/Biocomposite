@@ -463,10 +463,20 @@
     line-height: normal;
     letter-spacing: -0.3px;
     position: absolute;
-    bottom: -2rem;
+    top: 9rem;
 
     @include breakpoint(tablet) {
-      bottom: -1.5rem;
+      top: 8.75rem;
+    }
+  }
+
+  .footer__form-checkmark-wrapper {
+    .parsley-errors-list {
+      top: 2.5rem;
+  
+      @include breakpoint(tablet) {
+        top: 3rem;
+      }
     }
   }
 }
