@@ -41,6 +41,11 @@ export default function initSplitText() {
         yPercent: 0,
         duration: 1,
         stagger: 0.1,
+        onComplete: () => {
+          gsap.set(parentLines, {
+            overflow: "visible",
+          })
+        }
       },
       ">-=0.5"
     );

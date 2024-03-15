@@ -114,6 +114,14 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 2rem;
+
+    picture {
+      display: contents;
+    }
+
+    source {
+      display: contents;
+    }
   }
 
   &__slide-image {

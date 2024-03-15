@@ -24,8 +24,9 @@ mixin scroll-slider(tag, title, sliders)
                     .scroll-slider__slide-column.js-scroll-slider-images
                       if slide.images.length > 1
                         each image in slide.images
-                          .scroll-slider__slide-image-wrapper
-                            img(alt="image slider" src=image).scroll-slider__slide-image.scroll-slider__slide-image--rounded
+                          .scroll-slider__slide-image-wrapper.scroll-slider__slide-image--rounded
+                            picture
+                              img(alt="image slider" src=image).scroll-slider__slide-image
                       else
                         .scroll-slider__slide-image-wrapper.scroll-slider__slide-image-wrapper--large
                           img(alt="image slider" src=slide.images[0]).scroll-slider__slide-image

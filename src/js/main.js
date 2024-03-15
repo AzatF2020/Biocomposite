@@ -24,6 +24,7 @@ import setBubblesToClients from './modules/clientsBubbles.js';
 import enableReveal from './modules/revealBlocks.js';
 import scrollingToBlock from './modules/scrollAnchor.js';
 import scrollingToBottom from './modules/scrollToBottom.js';
+import connectMap from './vendor/mapInit.js';
 
 const runScripts = () => {
   window.biocompositeApi = {
@@ -54,6 +55,7 @@ const runScripts = () => {
   enableReveal()
   disclosureMultiVideoBlocks();
   scrollSliderMobile()
+  connectMap()
 };
 
 documentReady(runScripts, initLoader)
