@@ -1,7 +1,7 @@
 import Swup from 'swup';
 import SwupPreloadPlugin from '@swup/preload-plugin';
-import initFirstAnimation from '../modules/initFirstAnimation';
 import smoothScrolling from "./smoothScroll"
+import initSplitText from './initSplitText';
 
 export default (fn, loaderFn) => {
   const swup = new Swup({
@@ -28,6 +28,7 @@ export default (fn, loaderFn) => {
 
 
   swup.hooks.on('page:view', () => {
+    initSplitText()
     initFirstAnimation()
     updateScriptsHandler()
   })
