@@ -42,16 +42,19 @@
   }
 
   &__slider {
-    width: 102.5%;
+    width: 100%;
 
     @include breakpoint(laptop) {
-      width: 100%;
       max-width: 38.5rem;
     }
 
     @include breakpoint(tablet) {
-      max-width: 26.5rem;
+      max-width: 52.5rem;
     }
+  }
+
+  .swiper-slide {
+    width: fit-content;
   }
 
   &__slide {

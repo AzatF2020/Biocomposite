@@ -1,20 +1,28 @@
 .footer {
+  margin: 0 var(--content-margin);
+
+  @include breakpoint(tablet) {
+    margin: 0 var(--content-padding-two);
+  }
+
+  .container {
+    @include breakpoint(tablet) {
+      padding: 0;
+    }
+  }
+
   &__content {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-template-rows: .5fr 3fr .5fr;
     border-radius: 3rem;
 
-    padding: 6rem var(--content-padding) 0;
+    padding-top: 6rem;
 
     @include breakpoint(laptop) {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-    }
-
-    @include breakpoint(tablet) {
-      padding: 6rem var(--content-padding-two) 2rem;
     }
   }
 

@@ -8,7 +8,6 @@ import documentReady from './vendor/documentReady.js';
 import enableParallax from "./vendor/enableParallax";
 import Slider from "./vendor/slider";
 import modals from "./vendor/modals";
-import validation from "./vendor/validation";
 
 import initBurgerModalAnimation from './modules/burgerModalAnimation.js';
 import initLoader from './modules/loader.js';
@@ -36,7 +35,6 @@ const runScripts = () => {
   };
 
   modals()
-  validation()
   const sliderInstance = new Slider();
   sliderInstance.initializeSliders();
   

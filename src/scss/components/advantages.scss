@@ -103,7 +103,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: 90%;
-    letter-spacing: -.3rem;
 
     @include breakpoint(tablet) {
       font-size: var(--fz-h5);
@@ -112,7 +111,9 @@
     }
 
     @include breakpoint(tablet) {
-      max-width: 25.5rem;
+      max-width: 30.5rem;
+      text-wrap: wrap;
+      word-wrap: break-word;
     }
   }
 
@@ -138,15 +139,22 @@
     }
   }
 
+  &__slide-list .text-wrapper {
+    margin-bottom: 2.5rem;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
   &__slide-list-number {
     color: var(--white);
     font-family: "PP Pangram Sans Rounded", sans-serif;
     font-size: var(--fz-h3);
     font-style: normal;
     font-weight: 500;
-    line-height: 90%;
+    line-height: .9;
     letter-spacing: -.16rem;
-    margin-bottom: 1.5rem;
 
     @include breakpoint(tablet) {
       font-family: "PP Pangram Sans Rounded";

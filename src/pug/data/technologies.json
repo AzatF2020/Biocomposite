@@ -21,10 +21,10 @@
       {
         "navigationTitle": "О технологии",
         "images": [
-          "assets/img/board-hover.png",
-          "assets/img/board-hover.png",
-          "assets/img/board-hover.png",
-          "assets/img/board-hover.png"
+          "assets/img/scroll-slider-image-two.png",
+          "assets/img/scroll-slider-image-one.png",
+          "assets/img/scroll-slider-image-three.png",
+          "assets/img/scroll-slider-image-four.png"
         ],
         "title": "Мы предлагаем инновационные, устойчивые и высокоэффективные материалы на биологической основе. ",
         "text": "Композит представляет собой комбинацию двух или более материалов, которые при объединении обладают улучшенными свойствами.",
@@ -45,10 +45,10 @@
       {
         "navigationTitle": "биологическая основа",
         "images": [
-          "assets/img/board-hover.png",
-          "assets/img/board-hover.png",
-          "assets/img/board-hover.png",
-          "assets/img/board-hover.png"
+          "assets/img/scroll-slider-image-five.png",
+          "assets/img/scroll-slider-image-one.png",
+          "assets/img/scroll-slider-image-six.png",
+          "assets/img/scroll-slider-image-seven.png"
         ],
         "title": "Биокомпозиты включают в себя возобновляемые волокна древесины на биологической основе в качестве компонента. ",
         "text": "",
@@ -70,7 +70,7 @@
         "modeReversed": true,
         "navigationTitle": "комбинации биокомпозита",
         "images": [
-          "assets/img/board-hover.png"
+          "assets/img/scroll-slider-bg.jpg"
         ],
         "title": "Биокомпозитные материалы можно определить как композитные материалы, в которых хотя бы один из компонентов получен из природных источников",
         "text": "",

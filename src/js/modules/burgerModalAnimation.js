@@ -90,13 +90,13 @@ export default function initBurgerModalAnimation() {
     closeModal()
   }
 
-  const closeOutOfModalCondition = (event) => {
-    return (!burgerModal.contains(event.target)) && (!document.querySelector('.header').contains(event.target))
-  }
-
   window.addEventListener('click', (event) => {
     if(closeOutOfModalCondition(event)) {
       closeModal()
     }
   })
+
+  const closeOutOfModalCondition = (event) => {
+    return (!burgerModal.contains(event.target)) && (!document.querySelector('.header').contains(event.target))
+  }
 }

@@ -1,17 +1,28 @@
 .intro {
-  position: relative;
   height: 100vh;
   overflow-x: hidden;
+  
+  &__container {
+    position: relative;
+  }
 
   &__content {
     padding-bottom: 1rem;
     width: 100%;
-    min-height: calc(100vh - 2rem);
 
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     overflow-x: hidden;
+
+    height: 100vh;
+    height: 100svh;
+    border-radius: 2rem;
+
+    @include breakpoint(tablet) {
+      height: 95vh;
+      height: 95svh;
+    }
   }
 
   &__info {
@@ -33,17 +44,19 @@
     background-repeat: no-repeat;
     position: absolute;
 
+    border-radius: 2rem;
     top: 9rem;
     right: 0;
     bottom: 0;
     min-height: calc(100vh - 10rem);
     z-index: -1;
 
-    border-radius: 2rem;
-
     @include breakpoint(tablet) {
       top: 7rem;
-      min-height: calc(100vh - 8rem);
+      min-height: auto;
+      height: 90vh;
+      height: 90svh;
+
     }
   }
 
