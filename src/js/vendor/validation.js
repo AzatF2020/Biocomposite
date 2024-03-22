@@ -123,4 +123,61 @@ export default function validation() {
       }
     })
   });
+
+  // send
+  const js_form = document.querySelectorAll('form.js-form');
+  js_form.forEach((form) => {
+    if (form) {
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let wait = BX.showWait(form);
+
+        if (
+          $(form)
+            .parsley()
+            .isValid()
+        ) {
+
+          fetch(location.href, {
+            method: 'POST',
+            body: new FormData(form)
+          })
+          .then(response => {
+            BX.closeWait(form, wait);
+            window.biocompositeApi.modal.open("#modal-success");
+          })
+          .catch(error => {
+            window.biocompositeApi.modal.open("#modal-error");
+            console.log(error)
+          })
+
+          /*let options = {
+              success: function(data){
+                  if (data.ID > 0) {
+                      form.reset();
+                      $(form)
+                          .parsley()
+                          .reset();
+                      ym(90987059,'reachGoal','send');
+                      gtag('event', 'sendlead');
+                      window.openModal("#callback-success");
+                  } else {
+                      data.errors.forEach((error) => {
+                          alert(error);
+                      });
+                  }
+
+                  BX.closeWait(form, wait); // прячем прелоадер
+              },
+              error: function (request, status, error) {
+                  alert(error);
+              },
+              dataType:  'json',
+          };
+
+          $(form).ajaxSubmit(options);*/
+        }
+      });
+    }
+  })
 }
