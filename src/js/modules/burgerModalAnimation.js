@@ -45,6 +45,9 @@ export default function initBurgerModalAnimation() {
         ease: 'power2.out',
         onComplete: () => {
           burgerButton.disabled = false
+          menuItems.forEach((item) => {
+            item.style.overflow = 'visible'
+          })
         }
       }) 
   }
@@ -61,6 +64,9 @@ export default function initBurgerModalAnimation() {
         duration: .75,
         onStart: () => {
           burgerButton.disabled = true
+          menuItems.forEach((item) => {
+            item.style.overflow = 'hidden'
+          })
         }
       })
       .to(burgerModal, {

@@ -103,6 +103,7 @@
 
     @include breakpoint(tablet) {
       margin-bottom: 4rem;
+      font-size: var(--fz-i-t6);
       font-family: "Inter", sans-serif;
     }
   }

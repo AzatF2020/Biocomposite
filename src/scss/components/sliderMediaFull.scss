@@ -43,10 +43,6 @@
     background-color: black;
   }
 
-  &__slider {
-
-  }
-
   &__slide {
     height: calc(100vh - 8.8rem);
     max-height: 86rem;
@@ -63,7 +59,7 @@
       font-style: normal;
       font-weight: 400;
       line-height: 120%;
-      padding: 0 0 1rem 2rem;
+      padding: 0 0 2rem 2rem;
     }
 
     @include breakpoint(tablet) {
@@ -107,5 +103,10 @@
     right: 0;
     bottom: 0;
     z-index: -1;
+
+    @include breakpoint(tablet) {
+      object-position: center;
+      max-width: none;
+    }
   }
 }

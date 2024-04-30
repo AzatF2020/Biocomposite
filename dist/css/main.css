@@ -306,7 +306,6 @@ body {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding-bottom: 2rem;
 }
 
 html.is-changing .transition-main {
@@ -2169,7 +2168,7 @@ html.is-animating .transition-main {
 .product__slide {
   display: block;
   width: 100%;
-  max-width: 52.4rem;
+  max-width: 52rem;
   height: 55.6rem;
   position: relative;
   border-radius: 3rem;
@@ -2891,8 +2890,7 @@ html.is-animating .transition-main {
   bottom: 0;
   width: 100%;
   height: 100%;
-  -webkit-clip-path: polygon(0 0, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
-          clip-path: polygon(0 0, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+  clip-path: polygon(0 0, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
   z-index: 5;
   background-color: black;
 }
@@ -2912,7 +2910,7 @@ html.is-animating .transition-main {
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
-    padding: 0 0 1rem 2rem;
+    padding: 0 0 2rem 2rem;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -2957,6 +2955,13 @@ html.is-animating .transition-main {
   right: 0;
   bottom: 0;
   z-index: -1;
+}
+@media only screen and (max-width: 1024px) {
+  .slider-media-full__image {
+    -o-object-position: center;
+       object-position: center;
+    max-width: none;
+  }
 }
 
 .slider-digits {
@@ -3788,19 +3793,15 @@ html.is-animating .transition-main {
      object-fit: cover;
 }
 .scroll-slider__slide-image {
-  -webkit-clip-path: inset(0px 0px 650px 0px);
-          clip-path: inset(0px 0px 650px 0px);
+  clip-path: inset(0px 0px 650px 0px);
   width: 100%;
   position: absolute;
   z-index: -1;
-  transition: -webkit-clip-path 1.5s ease;
   transition: clip-path 1.5s ease;
-  transition: clip-path 1.5s ease, -webkit-clip-path 1.5s ease;
 }
 @media only screen and (max-width: 1200px) {
   .scroll-slider__slide-image {
-    -webkit-clip-path: none;
-            clip-path: none;
+    clip-path: none;
     display: none;
   }
 }
@@ -5687,8 +5688,7 @@ html.is-animating .transition-main {
   bottom: 0;
   width: 100%;
   height: 100%;
-  -webkit-clip-path: polygon(0 0, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
-          clip-path: polygon(0 0, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+  clip-path: polygon(0 0, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
   z-index: 5;
   background-color: black;
 }
@@ -5755,6 +5755,7 @@ html.is-animating .transition-main {
 @media only screen and (max-width: 1024px) {
   .more__slide-text {
     margin-bottom: 4rem;
+    font-size: var(--fz-i-t6);
     font-family: "Inter", sans-serif;
   }
 }
@@ -6172,7 +6173,7 @@ html.is-animating .transition-main {
   position: relative;
 }
 .intro__content {
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   width: 100%;
   display: flex;
   align-items: flex-end;

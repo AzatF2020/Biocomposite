@@ -25,16 +25,26 @@ class Slider {
     })
   }
 
-  #initTextAnimation(text, options) {
+  #initTextAnimation(text, textWrapper, options) {
     const {slideIndex, activeIndex} = options
+
+    textWrapper.forEach((item) => {
+      item.style.overflow = 'hidden'
+    })
 
     text.forEach((item, index) => {
       const tl = gsap.timeline({ease: "power3.out"})
 
       if (slideIndex === activeIndex) {
-        tl.to(item, {
+        tl
+        .to(item, {
           yPercent: 0,
           delay: 1 * (index / 20),
+          onComplete: () => {
+            textWrapper.forEach((item) => {
+              item.style.overflow = 'visible'
+            })
+          }
         })
       }
     })
@@ -49,10 +59,11 @@ class Slider {
         const slides = slider.querySelectorAll(".swiper-slide")
 
         slides.forEach((slide, slideIndex) => {
+          const textWrapper = slide.querySelectorAll('.text-wrapper')
           const text = slide.querySelectorAll(".text-wrapper *")
           gsap.set(text, { yPercent: 150 })
 
-          this.#initTextAnimation(text, {slideIndex, activeIndex})
+          this.#initTextAnimation(text, textWrapper, {slideIndex, activeIndex})
         })
       }
     }
@@ -62,6 +73,17 @@ class Slider {
     if (window.matchMedia("(max-width: 768px)").matches) {
       return options
     }
+  }
+
+  #setVisibleTextWrapper(slider) {
+    const slides = slider.querySelectorAll(".swiper-slide")
+
+    slides.forEach((slide, slideIndex) => {
+      const textWrapper = slide.querySelectorAll('.text-wrapper')
+      textWrapper.forEach((item) => {
+        item.style.overflow = 'visible'
+      })
+    })
   }
 
   #swiperInit(slider, options) {
@@ -87,6 +109,7 @@ class Slider {
       },
     })
 
+    this.#setVisibleTextWrapper(slider)
     swiperInstance.on('slideChange', this.#slideChangeConfig(swiperInstance, slider, options))
   }
 
