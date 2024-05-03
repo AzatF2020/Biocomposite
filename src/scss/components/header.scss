@@ -198,6 +198,10 @@
     }
   }
 
+  &__link-active{
+    opacity: .45;
+  }
+
   &__button-contact {
     display: flex;
     align-items: center;

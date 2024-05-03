@@ -1237,6 +1237,9 @@ html.is-animating .transition-main {
 .header__link:hover {
   opacity: 0.45;
 }
+.header__link-active {
+  opacity: 0.45;
+}
 .header__button-contact {
   display: flex;
   align-items: center;
