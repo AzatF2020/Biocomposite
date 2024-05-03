@@ -145,6 +145,7 @@ export default function validation() {
           .then(response => {
             BX.closeWait(form, wait);
             window.biocompositeApi.modal.open("#modal-success");
+            form.reset();
           })
           .catch(error => {
             window.biocompositeApi.modal.open("#modal-error");
