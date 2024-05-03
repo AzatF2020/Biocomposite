@@ -44,7 +44,7 @@
     font-size: 35rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 90%;
+    line-height: 1;
     letter-spacing: -1.6px;
     display: flex;
     align-items: center;
@@ -55,10 +55,14 @@
     }
 
     img {
+      position: relative;
+      top: 4rem;
+      width: 26.7rem;
+      height: auto;
+      object-fit: cover;
       @include breakpoint(tablet) {
+        top: 2rem;
         width: 13.3rem;
-        height: auto;
-        object-fit: cover;
       }
     }
   }
@@ -92,7 +96,7 @@
     font-size: var(--fz-i-t6);
     font-style: normal;
     font-weight: 600;
-    line-height: 120%; /* 18px */
+    line-height: 120%;
     letter-spacing: 0.15px;
 
     padding: 1.5rem;
