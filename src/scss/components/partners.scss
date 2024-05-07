@@ -3,7 +3,7 @@
   &__content {
     background-color: var(--white);
     border-radius: 2rem;
-    padding: var(--content-padding-two);
+    padding: 5rem var(--content-padding-two) var(--content-padding-two);
 
     @include breakpoint(tablet) {
       padding: 4rem var(--content-padding-two) 4rem;

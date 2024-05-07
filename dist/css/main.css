@@ -4515,7 +4515,7 @@ html.is-animating .transition-main {
   margin-bottom: 2rem;
 }
 .slider-hover__content {
-  padding: 4rem var(--content-padding-two) 2rem;
+  padding: 5rem var(--content-padding-two) 2rem;
   background-color: white;
   border-radius: 3rem;
   overflow-x: hidden;
@@ -5192,7 +5192,7 @@ html.is-animating .transition-main {
   }
 }
 .features__content {
-  padding: 6rem var(--content-padding-two) 0;
+  padding: 5rem var(--content-padding-two) 0;
   width: 100%;
   background: #6fee8a;
   color: var(--black);
@@ -5840,7 +5840,7 @@ html.is-animating .transition-main {
 .partners__content {
   background-color: var(--white);
   border-radius: 2rem;
-  padding: var(--content-padding-two);
+  padding: 5rem var(--content-padding-two) var(--content-padding-two);
 }
 @media only screen and (max-width: 1024px) {
   .partners__content {
