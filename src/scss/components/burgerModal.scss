@@ -5,7 +5,7 @@
   top: 0;
   right: 0;
   left: -.1rem;
-  height: 95%;
+  height: fit-content;
 
   @include breakpoint(laptop) {
     display: block;
@@ -19,7 +19,7 @@
 
     width: 100%;
     min-height: 95%;
-    height: 95%;
+    height: 100%;
     
     background-color: var(--black);
     border-radius: 0 0 3rem 3rem;
@@ -60,6 +60,10 @@
   &__button-products {
     display: flex;
     align-items: center;
+  }
+
+  &__button-products-wrapper {
+    margin-bottom: 5rem;
   }
 
   &__button-products > .burger-modal__button-text {

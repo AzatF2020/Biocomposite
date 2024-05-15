@@ -66,6 +66,7 @@
 
     @include breakpoint(laptop) {
       position: static;
+      margin-top: 5rem;
     }
 
     span {
