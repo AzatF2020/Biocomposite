@@ -1,0 +1,54 @@
+mixin click-slider(tag, title, sliders)
+  section.click-slider
+    .container
+      .click-slider__content
+        .click-slider__upper.container
+          span.click-slider__tag= tag
+          h2.click-slider__title= title
+        .click-slider__slider-section
+          .click-slider__navigation-bar
+            span.click-slider__navigation-line
+            .click-slider__navigation-bar-slider.js-navigation-bar
+              .swiper-wrapper
+                each slide, index in sliders
+                  .swiper-slide.js-navigation-slider(data-index=index)
+                    .click-slider__navigation-name
+                      span 
+                      p= slide.navigationTitle
+
+          .click-slider__slider.js-init-slider-click
+            .swiper-wrapper
+              each slide, index in sliders
+                .swiper-slide.js-slide(data-index=index)
+
+                  div(class={"click-slider__slide": !slide.modeReversed, "click-slider__slide click-slider__slide--reversed": slide.modeReversed})
+                    .click-slider__slide-column.js-click-slider-images
+                      if slide.images.length > 1
+                        each image in slide.images
+                          .click-slider__slide-image-wrapper.click-slider__slide-image--rounded
+                            img(alt="image slider" src=image).click-slider__slide-image
+                      else
+                        .click-slider__slide-image-wrapper.click-slider__slide-image-wrapper--large
+                          img(alt="image slider" src=slide.images[0]).click-slider__slide-image
+
+                    .click-slider__slide-column
+                      if slide.title
+                        h2.click-slider__slide-title= slide.title
+
+                      if slide.text
+                        p.click-slider__slide-text= slide.text
+
+                      if slide.percentageInfo.number || slide.percentageInfo.text
+                        .click-slider__slide-info-percentage
+                          h4.click-slider__slide-percentage-number= slide.percentageInfo.number
+                          p.click-slider__slide-percentage-text= slide.percentageInfo.text
+
+                      if slide.listInfo.listHead || slide.listInfo.list[0].imgSrc || slide.listInfo.list[0].text
+                        .click-slider__slide-list-label
+                          p.click-slider__slide-list-head= slide.listInfo.listHead
+                          ul.click-slider__slide-list
+                            each list in slide.listInfo.list
+                              li.click-slider__slide-info-list
+                                div.click-slider__slide-list-icon-wrapper
+                                  img(alt="icon" src= list.imgSrc)
+                                p.click-slider__slide-list-text= list.text

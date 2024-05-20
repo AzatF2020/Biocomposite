@@ -11,6 +11,12 @@
     display: block;
   }
 
+  &-inner {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
   .container {
     padding-top: 13rem;
     padding-bottom: 7rem;
@@ -27,6 +33,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    max-height: 100vh;
 
     @include breakpoint(mobile) {
       padding-top: 10rem;

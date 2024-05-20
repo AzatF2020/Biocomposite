@@ -51,12 +51,29 @@
     min-height: calc(100vh - 10rem);
     z-index: -1;
 
+    &:after {
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg width='880' height='861' viewBox='0 0 880 861' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1536 38.0883C1536 433.167 1216.54 753.004 823 753.004C429.462 753.004 110 433.167 110 38.0883C110 -356.99 429.462 -676.828 823 -676.828C1216.54 -676.828 1536 -356.99 1536 38.0883Z' stroke='white' stroke-opacity='0.1' stroke-width='220'/%3E%3C/svg%3E");
+      width: 880px;
+      height: 861px;
+      background-size: contain;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
     @include breakpoint(tablet) {
       top: 7rem;
       min-height: auto;
       height: 90vh;
       height: 90svh;
-
+      &:after {
+        width: calc(100vw - 87px);
+        height: calc(100vw - 87px);
+        left: 87px;
+        right: auto;
+      }
     }
   }
 

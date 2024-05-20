@@ -17,6 +17,7 @@ import initHorizontalScrollingSlider from "./modules/horizontalScrolling";
 import occurrenceCardsDecision from "./modules/occurrenceCardsDecision";
 import toggleVideoBlock from "./modules/multiVideoBlock";
 import disclosureMultiVideoBlocks from "./modules/multiVideoBlockMobile";
+import clickSlider from "./modules/clickSlider";
 import scrollSliderMobile from "./modules/scrollSliderMobile";
 import controlVideoScrolling from "./modules/controlVideoScrolling";
 import setBubblesToClients from './modules/clientsBubbles.js';
@@ -52,6 +53,7 @@ const runScripts = () => {
   enableParallax();
   enableReveal()
   disclosureMultiVideoBlocks();
+  clickSlider();
   scrollSliderMobile()
   connectMap()
 };

@@ -1,6 +1,7 @@
 extends ../layout/index
 
 include ../components/multi-video-block
+include ../components/click-slider
 include ../components/scroll-slider
 include ../components/decisions
 include ../components/advantages
@@ -15,6 +16,11 @@ block constants
 block page
   +multi-video-block(
     technologies.multiVideoBlock
+  )
+  +click-slider(
+    technologies.scrollSlider.tag,
+    technologies.scrollSlider.title,
+    technologies.scrollSlider.sliders
   )
   +scroll-slider(
     technologies.scrollSlider.tag,

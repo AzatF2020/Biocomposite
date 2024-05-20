@@ -38,6 +38,11 @@
     background: rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(8.5px);
 
+    &:hover {
+      background: var(--green-2);
+      color: var(--light-black);
+    }
+
     @include breakpoint(tablet) {
       font-size: 1.3rem;
       padding: 1.2rem 1.6rem;

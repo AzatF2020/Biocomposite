@@ -1,6 +1,10 @@
 .scroll-slider {
   margin-bottom: 12rem;
+  display:none;
 
+  @include breakpoint(laptop) {
+    display:block;
+  }
   @include breakpoint(tablet) {
     margin-bottom: 6rem;
   }
@@ -232,8 +236,8 @@
       align-items: center;
       justify-content: center;
       position: absolute;
-      width: 10rem;
-      height: 10rem;
+      width: 100px;
+      height: 100px;
       border-radius: 10rem;
       background-color: var(--white-grey);
       text-align: center;

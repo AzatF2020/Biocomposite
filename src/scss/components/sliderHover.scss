@@ -18,7 +18,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 90%;
-    letter-spacing: -.3rem;
+    letter-spacing: -.2rem;
     width: 100%;
     max-width: 68.5rem;
 
@@ -71,7 +71,8 @@
     border-radius: 2rem;
     background: #F3F3F3;
     width: 100%;
-    max-width: 38.5rem;
+    max-width: calc(100% - 20px);
+    margin-right: 20px;
     height: 48rem;
     display: flex;
     align-items: flex-start;
@@ -83,8 +84,9 @@
 
     @include breakpoint(tablet) {
       padding: 1rem;
-      max-width: 28.5rem;
       height: 30.5rem;
+      margin-right: 0;
+      max-width: 100%;
     }
 
     &:hover .slider-hover__slide-image {

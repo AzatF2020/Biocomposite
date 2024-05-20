@@ -1,4 +1,4 @@
-@import "../utils/variables";
+ @import "../utils/variables";
 
 .header {
   position: fixed;
@@ -70,6 +70,7 @@
     width: 21rem;
     height: auto;
     object-fit: cover;
+    padding: 8.5px 0 8.5px 7px;
 
     @include breakpoint(tablet) {
       transform: scale(0.985);
