@@ -55,14 +55,24 @@
     }
 
     img {
+      display:none;
       position: relative;
-      /*top: 4rem;*/
       width: 26.7rem;
       height: auto;
       object-fit: cover;
       @include breakpoint(tablet) {
         top: 2rem;
         width: 13.3rem;
+        display: inline-block;
+      }
+    }
+
+    .features__video {
+      position: relative;
+      width: 20rem;
+      margin: 10rem 4rem 0;
+      @include breakpoint(tablet) {
+        display: none;
       }
     }
   }

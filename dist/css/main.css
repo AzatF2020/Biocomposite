@@ -7682,8 +7682,8 @@ html.is-animating .transition-main {
   }
 }
 .not-found__title img {
+  display: none;
   position: relative;
-  /*top: 4rem;*/
   width: 26.7rem;
   height: auto;
   -o-object-fit: cover;
@@ -7693,6 +7693,17 @@ html.is-animating .transition-main {
   .not-found__title img {
     top: 2rem;
     width: 13.3rem;
+    display: inline-block;
+  }
+}
+.not-found__title .features__video {
+  position: relative;
+  width: 20rem;
+  margin: 10rem 4rem 0;
+}
+@media only screen and (max-width: 1024px) {
+  .not-found__title .features__video {
+    display: none;
   }
 }
 .not-found__text {

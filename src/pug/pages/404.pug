@@ -1,0 +1,24 @@
+extends ../layout/index
+
+block constants
+  - const title = "404"
+  - const barbaNamespace = "404"
+
+block page
+  section.not-found
+    .container
+      .not-found__content.js-scroll-video-container
+        p.not-found__uppertitle
+          | страница не найдена
+        h1.not-found__title
+          | 4
+          img(src="assets/icons/logo-3d.png")
+          video(playsinline="true" webkit-playsinline="true" preload="auto" muted="muted").features__video.js-video-background
+            source(src="assets/video/video-logo.mp4" type="video/mp4")
+          div#container
+          | 4
+        p.not-found__text
+          | возможно, она была перемещена,
+          | или неверно указан адрес
+        a.not-found__home-button(href="/")
+          | Вернуться на главную
