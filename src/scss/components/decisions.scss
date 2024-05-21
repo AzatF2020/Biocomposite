@@ -118,17 +118,23 @@
   }
 
   &__slide-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background: var(--white);
+    width: 80px;
+    height: 80px;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(tablet) {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+
     &::before {
       content: "0"counter(decisions-counter)"";
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 100%;
-      background: var(--white);
-      width: 80px;
-      height: 80px;
-      position: relative;
-      z-index: 1;
 
       color: var(--black);
       font-family: "PP Pangram Sans Rounded", sans-serif;
@@ -138,9 +144,10 @@
       line-height: 100%;
       letter-spacing: -.16rem;
 
+      margin-left: -5px;
+      margin-top: -5px;
+
       @include breakpoint(tablet) {
-        width: 4.8rem;
-        height: 4.8rem;
         font-size: var(--fz-i-t6);
         letter-spacing: 0;
         line-height: 0;

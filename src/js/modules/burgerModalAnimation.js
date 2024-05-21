@@ -36,7 +36,7 @@ export default function initBurgerModalAnimation() {
         duration: 1,
         onStart: () => {
           burgerButton.disabled = true
-          window.scroll.stopScroll()
+          //window.scroll.stopScroll()
         }
       })
       .to(menuItemsElements, {
