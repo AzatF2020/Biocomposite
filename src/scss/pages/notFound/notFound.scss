@@ -49,9 +49,12 @@
     display: flex;
     align-items: center;
     margin-bottom: 2.8rem;
+    margin-top: -6rem;
 
     @include breakpoint(tablet) {
       font-size: 15rem;
+      margin-top: -1rem;
+      margin-bottom: 0rem;
     }
 
     img {
@@ -62,9 +65,9 @@
       margin: 8rem 15px 0;
 
       @include breakpoint(tablet) {
-        top: 2rem;
-        width: 13.3rem;
+        width: 11rem;
         display: inline-block;
+        margin-top: -1rem;
       }
     }
   }

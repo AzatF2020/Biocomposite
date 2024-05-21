@@ -4990,7 +4990,9 @@ html.is-animating .transition-main {
   .decisions__slide-counter::before {
     font-size: var(--fz-i-t6);
     letter-spacing: 0;
-    line-height: 0;
+    line-height: 1;
+    margin-left: -2px;
+    margin-top: 2px;
   }
 }
 .decisions__slide-icon-wrapper {
@@ -7683,10 +7685,13 @@ html.is-animating .transition-main {
   display: flex;
   align-items: center;
   margin-bottom: 2.8rem;
+  margin-top: -6rem;
 }
 @media only screen and (max-width: 1024px) {
   .not-found__title {
     font-size: 15rem;
+    margin-top: -1rem;
+    margin-bottom: 0rem;
   }
 }
 .not-found__title img {
@@ -7699,9 +7704,9 @@ html.is-animating .transition-main {
 }
 @media only screen and (max-width: 1024px) {
   .not-found__title img {
-    top: 2rem;
-    width: 13.3rem;
+    width: 11rem;
     display: inline-block;
+    margin-top: -1rem;
   }
 }
 .not-found__text {
