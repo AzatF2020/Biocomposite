@@ -63,12 +63,26 @@
     @include breakpoint(tablet) {
       max-height: 54rem;
     }
+
+    &::after {
+      content: "";
+      background: rgba(0,0,0,.15);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__slide-bottom-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    z-index: 2;
   }
 
   &__slide-title {
@@ -82,6 +96,7 @@
     width: 100%;
     max-width: 91.5rem;
     margin-bottom: 2rem;
+    z-index: 2;
 
     @include breakpoint(tablet) {
       font-size: var(--fz-h5);
@@ -100,6 +115,7 @@
     width: 100%;
     max-width: 51.5rem;
     margin-bottom: 2rem;
+    z-index: 2;
 
     @include breakpoint(tablet) {
       margin-bottom: 4rem;
@@ -123,6 +139,7 @@
     border-radius: 3rem;
     background-color: var(--green-2);
     transition: .3s ease background-color;
+    z-index: 2;
 
     &:hover {
       background-color: var(--green-1);
@@ -132,6 +149,7 @@
   &__slide-tags {
     display: flex;
     align-items: center;
+    z-index: 2;
   }
 
   &__slide-tag {
@@ -148,6 +166,7 @@
     width: fit-content;
     border-radius: 3rem;
     border: .1rem solid rgba(255, 255, 255, 0.20);
+    z-index: 2;
 
     @include breakpoint(tablet) {
       font-size: 1.3rem;

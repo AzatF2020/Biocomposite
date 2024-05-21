@@ -6479,10 +6479,23 @@ html.is-animating .transition-main {
     max-height: 54rem;
   }
 }
+.more__slide::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
 .more__slide-bottom-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  z-index: 2;
 }
 .more__slide-title {
   color: var(--white);
@@ -6495,6 +6508,7 @@ html.is-animating .transition-main {
   width: 100%;
   max-width: 91.5rem;
   margin-bottom: 2rem;
+  z-index: 2;
 }
 @media only screen and (max-width: 1024px) {
   .more__slide-title {
@@ -6513,6 +6527,7 @@ html.is-animating .transition-main {
   width: 100%;
   max-width: 51.5rem;
   margin-bottom: 2rem;
+  z-index: 2;
 }
 @media only screen and (max-width: 1024px) {
   .more__slide-text {
@@ -6536,6 +6551,7 @@ html.is-animating .transition-main {
   border-radius: 3rem;
   background-color: var(--green-2);
   transition: 0.3s ease background-color;
+  z-index: 2;
 }
 .more__link-more:hover {
   background-color: var(--green-1);
@@ -6543,6 +6559,7 @@ html.is-animating .transition-main {
 .more__slide-tags {
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 .more__slide-tag {
   color: var(--white);
@@ -6557,6 +6574,7 @@ html.is-animating .transition-main {
   width: fit-content;
   border-radius: 3rem;
   border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
 }
 @media only screen and (max-width: 1024px) {
   .more__slide-tag {
