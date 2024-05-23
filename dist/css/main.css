@@ -2054,6 +2054,8 @@ html.is-animating .transition-main {
   border-radius: 2rem;
   background-color: #F0F3F5;
   counter-increment: industry-counter;
+  margin-right: 20px;
+  width: calc(100% - 20px);
   display: flex;
   align-items: flex-start;
   overflow: hidden;
@@ -2192,13 +2194,14 @@ html.is-animating .transition-main {
 }
 .product__slide {
   display: block;
-  width: 100%;
+  width: calc(100% - 20px);
   max-width: 52rem;
   height: 55.6rem;
   position: relative;
   border-radius: 3rem;
   overflow: hidden;
   cursor: pointer;
+  margin-right: 20px;
 }
 @media only screen and (max-width: 1024px) {
   .product__slide {
@@ -3400,6 +3403,12 @@ html.is-animating .transition-main {
   font-weight: 500;
   line-height: 110%;
   letter-spacing: -0.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.multi-video-block__wrapper-bottom-title:hover {
+  scale: 1.2;
+  margin-left: 25px;
 }
 .multi-video-block__wrapper-bottom--large {
   position: relative;
@@ -3485,7 +3494,7 @@ html.is-animating .transition-main {
   }
 }
 .click-slider__content {
-  padding: 2.5rem 0 2rem;
+  padding: 2.5rem 0 0;
   border-radius: 3rem;
   background-color: white;
 }
@@ -3633,11 +3642,34 @@ html.is-animating .transition-main {
          column-gap: 21rem;
   }
 }
+@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+  .click-slider__navigation-bar-slider .swiper-wrapper {
+    -moz-column-gap: 15rem;
+         column-gap: 15rem;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+  .click-slider__navigation-bar-slider .swiper-wrapper {
+    -moz-column-gap: 10rem;
+         column-gap: 10rem;
+  }
+}
 .click-slider__navigation-bar-slider .swiper-slide {
   max-width: 35% !important;
   width: calc(33.3333333333% - 21rem) !important;
   white-space: nowrap;
   cursor: pointer;
+}
+@media only screen and (max-width: 1600px) {
+  .click-slider__navigation-bar-slider .swiper-slide {
+    width: calc(33.3333333333% - 15rem) !important;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .click-slider__navigation-bar-slider .swiper-slide {
+    width: calc(33.3333333333% - 10rem) !important;
+  }
 }
 .click-slider__navigation-bar-slider .swiper-slide.click-slider__navigation-name--active .click-slider__navigation-name > span {
   background-color: var(--green-2);
@@ -3699,6 +3731,12 @@ html.is-animating .transition-main {
     }
   }*/
 }
+@media only screen and (max-width: 1600px) {
+  .click-slider__navigation-name {
+    padding-left: 60px;
+    white-space: wrap;
+  }
+}
 @media only screen and (max-width: 768px) {
   .click-slider__navigation-name {
     width: -moz-fit-content;
@@ -3750,7 +3788,7 @@ html.is-animating .transition-main {
   height: 85vh;
   max-height: none;
   overflow: hidden;
-  margin: 0 var(--content-padding-two);
+  margin: 0 var(--content-padding-two) 0 0;
 }
 @media only screen and (max-width: 1200px) {
   .click-slider__slider-section {
@@ -3812,7 +3850,7 @@ html.is-animating .transition-main {
   flex-basis: 100%;
   position: relative;
   height: 100%;
-  max-height: 60rem;
+  max-height: 63rem;
   display: flex;
   flex-direction: column;
 }
@@ -3924,7 +3962,7 @@ html.is-animating .transition-main {
      object-fit: cover;
   border-radius: 32.5rem;
   left: 10rem;
-  top: 48rem;
+  top: 46rem;
 }
 @media only screen and (max-width: 1024px) {
   .click-slider__slide-image-wrapper.click-slider__slide-image--rounded:nth-child(3) img {
@@ -5559,7 +5597,7 @@ html.is-animating .transition-main {
 .multi-title-block__content {
   overflow: hidden;
   width: 100%;
-  min-height: calc(100vh - 2rem);
+  min-height: calc(100vh - 3rem);
   position: relative;
   padding: 3.8rem 2rem;
   margin: 2rem 0;
@@ -7298,10 +7336,6 @@ html.is-animating .transition-main {
     margin-left: 1rem;
   }
 }
-.products-intro__slider .swiper-wrapper {
-  -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
-}
 @media only screen and (max-width: 1024px) {
   .products-intro__slider .swiper-wrapper {
     -moz-column-gap: 0;
@@ -7325,13 +7359,14 @@ html.is-animating .transition-main {
 }
 .products-intro__slide {
   position: relative;
-  width: 100%;
+  width: calc(100% - 20px);
   max-width: 65.5rem;
   height: 35rem;
   overflow: hidden;
   border-radius: 3rem;
   cursor: pointer;
   display: block;
+  margin-right: 20px;
 }
 @media only screen and (max-width: 1024px) {
   .products-intro__slide {

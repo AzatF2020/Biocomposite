@@ -10,7 +10,7 @@
   }
 
   &__content {
-    padding: 2.5rem 0 2rem;
+    padding: 2.5rem 0 0;
     border-radius: 3rem;
     background-color: white;
 
@@ -158,6 +158,13 @@
         display: flex;
         align-items: center;
         column-gap: 21rem;
+        @include breakpoint(large-desktop) {
+          column-gap: 15rem;
+          justify-content: space-between;
+        }
+        @include breakpoint(desktop) {
+          column-gap: 10rem;
+        }
       }
     }
 
@@ -166,6 +173,13 @@
       width: calc(100%/3 - 21rem) !important;
       white-space: nowrap;
       cursor: pointer;
+
+      @include breakpoint(large-desktop) {
+        width: calc(100%/3 - 15rem) !important;
+      }
+        @include breakpoint(desktop) {
+        width: calc(100%/3 - 10rem) !important;
+        }
 
       &.click-slider__navigation-name--active {
         .click-slider__navigation-name > span {
@@ -205,6 +219,11 @@
     line-height: 100%;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+
+    @include breakpoint(large-desktop) {
+      padding-left: 60px;
+      white-space: wrap;
+    }
 
     @include breakpoint(small-laptop) {
       width: fit-content;
@@ -305,7 +324,7 @@
     height: 85vh;
     max-height: none;
     overflow: hidden;
-    margin: 0 var(--content-padding-two);
+    margin: 0 var(--content-padding-two) 0 0;
 
     @include breakpoint(laptop) {
       height: fit-content;
@@ -369,7 +388,7 @@
     flex-basis: 100%;
     position: relative;
     height: 100%;
-    max-height: 60rem;
+    max-height: 63rem;
 
     display: flex;
     flex-direction: column;
@@ -477,7 +496,7 @@
     object-fit: cover;
     border-radius: 32.5rem;
     left: 10rem;
-    top: 48rem;
+    top: 46rem;
     @include breakpoint(tablet) {
       width: 10.4rem;
       height: 10.4rem;
