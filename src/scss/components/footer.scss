@@ -377,12 +377,12 @@
       object-fit: cover;
       width: 21rem;
       height: auto;
-      padding: 8px 2rem 8px 0;
+      padding: 8px 2rem 8px 7px;
       box-sizing: content-box;
     }
     height: auto;
     width: fit-content;
-    padding-left: .5rem;
+    padding-left: 0;
     padding-right: 1.5rem;
     background: var(--grey);
     border-radius: 4rem;
