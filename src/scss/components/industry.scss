@@ -9,7 +9,7 @@
   }
 
   &__content {
-    padding: 4rem 0;
+    padding: 5rem 0 4rem;
     display: grid;
     align-content: flex-end;
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -69,7 +69,7 @@
 
     grid-column: 1 / 5;
     grid-row: 1 / 2;
-    margin-left: 4rem;
+    margin-left: 20px;
     
     z-index: 2;
 

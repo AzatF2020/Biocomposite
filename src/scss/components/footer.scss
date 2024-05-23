@@ -375,8 +375,10 @@
     display: block;
     img {
       object-fit: cover;
-      width: 25rem;
+      width: 21rem;
       height: auto;
+      padding: 8px 2rem 8px 8px;
+      box-sizing: content-box;
     }
     height: auto;
     width: fit-content;

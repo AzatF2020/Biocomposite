@@ -1697,8 +1697,10 @@ html.is-animating .transition-main {
 .footer__logo-wrapper img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 25rem;
+  width: 21rem;
   height: auto;
+  padding: 8px 2rem 8px 8px;
+  box-sizing: content-box;
 }
 @media only screen and (max-width: 576px) {
   .footer__logo-wrapper {
@@ -1903,7 +1905,7 @@ html.is-animating .transition-main {
   }
 }
 .industry__content {
-  padding: 4rem 0;
+  padding: 5rem 0 4rem;
   display: grid;
   align-content: flex-end;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1966,7 +1968,7 @@ html.is-animating .transition-main {
   min-height: 14rem;
   grid-column: 1/5;
   grid-row: 1/2;
-  margin-left: 4rem;
+  margin-left: 20px;
   z-index: 2;
 }
 @media only screen and (max-width: 1024px) {
@@ -3388,6 +3390,7 @@ html.is-animating .transition-main {
   right: 0;
   bottom: 0;
   z-index: -1;
+  transition: all 0.3s ease;
 }
 .multi-video-block__wrapper-bottom {
   display: flex;
@@ -3404,11 +3407,6 @@ html.is-animating .transition-main {
   line-height: 110%;
   letter-spacing: -0.1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-.multi-video-block__wrapper-bottom-title:hover {
-  scale: 1.2;
-  margin-left: 25px;
 }
 .multi-video-block__wrapper-bottom--large {
   position: relative;
@@ -3469,6 +3467,9 @@ html.is-animating .transition-main {
     width: 100%;
     height: 17rem;
   }
+}
+.multi-video-block__wrapper:hover .multi-video-block__video {
+  scale: 1.15;
 }
 @media only screen and (max-width: 1024px) {
   .multi-video-block .js-video-wrapper {
