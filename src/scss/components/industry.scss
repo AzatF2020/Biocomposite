@@ -9,7 +9,7 @@
   }
 
   &__content {
-    padding: 4rem 0;
+    padding: 5rem 0 4rem;
     display: grid;
     align-content: flex-end;
     grid-template-columns: repeat(12, minmax(0, 1fr));
